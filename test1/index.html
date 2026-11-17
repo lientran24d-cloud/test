@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Adventure - Bài Kiểm Tra Nghe Tiếng Anh Tiểu Học (5 Parts)</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tải Google Fonts: Nunito tròn trịa, thân thiện với học sinh tiểu học -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Thư viện pháo hoa chúc mừng -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(180deg, #BAE6FD 0%, #E0F2FE 45%, #F0FDF4 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng mây trôi nhẹ trên nền trời */
+        @keyframes floatCloud {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-8px) translateX(12px); }
+        }
+        .cloud-float {
+            animation: floatCloud 6s ease-in-out infinite;
+        }
+        .cloud-float-delayed {
+            animation: floatCloud 8s ease-in-out 2s infinite;
+        }
+
+        /* Hiệu ứng nút bấm nổi khối 3D kiểu đồ chơi */
+        .btn-3d {
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-3d:active {
+            transform: translateY(4px);
+            border-bottom-width: 0px !important;
+        }
+
+        /* Hiệu ứng nảy nhẹ cho thẻ đáp án */
+        .option-card {
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .option-card:hover {
+            transform: translateY(-3px) scale(1.01);
+        }
+
+        /* Hiệu ứng sóng âm thanh nhún nhảy khi đang phát audio */
+        @keyframes soundWave {
+            0%, 100% { height: 8px; }
+            50% { height: 26px; }
+        }
+        .wave-bar {
+            width: 5px;
+            border-radius: 9999px;
+            background-color: #F97316;
+            height: 8px;
+        }
+        .playing .wave-bar:nth-child(1) { animation: soundWave 0.6s ease-in-out infinite 0.1s; }
+        .playing .wave-bar:nth-child(2) { animation: soundWave 0.6s ease-in-out infinite 0.3s; }
+        .playing .wave-bar:nth-child(3) { animation: soundWave 0.6s ease-in-out infinite 0.0s; }
+        .playing .wave-bar:nth-child(4) { animation: soundWave 0.6s ease-in-out infinite 0.4s; }
+        .playing .wave-bar:nth-child(5) { animation: soundWave 0.6s ease-in-out infinite 0.2s; }
+
+        /* Hiệu ứng rung nhẹ khi trả lời sai */
+        @keyframes gentleShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
+        }
+        .shake-anim {
+            animation: gentleShake 0.4s ease-in-out;
+        }
+
+        /* Hiệu ứng mascot nhún nhảy */
+        @keyframes mascotBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(4deg); }
+        }
+        .mascot-bounce {
+            animation: mascotBounce 1.4s ease-in-out infinite;
+        }
+
+        /* Tùy chỉnh thanh cuộn ngang cho tab bar trên di động */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 pb-20 relative">
+
+    <!-- Họa tiết đám mây trang trí nền -->
+    <div class="pointer-events-none fixed inset-0 overflow-hidden z-0 opacity-65">
+        <svg class="w-36 h-20 text-white absolute top-14 left-6 cloud-float" viewBox="0 0 200 100" fill="currentColor">
+            <path d="M45,80 L155,80 C175,80 190,65 190,48 C190,32 178,19 162,17 C155,5 140,-2 124,1 C112,3 102,11 97,22 C91,18 83,16 75,18 C62,20 52,31 51,44 C35,45 22,58 22,74 C22,78 32,80 45,80 Z"/>
+        </svg>
+        <svg class="w-44 h-24 text-white absolute top-28 right-10 cloud-float-delayed" viewBox="0 0 200 100" fill="currentColor">
+            <path d="M45,80 L155,80 C175,80 190,65 190,48 C190,32 178,19 162,17 C155,5 140,-2 124,1 C112,3 102,11 97,22 C91,18 83,16 75,18 C62,20 52,31 51,44 C35,45 22,58 22,74 C22,78 32,80 45,80 Z"/>
+        </svg>
+    </div>
+
+    <!-- THANH HEADER & BẢN ĐỒ 5 PART (25 CÂU HỎI) -->
+    <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b-4 border-sky-200 shadow-md">
+        <div class="max-w-5xl mx-auto px-4 py-3">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <!-- Logo & Tên bài thi -->
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white text-2xl shadow-md border-b-4 border-orange-600 mascot-bounce">
+                        🦉
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-sky-100 text-sky-700 text-xs font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">Cambridge A2 Key</span>
+                            <span class="bg-emerald-100 text-emerald-700 text-xs font-extrabold px-2.5 py-0.5 rounded-full">5 Parts • 25 Câu</span>
+                        </div>
+                        <h1 class="text-lg sm:text-xl font-black text-slate-800 leading-tight">Hành Trình Nghe Tiếng Anh</h1>
+                    </div>
+                </div>
+
+                <!-- Bộ đếm Ngôi Sao thưởng & Chế độ chấm điểm -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <div class="bg-amber-50 border-2 border-amber-300 px-3.5 py-1.5 rounded-2xl flex items-center gap-2 shadow-sm">
+                        <span class="text-2xl">⭐</span>
+                        <div>
+                            <div class="text-[10px] font-bold text-amber-600 uppercase leading-none">Ngôi sao của bé</div>
+                            <div class="text-base sm:text-lg font-black text-amber-700 leading-tight"><span id="starCount">0</span> / 25</div>
+                        </div>
+                    </div>
+
+                    <button onclick="showSummaryModal()" class="btn-3d bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-xs sm:text-sm px-3.5 py-2.5 rounded-2xl border-b-4 border-emerald-700 flex items-center gap-1.5 shadow-sm">
+                        <span>🏆</span>
+                        <span>Nộp bài</span>
+                    </button>
+
+                    <button onclick="resetQuiz()" class="btn-3d bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm px-3 py-2.5 rounded-2xl border-b-4 border-slate-300 flex items-center gap-1" title="Làm lại từ đầu">
+                        <span>🔄</span>
+                        <span class="hidden md:inline">Làm lại</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Thanh điều hướng 5 Part (Bản đồ chặng đường) -->
+            <div id="partTabsContainer" class="mt-3 pt-2.5 border-t border-slate-100 flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+                <!-- Các tab Part 1 -> Part 5 được render tự động -->
+            </div>
+        </div>
+    </header>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="max-w-4xl mx-auto px-4 mt-6 relative z-10">
+
+        <!-- Banner hướng dẫn Part hiện tại + Trình phát Audio kép (File MP3 gốc & Giọng đọc AI) -->
+        <section class="bg-white rounded-3xl p-5 sm:p-6 shadow-xl border-4 border-sky-200 mb-7">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+                <div>
+                    <span id="partBadge" class="inline-block bg-orange-100 text-orange-600 font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-1">
+                        PART 1 • QUESTION 1–5
+                    </span>
+                    <h2 id="partTitle" class="text-xl sm:text-2xl font-black text-slate-800">
+                        Nghe và chọn bức tranh đúng nhé! 🎧
+                    </h2>
+                    <p id="partInstruction" class="text-sm text-slate-500 font-semibold mt-0.5">
+                        For each question, choose the correct picture.
+                    </p>
+                </div>
+
+                <!-- Công tắc chấm điểm ngay -->
+                <div class="flex items-center gap-2 bg-sky-50 px-3.5 py-2 rounded-2xl border-2 border-sky-200 self-start">
+                    <input type="checkbox" id="instantMode" checked class="w-5 h-5 accent-sky-600 rounded cursor-pointer">
+                    <label for="instantMode" class="text-xs sm:text-sm font-extrabold text-sky-800 cursor-pointer select-none">
+                        Chấm điểm ngay khi làm
+                    </label>
+                </div>
+            </div>
+
+            <!-- Khu vực Trình phát Audio của Part -->
+            <div class="bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 border-2 border-amber-300 rounded-2xl p-4 space-y-3">
+                <div class="flex flex-col sm:flex-row items-center gap-3">
+                    <!-- Nút phát hội thoại AI toàn Part -->
+                    <button id="partAiPlayBtn" onclick="togglePartAiSpeech()" class="btn-3d w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-black text-sm px-5 py-3.5 rounded-2xl border-b-4 border-orange-700 shadow-md flex items-center justify-center gap-2 flex-shrink-0">
+                        <span id="partAiPlayIcon" class="text-lg">🔊</span>
+                        <span id="partAiPlayText">Nghe giọng đọc mẫu Part 1</span>
+                    </button>
+
+                    <!-- Sóng âm thanh & trạng thái -->
+                    <div class="flex-1 w-full bg-white/80 rounded-2xl px-4 py-2.5 border border-amber-200 flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-2">
+                            <div id="partWave" class="flex items-center gap-1 h-6">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                            <span id="audioStatusLabel" class="text-xs sm:text-sm font-extrabold text-orange-800">
+                                Sẵn sàng phát âm thanh Part 1
+                            </span>
+                        </div>
+
+                        <!-- Nút tải file MP3 gốc của giáo viên -->
+                        <label class="cursor-pointer bg-sky-100 hover:bg-sky-200 text-sky-800 text-xs font-extrabold px-3 py-1.5 rounded-xl border border-sky-300 flex items-center gap-1 transition flex-shrink-0" title="Chọn file MP3 từ máy tính để phát">
+                            <span>📂</span>
+                            <span class="hidden sm:inline">Chọn file MP3 gốc</span>
+                            <span class="sm:hidden">MP3</span>
+                            <input type="file" id="mp3FileInput" accept="audio/*" class="hidden" onchange="handleLocalAudioUpload(event)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Trình phát MP3 thực tế (hiện ra khi giáo viên chọn file MP3 từ máy) -->
+                <div id="localAudioPlayerWrapper" class="hidden pt-2 border-t border-amber-200/80">
+                    <div class="flex items-center justify-between text-xs font-extrabold text-amber-800 mb-1.5">
+                        <span id="localAudioFileName">🎵 Đang nạp file MP3...</span>
+                        <button onclick="clearLocalAudio()" class="text-rose-600 hover:underline">Gỡ file</button>
+                    </div>
+                    <audio id="localAudioElement" controls class="w-full h-10 rounded-xl"></audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- KHU VỰC HIỂN THỊ NỘI DUNG CÂU HỎI THEO TỪNG PART -->
+        <div id="partContentArea" class="space-y-6">
+            <!-- Nội dung câu hỏi sẽ được render bằng JS -->
+        </div>
+
+        <!-- THANH ĐIỀU HƯỚNG CHUYỂN PART CUỐI TRANG -->
+        <div class="mt-10 bg-white rounded-3xl p-5 shadow-xl border-4 border-sky-200 flex flex-wrap items-center justify-between gap-4">
+            <button id="prevPartBtn" onclick="changePart(currentPart - 1)" class="btn-3d bg-slate-100 hover:bg-slate-200 disabled:opacity-40 disabled:pointer-events-none text-slate-700 font-black text-sm sm:text-base px-6 py-3.5 rounded-2xl border-b-4 border-slate-300 flex items-center gap-2">
+                <span>⬅️</span>
+                <span>Part trước</span>
+            </button>
+
+            <div class="text-center">
+                <div class="text-xs font-extrabold text-slate-400 uppercase">Tiến độ hoàn thành</div>
+                <div class="text-base font-black text-sky-700"><span id="answeredCountText">0</span> / 25 câu đã làm</div>
+            </div>
+
+            <button id="nextPartBtn" onclick="handleNextOrSubmit()" class="btn-3d bg-sky-500 hover:bg-sky-600 text-white font-black text-sm sm:text-base px-7 py-3.5 rounded-2xl border-b-4 border-sky-700 shadow-md flex items-center gap-2">
+                <span id="nextPartBtnText">Part tiếp theo ➡️</span>
+            </button>
+        </div>
+
+    </main>
+
+    <!-- MODAL PHÓNG TO HÌNH ẢNH (DÀNH CHO PART 1) -->
+    <div id="zoomModal" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm hidden items-center justify-center p-4" onclick="closeZoomModal()">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border-4 border-sky-300" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between mb-4">
+                <span id="zoomModalTitle" class="bg-sky-100 text-sky-800 font-black px-4 py-1.5 rounded-full text-sm">
+                    Picture A
+                </span>
+                <button onclick="closeZoomModal()" class="w-10 h-10 rounded-full bg-slate-100 hover:bg-rose-100 text-slate-600 hover:text-rose-600 font-black text-xl flex items-center justify-center transition">
+                    ✕
+                </button>
+            </div>
+            <div id="zoomModalContent" class="bg-sky-50/50 rounded-2xl p-6 flex items-center justify-center border-2 border-sky-100 min-h-[260px]">
+                <!-- SVG phóng to -->
+            </div>
+            <div class="mt-5 text-center">
+                <button onclick="closeZoomModal()" class="btn-3d bg-sky-500 hover:bg-sky-600 text-white font-extrabold px-8 py-3 rounded-2xl border-b-4 border-sky-700">
+                    Đóng lại
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL TỔNG KẾT ĐIỂM & BẢNG VÀNG THÀNH TÍCH -->
+    <div id="summaryModal" class="fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto" onclick="closeSummaryModal()">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border-4 border-amber-300 text-center my-8" onclick="event.stopPropagation()">
+            <div class="text-6xl mb-2">🏆</div>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-800 mb-1">Bảng Vàng Thành Tích!</h2>
+            <p id="summaryEncouragement" class="text-slate-600 font-bold text-sm mb-5">
+                Chúc mừng con đã hoàn thành hành trình luyện nghe!
+            </p>
+
+            <!-- Tổng điểm & Ngôi sao -->
+            <div class="grid grid-cols-2 gap-3 mb-5">
+                <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-4">
+                    <div class="text-xs font-extrabold text-amber-600 uppercase">Tổng số sao</div>
+                    <div class="text-3xl font-black text-amber-500 mt-1"><span id="finalStarScore">0</span> / 25 ⭐</div>
+                </div>
+                <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-4">
+                    <div class="text-xs font-extrabold text-emerald-600 uppercase">Điểm quy đổi (Thang 10)</div>
+                    <div class="text-3xl font-black text-emerald-600 mt-1"><span id="finalTenScore">0.0</span> / 10</div>
+                </div>
+            </div>
+
+            <!-- Chi tiết từng Part -->
+            <div id="partBreakdownList" class="space-y-2 text-left mb-6">
+                <!-- Render kết quả từng Part 1 -> 5 -->
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button onclick="closeSummaryModal(); resetQuiz();" class="btn-3d flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-extrabold py-3.5 rounded-2xl border-b-4 border-slate-300">
+                    🔄 Làm lại từ đầu
+                </button>
+                <button onclick="closeSummaryModal(); revealAllAnswers();" class="btn-3d flex-1 bg-sky-500 hover:bg-sky-600 text-white font-extrabold py-3.5 rounded-2xl border-b-4 border-sky-700">
+                    🔍 Xem lại đáp án & giải thích
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- THÔNG BÁO NHỎ (TOAST MESSAGE) -->
+    <div id="toastMsg" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-800 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-xl opacity-0 pointer-events-none transition-opacity duration-300 text-center">
+        Thông báo
+    </div>
+
+    <script>
+        // =========================================================================
+        // 1. CƠ SỞ DỮ LIỆU ĐẦY ĐỦ 5 PART (25 CÂU HỎI) THEO ĐÚNG FILE NGHE & ẢNH ĐỀ
+        // =========================================================================
+        const quizParts = [
+            {
+                part: 1,
+                shortTitle: "Part 1",
+                range: "Câu 1–5",
+                icon: "🖼️",
+                title: "Part 1: Nghe và chọn bức tranh đúng nhé! 🎧",
+                instruction: "For each question, choose the correct picture. (Bấm nút loa ở từng câu để nghe hội thoại)",
+                fullTranscript: "Part 1. For each question, choose the correct picture. Question 1. Where will Ben and Sally go after school? Ben: Hi Sally, would you like to go to the park after school? Sally: It's too cold to be outside. Ben: We could go to see a film. The cinema will be nice and warm. Sally: I don't have much money. Why don't we go for a coffee? Ben: Good idea! Question 2. What time does the school sports day start? Girl: What time are you going to the school sports day, Jim? Jim: Look, it opens at eleven. But I want to help to get everything ready, so I'll be there ten o'clock in the morning. Girl: My first race is at eleven thirty. Question 3. What will Mary have for lunch? Dad: Would you like a sandwich to take to school for lunch, Mary? Mary: I like sandwiches, but today I would like something different. I'll have a banana, please. Dad: Do you want an apple too? Mary: No thanks. Question 4. How much are the shoes? Man: Excuse me, are these shoes half price? Woman: That's right. Everything on that shelf is twenty pounds. Man: Oh good. I'll have them, and I'd like this scarf too. Woman: That will be another five pounds for the scarf, so that is twenty-five pounds in total. Question 5. What was the weather like on Friday? Boy: What was the weather like during the football match on Friday? Girl: It wasn't raining, but it was very cold. We didn't have any sun all weekend. By the end of the game, it was snowing!",
+                type: "picture-choice",
+                questions: [
+                    {
+                        id: 1,
+                        question: "Where will Ben and Sally go after school?",
+                        transcript: "Ben: Hi Sally, would you like to go to the park after school? Sally: It's too cold to be outside. Ben: We could go to see a film. The cinema will be nice and warm. Sally: I don't have much money. Why don't we go for a coffee? Ben: Good idea!",
+                        correct: "C",
+                        explanation: "Trời lạnh để ra công viên (park), Sally không có nhiều tiền để đi xem phim (cinema) nên hai bạn rủ nhau đi uống cà phê (Cafe).",
+                        options: [
+                            {
+                                label: "A",
+                                title: "Picture A (Playground / Park)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#E0F2FE"/>
+                                        <rect x="10" y="110" width="200" height="30" rx="8" fill="#86EFAC"/>
+                                        <rect x="55" y="45" width="40" height="35" fill="#FBBF24" stroke="#B45309" stroke-width="2.5" rx="4"/>
+                                        <polygon points="50,45 75,25 100,45" fill="#F87171" stroke="#B91C1C" stroke-width="2.5"/>
+                                        <line x1="60" y1="80" x2="60" y2="115" stroke="#78350F" stroke-width="3"/>
+                                        <line x1="90" y1="80" x2="90" y2="115" stroke="#78350F" stroke-width="3"/>
+                                        <path d="M55,75 Q35,85 25,115 L38,115 Q48,90 55,82 Z" fill="#38BDF8" stroke="#0369A1" stroke-width="2"/>
+                                        <line x1="95" y1="45" x2="175" y2="45" stroke="#78350F" stroke-width="4" stroke-linecap="round"/>
+                                        <line x1="175" y1="45" x2="165" y2="115" stroke="#78350F" stroke-width="3"/>
+                                        <line x1="175" y1="45" x2="185" y2="115" stroke="#78350F" stroke-width="3"/>
+                                        <line x1="120" y1="45" x2="120" y2="95" stroke="#475569" stroke-width="1.5"/>
+                                        <line x1="135" y1="45" x2="135" y2="95" stroke="#475569" stroke-width="1.5"/>
+                                        <rect x="116" y="95" width="23" height="5" rx="2" fill="#F97316"/>
+                                        <line x1="150" y1="45" x2="150" y2="95" stroke="#475569" stroke-width="1.5"/>
+                                        <line x1="162" y1="45" x2="162" y2="95" stroke="#475569" stroke-width="1.5"/>
+                                        <rect x="147" y="95" width="18" height="5" rx="2" fill="#F97316"/>
+                                      </svg>`
+                            },
+                            {
+                                label: "B",
+                                title: "Picture B (Cinema)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#FEF3C7"/>
+                                        <rect x="35" y="38" width="150" height="92" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+                                        <rect x="45" y="20" width="130" height="24" rx="6" fill="#EF4444" stroke="#991B1B" stroke-width="2.5"/>
+                                        <text x="110" y="36" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="900" font-family="Nunito">MOVIE STARS</text>
+                                        <rect x="85" y="72" width="50" height="58" rx="4" fill="#60A5FA" stroke="#1D4ED8" stroke-width="2"/>
+                                        <rect x="92" y="55" width="36" height="22" rx="3" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+                                        <circle cx="110" cy="64" r="5" fill="#FDBA74"/>
+                                        <rect x="48" y="65" width="26" height="36" fill="#FFFFFF" stroke="#64748B" stroke-width="1.5"/>
+                                        <polygon points="61,72 64,79 71,79 65,84 67,91 61,87 55,91 57,84 51,79 58,79" fill="#F59E0B"/>
+                                      </svg>`
+                            },
+                            {
+                                label: "C",
+                                title: "Picture C (Cafe)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#FCE7F3"/>
+                                        <rect x="10" y="115" width="200" height="25" rx="6" fill="#CBD5E1"/>
+                                        <rect x="35" y="50" width="110" height="65" rx="4" fill="#FED7AA" stroke="#C2410C" stroke-width="2.5"/>
+                                        <rect x="145" y="30" width="40" height="85" rx="4" fill="#FDBA74" stroke="#C2410C" stroke-width="2.5"/>
+                                        <path d="M145,30 Q165,12 185,30 Z" fill="#FB7185" stroke="#BE123C" stroke-width="2"/>
+                                        <rect x="75" y="58" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#9A3412" stroke-width="2"/>
+                                        <text x="103" y="72" text-anchor="middle" fill="#9A3412" font-size="12" font-weight="900" font-family="Nunito">CAFE</text>
+                                        <rect x="155" y="78" width="20" height="37" fill="#7C2D12"/>
+                                        <path d="M42,92 Q57,80 72,92 Z" fill="#34D399" stroke="#065F46" stroke-width="1.5"/>
+                                        <line x1="57" y1="92" x2="57" y2="115" stroke="#475569" stroke-width="2"/>
+                                        <path d="M85,92 Q100,80 115,92 Z" fill="#38BDF8" stroke="#075985" stroke-width="1.5"/>
+                                        <line x1="100" y1="92" x2="100" y2="115" stroke="#475569" stroke-width="2"/>
+                                      </svg>`
+                            }
+                        ]
+                    },
+                    {
+                        id: 2,
+                        question: "What time does the school sports day start?",
+                        transcript: "Girl: What time are you going to the school sports day, Jim? Jim: Look, it opens at eleven. But I want to help to get everything ready, so I'll be there ten o'clock in the morning. Girl: My first race is at eleven thirty.",
+                        correct: "B",
+                        explanation: "Ngày hội thể thao mở cửa bắt đầu lúc 11:00 (It opens at eleven). 10:00 là giờ Jim đến chuẩn bị, còn 11:30 là lượt chạy đầu tiên.",
+                        options: [
+                            {
+                                label: "A",
+                                title: "Picture A (10:00)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#F1F5F9"/>
+                                        <rect x="28" y="35" width="164" height="80" rx="16" fill="#334155" stroke="#0F172A" stroke-width="3"/>
+                                        <rect x="54" y="48" width="112" height="44" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+                                        <text x="110" y="79" text-anchor="middle" fill="#065F46" font-size="30" font-weight="900" font-family="monospace">10:00</text>
+                                        <circle cx="96" cy="103" r="4" fill="#94A3B8"/><circle cx="110" cy="103" r="4" fill="#94A3B8"/><circle cx="124" cy="103" r="4" fill="#94A3B8"/>
+                                      </svg>`
+                            },
+                            {
+                                label: "B",
+                                title: "Picture B (11:00)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#F1F5F9"/>
+                                        <rect x="28" y="35" width="164" height="80" rx="16" fill="#334155" stroke="#0F172A" stroke-width="3"/>
+                                        <rect x="54" y="48" width="112" height="44" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+                                        <text x="110" y="79" text-anchor="middle" fill="#065F46" font-size="30" font-weight="900" font-family="monospace">11:00</text>
+                                        <circle cx="96" cy="103" r="4" fill="#94A3B8"/><circle cx="110" cy="103" r="4" fill="#94A3B8"/><circle cx="124" cy="103" r="4" fill="#94A3B8"/>
+                                      </svg>`
+                            },
+                            {
+                                label: "C",
+                                title: "Picture C (11:30)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#F1F5F9"/>
+                                        <rect x="28" y="35" width="164" height="80" rx="16" fill="#334155" stroke="#0F172A" stroke-width="3"/>
+                                        <rect x="54" y="48" width="112" height="44" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+                                        <text x="110" y="79" text-anchor="middle" fill="#065F46" font-size="30" font-weight="900" font-family="monospace">11:30</text>
+                                        <circle cx="96" cy="103" r="4" fill="#94A3B8"/><circle cx="110" cy="103" r="4" fill="#94A3B8"/><circle cx="124" cy="103" r="4" fill="#94A3B8"/>
+                                      </svg>`
+                            }
+                        ]
+                    },
+                    {
+                        id: 3,
+                        question: "What will Mary have for lunch?",
+                        transcript: "Dad: Would you like a sandwich to take to school for lunch, Mary? Mary: I like sandwiches, but today I would like something different. I'll have a banana, please. Dad: Do you want an apple too? Mary: No thanks.",
+                        correct: "A",
+                        explanation: "Mary từ chối bánh sandwich và táo, cô bé chọn ăn một quả chuối (I'll have a banana, please).",
+                        options: [
+                            {
+                                label: "A",
+                                title: "Picture A (Banana)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#FEFCE8"/>
+                                        <path d="M65,105 Q105,112 135,65 Q125,55 115,62 Q95,95 65,98 Z" fill="#FACC15" stroke="#CA8A04" stroke-width="2.5"/>
+                                        <path d="M115,62 Q122,42 132,45 Q138,52 132,65 Z" fill="#FEF08A" stroke="#CA8A04" stroke-width="2.5"/>
+                                        <path d="M115,62 Q95,55 88,68 Q102,72 115,68 Z" fill="#FDE047" stroke="#CA8A04" stroke-width="2"/>
+                                        <path d="M132,65 Q150,62 152,76 Q138,78 130,72 Z" fill="#FDE047" stroke="#CA8A04" stroke-width="2"/>
+                                        <rect x="60" y="98" width="8" height="7" rx="2" fill="#713F12"/>
+                                      </svg>`
+                            },
+                            {
+                                label: "B",
+                                title: "Picture B (Sandwich)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#FFF7ED"/>
+                                        <polygon points="55,95 115,65 165,95 105,120" fill="#D97706" stroke="#78350F" stroke-width="2.5"/>
+                                        <polygon points="55,82 115,52 165,82 105,107" fill="#22C55E" stroke="#15803D" stroke-width="2"/>
+                                        <polygon points="55,74 115,44 165,74 105,99" fill="#EF4444" stroke="#B91C1C" stroke-width="2"/>
+                                        <polygon points="55,64 115,34 165,64 105,89" fill="#FDE68A" stroke="#B45309" stroke-width="2.5"/>
+                                      </svg>`
+                            },
+                            {
+                                label: "C",
+                                title: "Picture C (Apple)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#FEF2F2"/>
+                                        <path d="M110,48 C92,38 68,48 68,78 C68,108 92,122 110,115 C128,122 152,108 152,78 C152,48 128,38 110,48 Z" fill="#EF4444" stroke="#991B1B" stroke-width="2.5"/>
+                                        <path d="M110,48 Q112,32 120,28" fill="none" stroke="#78350F" stroke-width="3.5" stroke-linecap="round"/>
+                                        <path d="M112,38 Q128,25 138,36 Q125,45 112,38 Z" fill="#22C55E" stroke="#15803D" stroke-width="2"/>
+                                        <ellipse cx="86" cy="68" rx="5" ry="10" transform="rotate(-20 86 68)" fill="#FCA5A5" opacity="0.7"/>
+                                      </svg>`
+                            }
+                        ]
+                    },
+                    {
+                        id: 4,
+                        question: "How much are the shoes?",
+                        transcript: "Man: Excuse me, are these shoes half price? Woman: That's right. Everything on that shelf is twenty pounds. Man: Oh good. I'll have them, and I'd like this scarf too. Woman: That will be another five pounds for the scarf, so that is twenty-five pounds in total.",
+                        correct: "B",
+                        explanation: "Câu hỏi chỉ hỏi giá của đôi giày (How much are the shoes?): đôi giày có giá £20.00 (còn £5 là khăn quàng và £25 là tổng tiền).",
+                        options: [
+                            {
+                                label: "A",
+                                title: "Picture A (£5.00)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#EFF6FF"/>
+                                        <path d="M38,42 L145,42 L182,75 L145,108 L38,108 Z" fill="#FFFFFF" stroke="#2563EB" stroke-width="3" stroke-linejoin="round"/>
+                                        <circle cx="158" cy="75" r="7" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.5"/>
+                                        <text x="95" y="84" text-anchor="middle" fill="#1E293B" font-size="28" font-weight="900" font-family="Nunito">£5.00</text>
+                                      </svg>`
+                            },
+                            {
+                                label: "B",
+                                title: "Picture B (£20.00)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#EFF6FF"/>
+                                        <path d="M38,42 L145,42 L182,75 L145,108 L38,108 Z" fill="#FFFFFF" stroke="#2563EB" stroke-width="3" stroke-linejoin="round"/>
+                                        <circle cx="158" cy="75" r="7" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.5"/>
+                                        <text x="95" y="84" text-anchor="middle" fill="#1E293B" font-size="26" font-weight="900" font-family="Nunito">£20.00</text>
+                                      </svg>`
+                            },
+                            {
+                                label: "C",
+                                title: "Picture C (£25.00)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#EFF6FF"/>
+                                        <path d="M38,42 L145,42 L182,75 L145,108 L38,108 Z" fill="#FFFFFF" stroke="#2563EB" stroke-width="3" stroke-linejoin="round"/>
+                                        <circle cx="158" cy="75" r="7" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.5"/>
+                                        <text x="95" y="84" text-anchor="middle" fill="#1E293B" font-size="26" font-weight="900" font-family="Nunito">£25.00</text>
+                                      </svg>`
+                            }
+                        ]
+                    },
+                    {
+                        id: 5,
+                        question: "What was the weather like on Friday?",
+                        transcript: "Boy: What was the weather like during the football match on Friday? Girl: It wasn't raining, but it was very cold. We didn't have any sun all weekend. By the end of the game, it was snowing!",
+                        correct: "C",
+                        explanation: "Trời không mưa, không có nắng, và đến cuối trận đấu vào thứ Sáu thì tuyết rơi (it was snowing).",
+                        options: [
+                            {
+                                label: "A",
+                                title: "Picture A (Rainy)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#E0F2FE"/>
+                                        <path d="M72,82 L148,82 C162,82 172,72 172,58 C172,46 163,36 151,35 C146,25 135,20 123,22 C114,24 107,30 103,38 C98,35 92,34 86,35 C76,37 69,45 68,55 C56,56 48,66 48,77 C48,80 58,82 72,82 Z" fill="#64748B" stroke="#334155" stroke-width="2.5"/>
+                                        <path d="M85,92 Q80,104 85,108 Q90,104 85,92 Z" fill="#0284C7"/>
+                                        <path d="M110,98 Q105,112 110,117 Q115,112 110,98 Z" fill="#0284C7"/>
+                                        <path d="M135,92 Q130,104 135,108 Q140,104 135,92 Z" fill="#0284C7"/>
+                                      </svg>`
+                            },
+                            {
+                                label: "B",
+                                title: "Picture B (Sunny)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#FEF9C3"/>
+                                        <circle cx="110" cy="75" r="28" fill="#FACC15" stroke="#EA580C" stroke-width="3"/>
+                                        <polygon points="110,24 117,40 103,40" fill="#F59E0B"/><polygon points="110,126 117,110 103,110" fill="#F59E0B"/>
+                                        <polygon points="59,75 75,68 75,82" fill="#F59E0B"/><polygon points="161,75 145,68 145,82" fill="#F59E0B"/>
+                                        <polygon points="74,39 89,47 81,55" fill="#F59E0B"/><polygon points="146,111 131,103 139,95" fill="#F59E0B"/>
+                                        <polygon points="146,39 139,55 131,47" fill="#F59E0B"/><polygon points="74,111 81,95 89,103" fill="#F59E0B"/>
+                                      </svg>`
+                            },
+                            {
+                                label: "C",
+                                title: "Picture C (Snowy)",
+                                svg: `<svg viewBox="0 0 220 150" class="w-full h-36">
+                                        <rect x="10" y="10" width="200" height="130" rx="16" fill="#F0F9FF"/>
+                                        <path d="M72,82 L148,82 C162,82 172,72 172,58 C172,46 163,36 151,35 C146,25 135,20 123,22 C114,24 107,30 103,38 C98,35 92,34 86,35 C76,37 69,45 68,55 C56,56 48,66 48,77 C48,80 58,82 72,82 Z" fill="#94A3B8" stroke="#475569" stroke-width="2.5"/>
+                                        <text x="85" y="108" text-anchor="middle" fill="#0284C7" font-size="20" font-weight="bold">❄</text>
+                                        <text x="110" y="118" text-anchor="middle" fill="#0284C7" font-size="24" font-weight="bold">❄</text>
+                                        <text x="135" y="108" text-anchor="middle" fill="#0284C7" font-size="20" font-weight="bold">❄</text>
+                                      </svg>`
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: 2,
+                shortTitle: "Part 2",
+                range: "Câu 6–10",
+                icon: "✏️",
+                title: "Part 2: Nghe và điền từ còn thiếu vào tờ lịch nhé! 📅",
+                instruction: "You will hear a teacher talking to a group of students about a school calendar. Write one word or a number or a date.",
+                fullTranscript: "Part 2. You will hear a teacher talking to a group of students about a school calendar. Last year's school calendar was very popular. Because of this, we are going to make another one, ready for next year. We hope to finish it by November, so that we can sell it in early December. We have decided to include drawings rather than photos in next year's calendar. If you would like to have your drawing in our calendar, you must enter it into our school competition. The final date to enter the competition is October 12th. We hoped it would be October 20th, but we had to change the date. We will choose a different drawing for each month, and the best of all will be put on the front cover. The 12 inside pictures will be in black and white, and the one on the front cover will be in colour. So we need 13 pictures in total. Please send your drawings to Mrs Rivers. That's R I V E R S.",
+                type: "fill-gap",
+                cardHeader: "📅 SCHOOL CALENDAR (Lịch Trường Học)",
+                cardSubNote: "For next: year",
+                questions: [
+                    {
+                        id: 6,
+                        prefix: "Start to sell calendars in:",
+                        suffix: "",
+                        placeholder: "Nhập tháng (VD: December)",
+                        acceptedAnswers: ["december", "early december"],
+                        displayAnswer: "December",
+                        explanation: "Cô giáo nói: 'so that we can sell it in early December' (bắt đầu bán vào đầu tháng 12 - December)."
+                    },
+                    {
+                        id: 7,
+                        prefix: "Last date to enter competition:",
+                        suffix: "",
+                        placeholder: "Nhập ngày (VD: October 12)",
+                        acceptedAnswers: ["october 12", "october 12th", "12 october", "12th october", "12/10", "oct 12", "oct 12th"],
+                        displayAnswer: "October 12 / 12th",
+                        explanation: "Hạn cuối nộp tranh dự thi là ngày 12 tháng 10: 'The final date to enter the competition is October 12th'."
+                    },
+                    {
+                        id: 8,
+                        prefix: "Front picture will be: in",
+                        suffix: "",
+                        placeholder: "Nhập từ (VD: colour)",
+                        acceptedAnswers: ["colour", "color"],
+                        displayAnswer: "colour (color)",
+                        explanation: "12 tranh bên trong đen trắng, còn bức tranh bìa trước sẽ có màu: 'the one on the front cover will be in colour'."
+                    },
+                    {
+                        id: 9,
+                        prefix: "Total number of pictures:",
+                        suffix: "",
+                        placeholder: "Nhập số (VD: 13)",
+                        acceptedAnswers: ["13", "thirteen"],
+                        displayAnswer: "13 (thirteen)",
+                        explanation: "12 bức cho 12 tháng + 1 bức trang bìa = 13 bức tranh tất cả ('So we need 13 pictures in total')."
+                    },
+                    {
+                        id: 10,
+                        prefix: "Send your pictures to: Mrs",
+                        suffix: "",
+                        placeholder: "Đánh vần tên (R-I-V-E-R-S)",
+                        acceptedAnswers: ["rivers"],
+                        displayAnswer: "Rivers",
+                        explanation: "Cô giáo đánh vần tên: R - I - V - E - R - S (Mrs Rivers)."
+                    }
+                ]
+            },
+            {
+                part: 3,
+                shortTitle: "Part 3",
+                range: "Câu 11–15",
+                icon: "⛺",
+                title: "Part 3: Nghe hội thoại giữa Sarah và Tom về chuyến đi cắm trại! 🏕️",
+                instruction: "You will hear Sarah talking to her friend Tom about a school trip. Choose the correct answer A, B or C.",
+                fullTranscript: "Part 3. You will hear Sarah talking to her friend Tom about a school trip. Sarah: Hi Tom, are you going on the trip next month? Tom: I'm not sure, Sarah. I like the idea of staying on a farm, but not on a campsite. Sarah: I know. I usually stay in a guest house or hotel when I go on holiday with my parents, but this will be fun. Tom: I don't think I want to be with my classmates for a whole week. Sarah: I think that makes it more interesting, don't you? Tom: Maybe. But won't it be expensive? Sarah: No, it'll be really cheap as we're going in a group. The teachers are lucky, they don't pay. Tom: But what if the weather's bad? Sarah: Don't worry, it's summer now. I have heard the weather will be sunny these days. Tom: So can we cook our own food on the fire outdoors? Sarah: Unfortunately we aren't allowed to. Well, the campsite where we will stay belongs to the farm. Tom: So where will we eat? I don't suppose there's a café near there? Sarah: No, we'll eat in the farm. Some people there will prepare food for us.",
+                type: "mcq",
+                questions: [
+                    {
+                        id: 11,
+                        question: "Where will they stay?",
+                        correct: "B",
+                        explanation: "Họ sẽ ở trong khu cắm trại thuộc trang trại ('not on a campsite... the campsite where we will stay belongs to the farm').",
+                        options: [
+                            { label: "A", text: "in a hotel" },
+                            { label: "B", text: "on a campsite" },
+                            { label: "C", text: "in a guest house" }
+                        ]
+                    },
+                    {
+                        id: 12,
+                        question: "Sarah thinks a camping holiday",
+                        correct: "B",
+                        explanation: "Sarah thường ở nhà nghỉ/khách sạn với bố mẹ nhưng cô nghĩ chuyến cắm trại này sẽ rất vui và thú vị (một sự thay đổi tuyệt vời).",
+                        options: [
+                            { label: "A", text: "is like her usual holidays." },
+                            { label: "B", text: "will be a nice change." },
+                            { label: "C", text: "is better with families." }
+                        ]
+                    },
+                    {
+                        id: 13,
+                        question: "For Sarah and Tom, the holiday will be",
+                        correct: "B",
+                        explanation: "Sarah nói chuyến đi rất rẻ vì đi theo nhóm ('it'll be really cheap as we're going in a group'), chỉ có giáo viên là được miễn phí.",
+                        options: [
+                            { label: "A", text: "expensive." },
+                            { label: "B", text: "cheap." },
+                            { label: "C", text: "free." }
+                        ]
+                    },
+                    {
+                        id: 14,
+                        question: "What will the weather be during their school trip?",
+                        correct: "B",
+                        explanation: "Sarah nghe dự báo những ngày tới trời sẽ có nắng ('I have heard the weather will be sunny these days').",
+                        options: [
+                            { label: "A", text: "rainy" },
+                            { label: "B", text: "sunny" },
+                            { label: "C", text: "cold" }
+                        ]
+                    },
+                    {
+                        id: 15,
+                        question: "Where will they eat?",
+                        correct: "C",
+                        explanation: "Họ sẽ ăn ở trong trang trại vì có người chuẩn bị đồ ăn sẵn cho cả đoàn ('we'll eat in the farm').",
+                        options: [
+                            { label: "A", text: "on the campsite" },
+                            { label: "B", text: "at a café" },
+                            { label: "C", text: "in the farm" }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: 4,
+                shortTitle: "Part 4",
+                range: "Câu 16–20",
+                icon: "💬",
+                title: "Part 4: Nghe 5 đoạn hội thoại ngắn và chọn ý đúng! 🗣️",
+                instruction: "For each question, choose the correct answer A, B or C.",
+                fullTranscript: "Part 4. Question 16. What didn't he like? Girl: How was your holiday? Boy: The weather was great, and so was the hotel. I just didn't enjoy the meals. They only served German food, and I hate that. Question 17. Why won't the girl order something sweet? Boy: Would you like a dessert? Girl: I'd love one, but I have to be very careful. Boy: Oh, I forgot. You've got a problem with your stomach and there are some things you can't eat, right? Girl: Yes, eggs and milk. Question 18. Why is the woman unhappy? Woman: I'm not going in there again. The shop assistants were very polite, but even I know more about laptops than they do. They had nothing at a low price. Question 19. What's the problem with her trainers? Girl: Hello, I'd like to return some trainers. They're much lighter in colour than in the photo. They are at a low price, and their size is exactly what I want. Question 20. What's the problem with his sister's suitcase? Boy: You always pack so much. Your suitcase is too heavy. Sister: At least we won't have to pay anything this time as we aren't travelling by plane. Boy: I just hope that there is enough space left in Dad's car.",
+                type: "mcq",
+                questions: [
+                    {
+                        id: 16,
+                        question: "You will hear a boy talking to his friend about his holiday. What didn't he like?",
+                        transcript: "Girl: How was your holiday? Boy: The weather was great, and so was the hotel. I just didn't enjoy the meals. Girl: Don't you like Spanish food? Boy: I do, but they only served German food, and I hate that.",
+                        correct: "C",
+                        explanation: "Cậu bé thích đồ ăn Tây Ban Nha nhưng khách sạn chỉ phục vụ đồ ăn Đức và cậu ghét điều đó ('only served German food, and I hate that').",
+                        options: [
+                            { label: "A", text: "Spanish food" },
+                            { label: "B", text: "the weather" },
+                            { label: "C", text: "German food" }
+                        ]
+                    },
+                    {
+                        id: 17,
+                        question: "You will hear two friends talking in a restaurant. Why won't the girl order something sweet?",
+                        transcript: "Boy: Would you like a dessert? Girl: I'd love one, but I have to be very careful. Boy: Oh, I forgot. You've got a problem with your stomach and there are some things you can't eat, right? Girl: Yes, eggs and milk.",
+                        correct: "B",
+                        explanation: "Cô bé bị đau dạ dày nên không thể ăn trứng và sữa có trong món tráng miệng ngọt ('problem with your stomach').",
+                        options: [
+                            { label: "A", text: "She doesn't like sweet food." },
+                            { label: "B", text: "Eating sweet food makes her ill." },
+                            { label: "C", text: "She wants to stay thin." }
+                        ]
+                    },
+                    {
+                        id: 18,
+                        question: "You will hear two teachers talking outside a shop. Why is the woman unhappy?",
+                        transcript: "Woman: I'm not going in there again. The shop assistants were very polite, but even I know more about laptops than they do. They were all about the same price. They had nothing at a low price.",
+                        correct: "B",
+                        explanation: "Nhân viên rất lịch sự nhưng cửa hàng không có chiếc laptop nào giá rẻ cả ('They had nothing at a low price' -> giá quá đắt).",
+                        options: [
+                            { label: "A", text: "The shop assistants didn't help her." },
+                            { label: "B", text: "The laptops were too expensive." },
+                            { label: "C", text: "The shop assistants weren't polite." }
+                        ]
+                    },
+                    {
+                        id: 19,
+                        question: "You will hear a girl speaking on the phone. What's the problem with her trainers?",
+                        transcript: "Girl: Hello, I'd like to return some trainers. They're much lighter in colour than in the photo. It's a pity because they are at a low price, and their size is exactly what I want.",
+                        correct: "B",
+                        explanation: "Đôi giày thể thao có màu nhạt hơn nhiều so với ảnh trên mạng ('lighter in colour than in the photo'), còn giá và kích cỡ đều ổn.",
+                        options: [
+                            { label: "A", text: "their size" },
+                            { label: "B", text: "their colour" },
+                            { label: "C", text: "their price" }
+                        ]
+                    },
+                    {
+                        id: 20,
+                        question: "You will hear a boy talking to his sister. What's the problem with his sister's suitcase?",
+                        transcript: "Boy: You always pack so much. Your suitcase is too heavy. Sister: My suitcase is very heavy again, but at least we won't have to pay anything this time as we aren't travelling by plane. Boy: I just hope that there is enough space left in Dad's car.",
+                        correct: "B",
+                        explanation: "Vali của cô chị nhồi nhét quá đầy và rất nặng ('always pack so much... suitcase is very heavy again').",
+                        options: [
+                            { label: "A", text: "It was very expensive." },
+                            { label: "B", text: "It's too full and heavy." },
+                            { label: "C", text: "It can't fit in their father's car." }
+                        ]
+                    }
+                ]
+            },
+            {
+                part: 5,
+                shortTitle: "Part 5",
+                range: "Câu 21–25",
+                icon: "📚",
+                title: "Part 5: Tom nhận xét thế nào về các môn học hôm nay? 🎒",
+                instruction: "You will hear a boy talking to his friend about the lessons that he had today. How does he describe each lesson?",
+                fullTranscript: "Part 5. How does he describe each lesson? Girl: Hi Tom, how was school today? Tom: Well, my first lesson this morning was Art, and I couldn't believe how good some of Picasso's paintings were. Then, I had an hour of History. I almost wanted to sleep. Girl: Did you have Mathematics today? Tom: Yes, but I didn't understand most of the lesson. I never thought maths is easy. Girl: What lessons did you have this afternoon? Tom: Science and German. In Science, Mrs Bright made us wear special glasses so that we wouldn't hurt our eyes. She put some things in a box and it suddenly made a big noise. We had to be careful. Later, I had German. Our teacher made a list of all the words that we should know, which will help me a lot. Girl: That's really useful, isn't it? Tom: Yes. And the last lesson was Geography. I always find this lesson interesting.",
+                type: "matching",
+                exampleText: "Ví dụ mẫu (Example): Art ➔ F - surprising (Bất ngờ)",
+                opinionsBank: [
+                    { code: "A", label: "interesting", vi: "thú vị" },
+                    { code: "B", label: "funny", vi: "hài hước" },
+                    { code: "C", label: "difficult", vi: "khó" },
+                    { code: "D", label: "dangerous", vi: "nguy hiểm" },
+                    { code: "E", label: "boring", vi: "nhàm chán" },
+                    { code: "F", label: "surprising", vi: "bất ngờ" },
+                    { code: "G", label: "easy", vi: "dễ" },
+                    { code: "H", label: "useful", vi: "hữu ích" }
+                ],
+                questions: [
+                    {
+                        id: 21,
+                        subject: "History",
+                        icon: "🏛️",
+                        correct: "E",
+                        explanation: "Tom nói: 'I almost wanted to sleep' (suýt nữa thì ngủ gật) ➔ E - boring (nhàm chán)."
+                    },
+                    {
+                        id: 22,
+                        subject: "Mathematics",
+                        icon: "📐",
+                        correct: "C",
+                        explanation: "Tom nói: 'I didn't understand most of the lesson. I never thought maths is easy' (không hiểu phần lớn bài học) ➔ C - difficult (khó)."
+                    },
+                    {
+                        id: 23,
+                        subject: "Science",
+                        icon: "🧪",
+                        correct: "D",
+                        explanation: "Phải đeo kính bảo hộ để không hại mắt, có tiếng nổ lớn và phải rất cẩn thận ('We had to be careful') ➔ D - dangerous (nguy hiểm)."
+                    },
+                    {
+                        id: 24,
+                        subject: "German",
+                        icon: "🇩🇪",
+                        correct: "H",
+                        explanation: "Cô giáo lập danh sách từ vựng giúp ích rất nhiều ('That's really useful, isn't it? - Yes') ➔ H - useful (hữu ích)."
+                    },
+                    {
+                        id: 25,
+                        subject: "Geography",
+                        icon: "🌍",
+                        correct: "A",
+                        explanation: "Tom nói: 'I always find this lesson interesting' (luôn thấy môn Địa lý thú vị) ➔ A - interesting (thú vị)."
+                    }
+                ]
+            }
+        ];
+
+        // =========================================================================
+        // 2. QUẢN LÝ TRẠNG THÁI ỨNG DỤNG
+        // =========================================================================
+        let currentPart = 1;
+        let userAnswers = {}; // Lưu đáp án của cả 25 câu: { 1: 'C', 6: 'December', 21: 'E', ... }
+        let isSpeakingAi = false;
+        let localAudioUrls = {}; // Lưu file MP3 upload cục bộ cho từng part: { 1: { url, name } }
+
+        // =========================================================================
+        // 3. ÂM THANH HIỆU ỨNG VUI NHỘN (WEB AUDIO API)
+        // =========================================================================
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playSoundEffect(type) {
+            try {
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                const now = audioCtx.currentTime;
+                if (type === 'correct') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(523.25, now);
+                    osc.frequency.setValueAtTime(659.25, now + 0.1);
+                    osc.frequency.setValueAtTime(783.99, now + 0.2);
+                    gain.gain.setValueAtTime(0.25, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.45);
+                    osc.start(now);
+                    osc.stop(now + 0.45);
+                } else if (type === 'wrong') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(300, now);
+                    osc.frequency.linearRampToValueAtTime(220, now + 0.25);
+                    gain.gain.setValueAtTime(0.18, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                    osc.start(now);
+                    osc.stop(now + 0.3);
+                } else {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(620, now);
+                    gain.gain.setValueAtTime(0.1, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+                    osc.start(now);
+                    osc.stop(now + 0.08);
+                }
+            } catch (e) {}
+        }
+
+        // =========================================================================
+        // 4. KIỂM TRA ĐÚNG / SAI CHO TỪNG CÂU HỎI Ở MỌI PART
+        // =========================================================================
+        function isQuestionCorrect(qId) {
+            const val = userAnswers[qId];
+            if (val === undefined || val === null || String(val).trim() === '') return false;
+
+            // Tìm câu hỏi trong dữ liệu
+            for (const p of quizParts) {
+                const q = p.questions.find(item => item.id === qId);
+                if (q) {
+                    if (p.type === 'fill-gap') {
+                        const normalized = String(val).trim().toLowerCase().replace(/\s+/g, ' ');
+                        return q.acceptedAnswers.includes(normalized);
+                    } else {
+                        return val === q.correct;
+                    }
+                }
+            }
+            return false;
+        }
+
+        function countTotalStars() {
+            let total = 0;
+            for (let i = 1; i <= 25; i++) {
+                if (isQuestionCorrect(i)) total++;
+            }
+            return total;
+        }
+
+        function countAnsweredQuestions() {
+            let count = 0;
+            for (let i = 1; i <= 25; i++) {
+                const val = userAnswers[i];
+                if (val !== undefined && val !== null && String(val).trim() !== '') {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        function updateGlobalCounters() {
+            document.getElementById('starCount').textContent = countTotalStars();
+            document.getElementById('answeredCountText').textContent = countAnsweredQuestions();
+            renderPartTabs();
+        }
+
+        // =========================================================================
+        // 5. THANH ĐIỀU HƯỚNG 5 PART & CHUYỂN PART
+        // =========================================================================
+        function renderPartTabs() {
+            const container = document.getElementById('partTabsContainer');
+            container.innerHTML = quizParts.map(p => {
+                const isActive = p.part === currentPart;
+                // Đếm số câu đã làm trong Part này
+                const doneInPart = p.questions.filter(q => {
+                    const v = userAnswers[q.id];
+                    return v !== undefined && v !== null && String(v).trim() !== '';
+                }).length;
+                const isCompleted = doneInPart === p.questions.length;
+
+                let btnStyle = "bg-slate-100 hover:bg-sky-50 text-slate-600 border-b-4 border-slate-300";
+                if (isActive) {
+                    btnStyle = "bg-sky-500 text-white border-b-4 border-sky-700 shadow-sm scale-[1.02]";
+                } else if (isCompleted) {
+                    btnStyle = "bg-emerald-100 text-emerald-800 border-b-4 border-emerald-400";
+                }
+
+                return `
+                    <button onclick="changePart(${p.part})" class="btn-3d flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-2xl font-extrabold text-xs sm:text-sm transition ${btnStyle}">
+                        <span>${isCompleted && !isActive ? '✅' : p.icon} ${p.shortTitle}</span>
+                        <span class="${isActive ? 'bg-white/25 text-white' : 'bg-white text-slate-600'} text-[11px] px-2 py-0.5 rounded-full font-black">
+                            ${doneInPart}/${p.questions.length}
+                        </span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function changePart(partNum) {
+            if (partNum < 1 || partNum > 5) return;
+            stopAllAudio();
+            currentPart = partNum;
+            playSoundEffect('click');
+            renderCurrentPart();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleNextOrSubmit() {
+            if (currentPart < 5) {
+                changePart(currentPart + 1);
+            } else {
+                showSummaryModal();
+            }
+        }
+
+        // =========================================================================
+        // 6. XỬ LÝ AUDIO (GIỌNG ĐỌC MẪU AI + FILE MP3 GỐC CỦA GIÁO VIÊN)
+        // =========================================================================
+        function stopAllAudio() {
+            window.speechSynthesis.cancel();
+            isSpeakingAi = false;
+            const wave = document.getElementById('partWave');
+            if (wave) wave.classList.remove('playing');
+
+            const partData = quizParts.find(p => p.part === currentPart);
+            const playText = document.getElementById('partAiPlayText');
+            const playIcon = document.getElementById('partAiPlayIcon');
+            const statusLbl = document.getElementById('audioStatusLabel');
+
+            if (playText && partData) playText.textContent = `Nghe giọng đọc mẫu Part ${partData.part}`;
+            if (playIcon) playIcon.textContent = '🔊';
+            if (statusLbl && partData) statusLbl.textContent = `Sẵn sàng phát âm thanh Part ${partData.part}`;
+
+            const audioEl = document.getElementById('localAudioElement');
+            if (audioEl) audioEl.pause();
+        }
+
+        function togglePartAiSpeech() {
+            const partData = quizParts.find(p => p.part === currentPart);
+            if (!partData) return;
+
+            if (isSpeakingAi) {
+                stopAllAudio();
+                return;
+            }
+
+            stopAllAudio();
+            isSpeakingAi = true;
+
+            document.getElementById('partWave').classList.add('playing');
+            document.getElementById('partAiPlayIcon').textContent = '⏹️';
+            document.getElementById('partAiPlayText').textContent = 'Dừng đọc';
+            document.getElementById('audioStatusLabel').textContent = `Đang phát hội thoại Part ${partData.part}...`;
+
+            const utterance = new SpeechSynthesisUtterance(partData.fullTranscript);
+            utterance.lang = 'en-GB';
+            utterance.rate = 0.92;
+
+            utterance.onend = () => stopAllAudio();
+            utterance.onerror = () => stopAllAudio();
+
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function speakSingleQuestion(qId) {
+            const partData = quizParts.find(p => p.part === currentPart);
+            const q = partData?.questions.find(item => item.id === qId);
+            if (!q || !q.transcript) return;
+
+            stopAllAudio();
+            isSpeakingAi = true;
+            document.getElementById('partWave').classList.add('playing');
+            document.getElementById('audioStatusLabel').textContent = `Đang phát hội thoại Câu ${qId}...`;
+
+            const utterance = new SpeechSynthesisUtterance(`Question ${q.id}. ${q.question} ... ${q.transcript}`);
+            utterance.lang = 'en-GB';
+            utterance.rate = 0.92;
+            utterance.onend = () => stopAllAudio();
+            window.speechSynthesis.speak(utterance);
+            showToast(`🎧 Đang phát hội thoại Câu ${qId}...`);
+        }
+
+        function handleLocalAudioUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            stopAllAudio();
+            const fileUrl = URL.createObjectURL(file);
+            localAudioUrls[currentPart] = { url: fileUrl, name: file.name };
+            syncLocalAudioUI();
+            showToast(`🎵 Đã nạp file "${file.name}" cho Part ${currentPart}!`);
+        }
+
+        function clearLocalAudio() {
+            delete localAudioUrls[currentPart];
+            document.getElementById('mp3FileInput').value = '';
+            syncLocalAudioUI();
+        }
+
+        function syncLocalAudioUI() {
+            const wrapper = document.getElementById('localAudioPlayerWrapper');
+            const audioEl = document.getElementById('localAudioElement');
+            const nameLbl = document.getElementById('localAudioFileName');
+            const saved = localAudioUrls[currentPart];
+
+            if (saved) {
+                wrapper.classList.remove('hidden');
+                nameLbl.textContent = `🎵 File MP3 gốc: ${saved.name}`;
+                audioEl.src = saved.url;
+            } else {
+                wrapper.classList.add('hidden');
+                audioEl.pause();
+                audioEl.src = '';
+            }
+        }
+
+        // =========================================================================
+        // 7. RENDER GIAO DIỆN TỪNG PART (PART 1 -> PART 5)
+        // =========================================================================
+        function renderCurrentPart() {
+            const partData = quizParts.find(p => p.part === currentPart);
+            if (!partData) return;
+
+            // Cập nhật tiêu đề banner
+            document.getElementById('partBadge').textContent = `PART ${partData.part} • ${partData.range.toUpperCase()}`;
+            document.getElementById('partTitle').textContent = partData.title;
+            document.getElementById('partInstruction').textContent = partData.instruction;
+            document.getElementById('partAiPlayText').textContent = `Nghe giọng đọc mẫu Part ${partData.part}`;
+            document.getElementById('audioStatusLabel').textContent = `Sẵn sàng phát âm thanh Part ${partData.part}`;
+
+            // Cập nhật nút điều hướng dưới cùng
+            document.getElementById('prevPartBtn').disabled = currentPart === 1;
+            document.getElementById('nextPartBtnText').textContent = currentPart === 5 ? "🏆 Nộp bài & Xem tổng kết" : `Sang Part ${currentPart + 1} ➡️`;
+
+            syncLocalAudioUI();
+            updateGlobalCounters();
+
+            const area = document.getElementById('partContentArea');
+            area.innerHTML = '';
+
+            if (partData.type === 'picture-choice') {
+                renderPart1(partData, area);
+            } else if (partData.type === 'fill-gap') {
+                renderPart2(partData, area);
+            } else if (partData.type === 'mcq') {
+                renderPart3And4(partData, area);
+            } else if (partData.type === 'matching') {
+                renderPart5(partData, area);
+            }
+        }
+
+        // --- PART 1: CHỌN TRANH ---
+        function renderPart1(partData, container) {
+            const instantMode = document.getElementById('instantMode').checked;
+
+            partData.questions.forEach(q => {
+                const selected = userAnswers[q.id];
+                const card = `
+                    <div id="q-card-${q.id}" class="bg-white rounded-3xl p-5 sm:p-6 shadow-lg border-4 border-sky-100">
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 rounded-2xl bg-sky-500 text-white font-black text-lg flex items-center justify-center shadow-sm flex-shrink-0">
+                                    ${q.id}
+                                </span>
+                                <h3 class="text-lg sm:text-xl font-black text-slate-800">${q.question}</h3>
+                            </div>
+                            <button onclick="speakSingleQuestion(${q.id})" class="btn-3d bg-sky-100 hover:bg-sky-200 text-sky-700 font-extrabold text-xs sm:text-sm px-4 py-2.5 rounded-2xl border-b-4 border-sky-300 flex items-center gap-1.5">
+                                <span>🔊</span>
+                                <span>Nghe câu ${q.id}</span>
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            ${q.options.map(opt => {
+                                const isSelected = selected === opt.label;
+                                const isCorrect = opt.label === q.correct;
+                                let borderClass = "border-slate-200 bg-white hover:border-sky-400";
+                                let badgeBg = "bg-slate-100 text-slate-700";
+
+                                if (isSelected) {
+                                    if (instantMode) {
+                                        borderClass = isCorrect ? "border-emerald-500 bg-emerald-50/70 ring-4 ring-emerald-200" : "border-rose-400 bg-rose-50/70 ring-4 ring-rose-200";
+                                        badgeBg = isCorrect ? "bg-emerald-500 text-white" : "bg-rose-500 text-white";
+                                    } else {
+                                        borderClass = "border-sky-500 bg-sky-50/70 ring-4 ring-sky-200";
+                                        badgeBg = "bg-sky-500 text-white";
+                                    }
+                                }
+
+                                return `
+                                    <div onclick="handleSelectAnswer(${q.id}, '${opt.label}')" class="option-card relative rounded-3xl border-4 p-3.5 cursor-pointer flex flex-col items-center justify-between shadow-sm ${borderClass}">
+                                        <button type="button" onclick="event.stopPropagation(); openZoomModal(${q.id}, '${opt.label}')" class="absolute top-2.5 right-2.5 z-10 bg-white/95 hover:bg-amber-100 text-slate-600 hover:text-amber-700 text-xs font-extrabold px-2.5 py-1 rounded-xl border border-slate-200 shadow-sm flex items-center gap-1">
+                                            <span>🔍</span><span>To</span>
+                                        </button>
+                                        <div class="w-full flex items-center justify-center my-1">${opt.svg}</div>
+                                        <div class="w-full mt-2 py-2 px-3 rounded-2xl font-black text-center text-sm flex items-center justify-center gap-2 transition ${badgeBg}">
+                                            <span class="w-6 h-6 rounded-full bg-white/30 flex items-center justify-center text-xs font-black">${opt.label}</span>
+                                            <span>Picture ${opt.label}</span>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+
+                        ${selected && instantMode ? renderFeedbackBox(q, isQuestionCorrect(q.id)) : ''}
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', card);
+            });
+        }
+
+        // --- PART 2: ĐIỀN TỪ VÀO TỜ LỊCH (SCHOOL CALENDAR) ---
+        function renderPart2(partData, container) {
+            const instantMode = document.getElementById('instantMode').checked;
+
+            const posterHtml = `
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-4 border-amber-200 relative overflow-hidden">
+                    <!-- Trang trí ghim kẹp giấy -->
+                    <div class="bg-gradient-to-r from-sky-500 to-indigo-500 text-white rounded-2xl p-4 mb-6 text-center shadow-md border-b-4 border-indigo-700">
+                        <h3 class="text-xl sm:text-2xl font-black tracking-wide">${partData.cardHeader}</h3>
+                        <p class="text-sky-100 text-sm font-bold mt-1">For next: <span class="underline decoration-wavy">year</span></p>
+                    </div>
+
+                    <div class="space-y-5">
+                        ${partData.questions.map(q => {
+                            const val = userAnswers[q.id] || '';
+                            const hasValue = val.trim() !== '';
+                            const isCorrect = isQuestionCorrect(q.id);
+
+                            let inputBorder = "border-slate-300 focus:border-sky-500 bg-slate-50";
+                            if (hasValue && instantMode) {
+                                inputBorder = isCorrect ? "border-emerald-500 bg-emerald-50 text-emerald-900" : "border-rose-400 bg-rose-50 text-rose-900";
+                            }
+
+                            return `
+                                <div id="q-card-${q.id}" class="p-4 sm:p-5 rounded-2xl border-2 border-slate-100 bg-sky-50/30">
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                                        <div class="flex items-center gap-2.5 flex-shrink-0">
+                                            <span class="w-9 h-9 rounded-xl bg-amber-500 text-white font-black flex items-center justify-center shadow-sm">${q.id}</span>
+                                            <span class="font-extrabold text-slate-800 text-base sm:text-lg">${q.prefix}</span>
+                                        </div>
+
+                                        <div class="flex-1 flex items-center gap-2">
+                                            <input type="text"
+                                                value="${val.replace(/"/g, '&quot;')}"
+                                                placeholder="${q.placeholder}"
+                                                onchange="handleFillGapInput(${q.id}, this.value)"
+                                                onkeyup="if(event.key === 'Enter') handleFillGapInput(${q.id}, this.value)"
+                                                class="w-full px-4 py-2.5 rounded-xl border-3 font-extrabold text-base outline-none transition ${inputBorder}">
+                                            <button onclick="checkSingleGap(${q.id})" class="btn-3d bg-sky-500 hover:bg-sky-600 text-white font-extrabold text-xs px-3.5 py-3 rounded-xl border-b-4 border-sky-700 flex-shrink-0">
+                                                Kiểm tra
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    ${hasValue && instantMode ? renderFeedbackBox(q, isCorrect, q.displayAnswer) : ''}
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+            container.innerHTML = posterHtml;
+        }
+
+        // --- PART 3 & PART 4: TRẮC NGHIỆM 3 LỰA CHỌN A, B, C ---
+        function renderPart3And4(partData, container) {
+            const instantMode = document.getElementById('instantMode').checked;
+
+            partData.questions.forEach(q => {
+                const selected = userAnswers[q.id];
+                const isCorrect = isQuestionCorrect(q.id);
+
+                const card = `
+                    <div id="q-card-${q.id}" class="bg-white rounded-3xl p-5 sm:p-6 shadow-lg border-4 border-sky-100">
+                        <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                            <div class="flex items-start gap-3">
+                                <span class="w-10 h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg flex items-center justify-center shadow-sm flex-shrink-0 mt-0.5">
+                                    ${q.id}
+                                </span>
+                                <h3 class="text-base sm:text-lg font-black text-slate-800 leading-snug">${q.question}</h3>
+                            </div>
+                            ${q.transcript ? `
+                                <button onclick="speakSingleQuestion(${q.id})" class="btn-3d bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-extrabold text-xs px-3.5 py-2 rounded-2xl border-b-4 border-indigo-300 flex items-center gap-1 flex-shrink-0">
+                                    <span>🔊</span><span>Nghe câu ${q.id}</span>
+                                </button>
+                            ` : ''}
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            ${q.options.map(opt => {
+                                const isSelected = selected === opt.label;
+                                const isRightOpt = opt.label === q.correct;
+
+                                let btnClass = "border-slate-200 bg-slate-50/60 hover:bg-sky-50 hover:border-sky-400 text-slate-700";
+                                let circleClass = "bg-white text-slate-700 border-2 border-slate-300";
+
+                                if (isSelected) {
+                                    if (instantMode) {
+                                        btnClass = isRightOpt ? "border-emerald-500 bg-emerald-50 text-emerald-900 ring-4 ring-emerald-200" : "border-rose-400 bg-rose-50 text-rose-900 ring-4 ring-rose-200";
+                                        circleClass = isRightOpt ? "bg-emerald-500 text-white border-emerald-500" : "bg-rose-500 text-white border-rose-500";
+                                    } else {
+                                        btnClass = "border-sky-500 bg-sky-50 text-sky-900 ring-4 ring-sky-200";
+                                        circleClass = "bg-sky-500 text-white border-sky-500";
+                                    }
+                                }
+
+                                return `
+                                    <button onclick="handleSelectAnswer(${q.id}, '${opt.label}')" class="option-card text-left p-4 rounded-2xl border-3 font-extrabold text-sm sm:text-base flex items-center gap-3 transition ${btnClass}">
+                                        <span class="w-8 h-8 rounded-full flex items-center justify-center font-black text-sm flex-shrink-0 ${circleClass}">
+                                            ${opt.label}
+                                        </span>
+                                        <span>${opt.text}</span>
+                                    </button>
+                                `;
+                            }).join('')}
+                        </div>
+
+                        ${selected && instantMode ? renderFeedbackBox(q, isCorrect) : ''}
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', card);
+            });
+        }
+
+        // --- PART 5: NỐI CẢM NHẬN VỀ CÁC MÔN HỌC (MATCHING) ---
+        function renderPart5(partData, container) {
+            const instantMode = document.getElementById('instantMode').checked;
+
+            // Bảng từ khóa gợi ý (Opinions Bank)
+            const bankHtml = `
+                <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-lg border-4 border-purple-200 mb-6">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <h3 class="text-lg font-black text-purple-900">📋 Bảng Từ Vựng Cảm Nhận (Opinions)</h3>
+                        <span class="bg-amber-100 text-amber-800 text-xs font-black px-3 py-1 rounded-full">
+                            ${partData.exampleText}
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                        ${partData.opinionsBank.map(op => `
+                            <div class="bg-purple-50 border-2 border-purple-200 rounded-2xl px-3 py-2 flex items-center gap-2">
+                                <span class="w-7 h-7 rounded-xl bg-purple-600 text-white font-black text-xs flex items-center justify-center flex-shrink-0">${op.code}</span>
+                                <div>
+                                    <div class="font-black text-sm text-slate-800 leading-tight">${op.label}</div>
+                                    <div class="text-[11px] font-bold text-purple-600">(${op.vi})</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', bankHtml);
+
+            // Danh sách 5 môn học Q21 - Q25
+            partData.questions.forEach(q => {
+                const selected = userAnswers[q.id] || '';
+                const isCorrect = isQuestionCorrect(q.id);
+
+                let selectStyle = "border-slate-300 bg-slate-50 text-slate-800";
+                if (selected && instantMode) {
+                    selectStyle = isCorrect ? "border-emerald-500 bg-emerald-50 text-emerald-900 ring-4 ring-emerald-200" : "border-rose-400 bg-rose-50 text-rose-900 ring-4 ring-rose-200";
+                }
+
+                const card = `
+                    <div id="q-card-${q.id}" class="bg-white rounded-3xl p-5 shadow-lg border-4 border-sky-100">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 rounded-2xl bg-purple-600 text-white font-black text-lg flex items-center justify-center shadow-sm flex-shrink-0">
+                                    ${q.id}
+                                </span>
+                                <span class="text-2xl">${q.icon}</span>
+                                <h3 class="text-lg sm:text-xl font-black text-slate-800">${q.subject}</h3>
+                            </div>
+
+                            <div class="w-full sm:w-72">
+                                <select onchange="handleSelectAnswer(${q.id}, this.value)" class="w-full px-4 py-3 rounded-2xl border-3 font-extrabold text-sm sm:text-base cursor-pointer outline-none transition ${selectStyle}">
+                                    <option value="">-- Chọn cảm nhận (A–H) --</option>
+                                    ${partData.opinionsBank.map(op => `
+                                        <option value="${op.code}" ${selected === op.code ? 'selected' : ''}>
+                                            ${op.code} - ${op.label} (${op.vi})
+                                        </option>
+                                    `).join('')}
+                                </select>
+                            </div>
+                        </div>
+
+                        ${selected && instantMode ? renderFeedbackBox(q, isCorrect) : ''}
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', card);
+            });
+        }
+
+        // =========================================================================
+        // 8. KHUNG PHẢN HỒI ĐÚNG / SAI & XỬ LÝ TƯƠNG TÁC
+        // =========================================================================
+        function renderFeedbackBox(q, isCorrect, customCorrectText = null) {
+            if (isCorrect) {
+                return `
+                    <div class="mt-4 bg-emerald-100 border-2 border-emerald-400 rounded-2xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-emerald-900">
+                        <div class="flex items-start gap-2.5">
+                            <span class="text-2xl">🌟</span>
+                            <div>
+                                <span class="font-black text-sm sm:text-base">Chính xác! Con nhận được +1 ⭐</span>
+                                <p class="text-xs sm:text-sm font-semibold text-emerald-800 mt-0.5">${q.explanation}</p>
+                            </div>
+                        </div>
+                        <span class="self-start sm:self-center bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full whitespace-nowrap">
+                            +0.4 điểm
+                        </span>
+                    </div>
+                `;
+            } else {
+                return `
+                    <div class="mt-4 bg-rose-100 border-2 border-rose-300 rounded-2xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-rose-900">
+                        <div class="flex items-start gap-2.5">
+                            <span class="text-2xl">💡</span>
+                            <div>
+                                <span class="font-black text-sm sm:text-base">Chưa đúng rồi! Bé nghe kỹ lại nhé!</span>
+                                <p class="text-xs sm:text-sm font-semibold text-rose-800 mt-0.5">
+                                    ${customCorrectText ? 'Gợi ý: Kiểm tra lại chính tả tiếng Anh hoặc số/ngày tháng nhé.' : 'Hãy bấm nút loa để nghe lại manh mối trong bài.'}
+                                </p>
+                            </div>
+                        </div>
+                        <span class="self-start sm:self-center bg-rose-500 text-white text-xs font-black px-3 py-1 rounded-full whitespace-nowrap">
+                            Thử lại nào!
+                        </span>
+                    </div>
+                `;
+            }
+        }
+
+        function handleSelectAnswer(qId, value) {
+            const wasCorrect = isQuestionCorrect(qId);
+            if (!value) {
+                delete userAnswers[qId];
+            } else {
+                userAnswers[qId] = value;
+            }
+
+            const nowCorrect = isQuestionCorrect(qId);
+            const instantMode = document.getElementById('instantMode').checked;
+
+            renderCurrentPart();
+
+            if (value && instantMode) {
+                if (nowCorrect) {
+                    playSoundEffect('correct');
+                    if (!wasCorrect) {
+                        confetti({ particleCount: 40, spread: 55, origin: { y: 0.75 } });
+                    }
+                } else {
+                    playSoundEffect('wrong');
+                    triggerShake(qId);
+                }
+            } else {
+                playSoundEffect('click');
+            }
+        }
+
+        function handleFillGapInput(qId, rawValue) {
+            const wasCorrect = isQuestionCorrect(qId);
+            userAnswers[qId] = rawValue;
+            const nowCorrect = isQuestionCorrect(qId);
+            const instantMode = document.getElementById('instantMode').checked;
+
+            renderCurrentPart();
+
+            if (rawValue.trim() !== '' && instantMode) {
+                if (nowCorrect) {
+                    playSoundEffect('correct');
+                    if (!wasCorrect) {
+                        confetti({ particleCount: 40, spread: 55, origin: { y: 0.75 } });
+                    }
+                } else {
+                    playSoundEffect('wrong');
+                    triggerShake(qId);
+                }
+            }
+        }
+
+        function checkSingleGap(qId) {
+            const val = userAnswers[qId] || '';
+            if (val.trim() === '') {
+                showToast("✏️ Bé hãy gõ câu trả lời vào ô trống trước nhé!");
+                return;
+            }
+            document.getElementById('instantMode').checked = true;
+            handleFillGapInput(qId, val);
+        }
+
+        function triggerShake(qId) {
+            const card = document.getElementById(`q-card-${qId}`);
+            if (card) {
+                card.classList.add('shake-anim');
+                setTimeout(() => card.classList.remove('shake-anim'), 450);
+            }
+        }
+
+        // =========================================================================
+        // 9. MODAL PHÓNG TO TRANH & TỔNG KẾT ĐIỂM TOÀN BỘ 25 CÂU
+        // =========================================================================
+        function openZoomModal(qId, optLabel) {
+            const p1 = quizParts[0];
+            const q = p1.questions.find(item => item.id === qId);
+            const opt = q?.options.find(o => o.label === optLabel);
+            if (!opt) return;
+
+            document.getElementById('zoomModalTitle').textContent = `Câu ${qId} - ${opt.title}`;
+            document.getElementById('zoomModalContent').innerHTML = opt.svg.replace('h-36', 'h-64');
+
+            const modal = document.getElementById('zoomModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeZoomModal() {
+            const modal = document.getElementById('zoomModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function showSummaryModal() {
+            stopAllAudio();
+            const totalStars = countTotalStars();
+            const scoreTen = (totalStars * 0.4).toFixed(1);
+
+            document.getElementById('finalStarScore').textContent = totalStars;
+            document.getElementById('finalTenScore').textContent = scoreTen;
+
+            const msg = document.getElementById('summaryEncouragement');
+            if (totalStars >= 22) {
+                msg.textContent = "Xuất sắc tuyệt vời! Con là siêu sao tiếng Anh! 🏆";
+                confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+                playSoundEffect('correct');
+            } else if (totalStars >= 15) {
+                msg.textContent = "Giỏi lắm! Con đã hoàn thành rất tốt bài kiểm tra 5 Part! 👏";
+                confetti({ particleCount: 60, spread: 60, origin: { y: 0.6 } });
+                playSoundEffect('correct');
+            } else {
+                msg.textContent = "Cố gắng lên nhé! Con có thể xem lại giải thích từng câu để chinh phục 25 sao nha! 💪";
+            }
+
+            // Render chi tiết điểm từng Part
+            const breakdownEl = document.getElementById('partBreakdownList');
+            breakdownEl.innerHTML = quizParts.map(p => {
+                const partStars = p.questions.filter(q => isQuestionCorrect(q.id)).length;
+                const partMax = p.questions.length;
+                const isFull = partStars === partMax;
+                return `
+                    <div class="flex items-center justify-between bg-slate-50 border-2 border-slate-200 rounded-2xl px-4 py-2.5">
+                        <div class="flex items-center gap-2">
+                            <span>${p.icon}</span>
+                            <span class="font-black text-sm text-slate-800">${p.shortTitle} (${p.range})</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-black text-sm ${isFull ? 'text-emerald-600' : 'text-amber-600'}">
+                                ${partStars} / ${partMax} ⭐
+                            </span>
+                            <span class="text-xs font-bold text-slate-500">(${(partStars * 0.4).toFixed(1)} đ)</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const modal = document.getElementById('summaryModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeSummaryModal() {
+            const modal = document.getElementById('summaryModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function revealAllAnswers() {
+            document.getElementById('instantMode').checked = true;
+            // Điền đáp án đúng cho các câu chưa làm hoặc làm sai để học sinh ôn tập
+            quizParts.forEach(p => {
+                p.questions.forEach(q => {
+                    if (p.type === 'fill-gap') {
+                        userAnswers[q.id] = q.acceptedAnswers[0].charAt(0).toUpperCase() + q.acceptedAnswers[0].slice(1);
+                    } else {
+                        userAnswers[q.id] = q.correct;
+                    }
+                });
+            });
+            renderCurrentPart();
+            showToast("✨ Đã hiển thị toàn bộ đáp án chuẩn kèm giải thích chi tiết!");
+        }
+
+        function resetQuiz() {
+            stopAllAudio();
+            userAnswers = {};
+            currentPart = 1;
+            renderCurrentPart();
+            showToast("🔄 Đã làm mới toàn bộ 5 Part! Bé bắt đầu lại nhé!");
+        }
+
+        function showToast(text) {
+            const toast = document.getElementById('toastMsg');
+            toast.textContent = text;
+            toast.classList.remove('opacity-0');
+            clearTimeout(window.toastTimeout);
+            window.toastTimeout = setTimeout(() => {
+                toast.classList.add('opacity-0');
+            }, 3200);
+        }
+
+        // Lắng nghe thay đổi công tắc chấm điểm ngay
+        document.getElementById('instantMode').addEventListener('change', () => {
+            renderCurrentPart();
+        });
+
+        // Khởi chạy ứng dụng
+        window.onload = function() {
+            renderCurrentPart();
+        };
+    </script>
+</body>
+</html>
