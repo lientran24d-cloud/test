@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grade 3 - Practice Test 5 | Lighthouse English - Ms. Linda's Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #fef9c3 50%, #fce7f3 100%);
+            min-height: 100vh;
+        }
+        .btn-3d {
+            transition: all 0.15s ease;
+            box-shadow: 0 5px 0 #cbd5e1;
+        }
+        .btn-3d:hover {
+            transform: translateY(-2px);
+        }
+        .btn-3d:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #cbd5e1;
+        }
+        .option-selected {
+            border-color: #3b82f6 !important;
+            background-color: #eff6ff !important;
+            box-shadow: 0 5px 0 #2563eb !important;
+        }
+        .option-correct {
+            border-color: #22c55e !important;
+            background-color: #dcfce7 !important;
+            box-shadow: 0 5px 0 #16a34a !important;
+        }
+        .option-wrong {
+            border-color: #ef4444 !important;
+            background-color: #fee2e2 !important;
+            box-shadow: 0 5px 0 #dc2626 !important;
+        }
+        .word-chip {
+            box-shadow: 0 4px 0 #93c5fd;
+            transition: all 0.12s ease;
+        }
+        .word-chip:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #93c5fd;
+        }
+        .letter-box:focus {
+            outline: none;
+            border-color: #f59e0b;
+            background-color: #fffbeb;
+            transform: scale(1.06);
+        }
+        .logo-trigger {
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.2s ease;
+        }
+        .logo-trigger:hover {
+            transform: scale(1.04);
+        }
+    </style>
+</head>
+<body class="text-slate-800 pb-16">
+
+    <!-- MÀN HÌNH ĐĂNG NHẬP HỌC VIÊN -->
+    <div id="loginScreen" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gradient-to-br from-sky-100 via-amber-50 to-indigo-100">
+        <div class="bg-white rounded-3xl shadow-2xl border-4 border-blue-600 max-w-md w-full p-6 sm:p-8 text-center relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-yellow-300/40 rounded-full pointer-events-none"></div>
+            <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-sky-300/40 rounded-full pointer-events-none"></div>
+
+            <!-- Logo tròn Lighthouse English - Ms Linda's Class (Nhấn đúp để mở Bảng kết quả giáo viên) -->
+            <div class="flex justify-center mb-4">
+                <div ondblclick="openTeacherModal()" title="Lighthouse English - Ms Linda's Class" class="logo-trigger w-32 h-32 rounded-full shadow-lg bg-white p-1 border-2 border-blue-700 flex items-center justify-center overflow-hidden">
+                    <img src="Logo tròn Lien (1).png" alt="Lighthouse English Logo" class="w-full h-full object-contain rounded-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <svg viewBox="0 0 300 300" class="w-full h-full hidden">
+                        <circle cx="150" cy="150" r="144" fill="#ffffff" stroke="#0038a8" stroke-width="6"/>
+                        <circle cx="150" cy="150" r="100" fill="#ffffff" stroke="#0038a8" stroke-width="3.5"/>
+                        <defs>
+                            <path id="topArcLogin" d="M 38,150 A 112,112 0 1,1 262,150" />
+                            <path id="bottomArcLogin" d="M 32,155 A 118,118 0 0,0 268,155" />
+                        </defs>
+                        <text fill="#0038a8" font-size="21" font-weight="900" letter-spacing="2.5">
+                            <textPath href="#topArcLogin" startOffset="50%" text-anchor="middle">LIGHTHOUSE ENGLISH</textPath>
+                        </text>
+                        <text fill="#0038a8" font-size="21" font-weight="900" letter-spacing="2.2">
+                            <textPath href="#bottomArcLogin" startOffset="50%" text-anchor="middle">MS LINDA’S CLASS</textPath>
+                        </text>
+                        <polygon points="26,134 30,146 42,150 30,154 26,166 22,154 10,150 22,146" fill="#facc15"/>
+                        <polygon points="274,134 278,146 290,150 278,154 274,166 270,154 258,150 270,146" fill="#facc15"/>
+                        <circle cx="150" cy="106" r="46" fill="#facc15"/>
+                        <polygon points="150,58 134,78 166,78" fill="#ffffff" stroke="#0038a8" stroke-width="3.5" stroke-linejoin="round"/>
+                        <rect x="137" y="78" width="26" height="22" fill="#ffffff" stroke="#0038a8" stroke-width="3.5"/>
+                        <line x1="145" y1="78" x2="145" y2="100" stroke="#0038a8" stroke-width="2.5"/>
+                        <line x1="155" y1="78" x2="155" y2="100" stroke="#0038a8" stroke-width="2.5"/>
+                        <rect x="131" y="100" width="38" height="7" rx="3" fill="#ffffff" stroke="#0038a8" stroke-width="3.5"/>
+                        <line x1="126" y1="84" x2="110" y2="79" stroke="#0038a8" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="126" y1="92" x2="108" y2="92" stroke="#0038a8" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="126" y1="100" x2="111" y2="106" stroke="#0038a8" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="174" y1="84" x2="190" y2="79" stroke="#0038a8" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="174" y1="92" x2="192" y2="92" stroke="#0038a8" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="174" y1="100" x2="189" y2="106" stroke="#0038a8" stroke-width="3" stroke-linecap="round"/>
+                        <polygon points="136,107 164,107 167,133 133,133" fill="#ef1c1c" stroke="#0038a8" stroke-width="3.5"/>
+                        <polygon points="133,133 167,133 171,160 129,160" fill="#0038a8" stroke="#0038a8" stroke-width="3.5"/>
+                        <polygon points="129,160 171,160 175,188 125,188" fill="#ef1c1c" stroke="#0038a8" stroke-width="3.5"/>
+                        <path d="M84,116 Q93,110 98,118 Q103,110 112,116" fill="none" stroke="#0038a8" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M96,133 Q103,128 107,134 Q111,128 118,133" fill="none" stroke="#0038a8" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M184,126 Q192,120 197,127 Q202,120 210,126" fill="none" stroke="#0038a8" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M82,196 Q115,178 150,194 Q185,178 218,196 Q180,206 150,198 Q120,206 82,196 Z" fill="#0038a8"/>
+                        <path d="M96,208 Q130,195 150,206 Q175,195 204,208 Q170,216 150,210 Q125,216 96,208 Z" fill="#0284c7"/>
+                    </svg>
+                </div>
+            </div>
+
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                English Grade 3 • Practice Test 5
+            </span>
+            <h2 class="text-2xl font-black text-slate-800">Chào mừng con đến với lớp học!</h2>
+            <p class="text-slate-500 font-semibold text-sm mt-1 mb-5">Con hãy nhập họ và tên của mình để bắt đầu làm bài nhé</p>
+
+            <form onsubmit="handleStudentLogin(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-sm font-extrabold text-slate-700 mb-1.5">Họ và tên học sinh <span class="text-rose-500">*</span></label>
+                    <input type="text" id="studentNameInput" required placeholder="Ví dụ: Nguyễn Minh Anh"
+                        class="w-full px-4 py-3 rounded-2xl border-2 border-sky-300 focus:border-blue-600 focus:outline-none font-bold text-slate-800 bg-sky-50/50 text-base">
+                </div>
+                <div>
+                    <label class="block text-sm font-extrabold text-slate-700 mb-1.5">Lớp (Không bắt buộc)</label>
+                    <input type="text" id="studentClassInput" placeholder="Ví dụ: 3A1"
+                        class="w-full px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-blue-600 focus:outline-none font-bold text-slate-800 bg-slate-50 text-base">
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-black py-3.5 rounded-2xl shadow-lg text-lg active:translate-y-0.5 transition mt-2">
+                    Bắt đầu làm bài 🚀
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- HEADER CHÍNH -->
+    <header class="bg-white/95 backdrop-blur-md shadow-md sticky top-0 z-40 border-b-4 border-blue-600">
+        <div class="max-w-5xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <div ondblclick="openTeacherModal()" class="logo-trigger w-14 h-14 rounded-full bg-white border-2 border-blue-700 shadow-md flex-shrink-0 overflow-hidden p-0.5 flex items-center justify-center">
+                    <img src="Logo tròn Lien (1).png" alt="Lighthouse English Logo" class="w-full h-full object-contain rounded-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <svg viewBox="0 0 300 300" class="w-full h-full hidden">
+                        <circle cx="150" cy="150" r="144" fill="#ffffff" stroke="#0038a8" stroke-width="8"/>
+                        <circle cx="150" cy="150" r="98" fill="#ffffff" stroke="#0038a8" stroke-width="4"/>
+                        <defs>
+                            <path id="topArcNav" d="M 38,150 A 112,112 0 1,1 262,150" />
+                            <path id="bottomArcNav" d="M 32,155 A 118,118 0 0,0 268,155" />
+                        </defs>
+                        <text fill="#0038a8" font-size="21" font-weight="900" letter-spacing="2.2">
+                            <textPath href="#topArcNav" startOffset="50%" text-anchor="middle">LIGHTHOUSE ENGLISH</textPath>
+                        </text>
+                        <text fill="#0038a8" font-size="21" font-weight="900" letter-spacing="2">
+                            <textPath href="#bottomArcNav" startOffset="50%" text-anchor="middle">MS LINDA’S CLASS</textPath>
+                        </text>
+                        <polygon points="26,134 30,146 42,150 30,154 26,166 22,154 10,150 22,146" fill="#facc15"/>
+                        <polygon points="274,134 278,146 290,150 278,154 274,166 270,154 258,150 270,146" fill="#facc15"/>
+                        <circle cx="150" cy="106" r="46" fill="#facc15"/>
+                        <polygon points="150,58 134,78 166,78" fill="#ffffff" stroke="#0038a8" stroke-width="4"/>
+                        <rect x="137" y="78" width="26" height="22" fill="#ffffff" stroke="#0038a8" stroke-width="4"/>
+                        <rect x="131" y="100" width="38" height="7" rx="3" fill="#ffffff" stroke="#0038a8" stroke-width="4"/>
+                        <polygon points="136,107 164,107 167,133 133,133" fill="#ef1c1c" stroke="#0038a8" stroke-width="4"/>
+                        <polygon points="133,133 167,133 171,160 129,160" fill="#0038a8" stroke="#0038a8" stroke-width="4"/>
+                        <polygon points="129,160 171,160 175,188 125,188" fill="#ef1c1c" stroke="#0038a8" stroke-width="4"/>
+                        <path d="M82,196 Q115,178 150,194 Q185,178 218,196 Q180,206 150,198 Q120,206 82,196 Z" fill="#0038a8"/>
+                    </svg>
+                </div>
+
+                <div>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="bg-blue-600 text-white text-xs font-black px-2.5 py-0.5 rounded-full uppercase">Grade 3 • Test 5</span>
+                        <span id="studentBadge" class="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200">
+                            👤 Học viên: Chưa đăng nhập
+                        </span>
+                    </div>
+                    <h1 class="text-base sm:text-lg font-black text-slate-800 mt-0.5">Lighthouse English • Ms. Linda's Class</h1>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+                <div class="bg-amber-50 border-2 border-amber-300 px-3 py-1.5 rounded-2xl flex items-center gap-2">
+                    <span class="text-lg">⭐</span>
+                    <div>
+                        <div class="text-[10px] font-bold text-amber-700 uppercase leading-none">Tiến độ</div>
+                        <div id="progressText" class="text-xs sm:text-sm font-black text-amber-900">0 / 30 câu</div>
+                    </div>
+                </div>
+                <button onclick="submitQuiz()" id="submitBtn" class="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-black px-4 sm:px-5 py-2.5 rounded-2xl shadow-lg active:translate-y-0.5 transition text-sm">
+                    Nộp bài 🚀
+                </button>
+            </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 py-2 flex gap-2 overflow-x-auto no-scrollbar border-t border-slate-100" id="partTabs"></div>
+    </header>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="max-w-4xl mx-auto px-4 mt-6">
+        <div id="resultBanner" class="hidden mb-6 bg-white rounded-3xl p-6 border-4 border-emerald-400 shadow-xl text-center">
+            <div class="text-4xl mb-2">🎉🏆🎉</div>
+            <h2 class="text-2xl font-black text-slate-800">Chúc mừng <span id="resultStudentName" class="text-blue-600"></span> đã hoàn thành bài kiểm tra!</h2>
+            <p class="text-slate-600 font-semibold mt-1">Kết quả của con đã được lưu vào hệ thống của Ms. Linda:</p>
+            <div class="flex justify-center gap-4 my-4 flex-wrap">
+                <div class="bg-emerald-50 border-2 border-emerald-300 px-6 py-3 rounded-2xl">
+                    <div class="text-xs font-bold text-emerald-700 uppercase">Số câu đúng</div>
+                    <div id="scoreCount" class="text-3xl font-black text-emerald-600">0 / 30</div>
+                </div>
+                <div class="bg-amber-50 border-2 border-amber-300 px-6 py-3 rounded-2xl">
+                    <div class="text-xs font-bold text-amber-700 uppercase">Điểm số (Thang 10)</div>
+                    <div id="scoreTen" class="text-3xl font-black text-amber-600">0.0</div>
+                </div>
+            </div>
+            <div class="flex justify-center gap-3 flex-wrap">
+                <button onclick="resetQuiz()" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-5 py-2.5 rounded-xl shadow transition">
+                    🔄 Làm lại bài
+                </button>
+                <button onclick="switchStudent()" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold px-5 py-2.5 rounded-xl shadow transition">
+                    👤 Đổi học sinh khác
+                </button>
+            </div>
+        </div>
+
+        <div id="partContainer"></div>
+
+        <div class="mt-8 flex justify-between items-center">
+            <button id="prevPartBtn" onclick="changePart(-1)" class="bg-white hover:bg-slate-50 text-slate-700 font-extrabold px-5 py-3 rounded-2xl border-2 border-slate-300 btn-3d disabled:opacity-40">
+                ⬅️ Part trước
+            </button>
+            <button id="nextPartBtn" onclick="changePart(1)" class="bg-sky-500 hover:bg-sky-600 text-white font-extrabold px-6 py-3 rounded-2xl border-2 border-sky-600 shadow-md transition">
+                Part tiếp theo ➡️
+            </button>
+        </div>
+    </main>
+
+    <!-- MODAL PHÓNG TO TRANH -->
+    <div id="zoomModal" class="hidden fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4" onclick="closeZoom()">
+        <div class="bg-white rounded-3xl p-4 max-w-lg w-full relative" onclick="event.stopPropagation()">
+            <button onclick="closeZoom()" class="absolute -top-3 -right-3 bg-rose-500 text-white w-9 h-9 rounded-full font-black shadow-lg">✕</button>
+            <div id="zoomContent" class="flex flex-col items-center justify-center p-4"></div>
+        </div>
+    </div>
+
+    <!-- MODAL BẢNG TỔNG HỢP KẾT QUẢ BÍ MẬT DÀNH CHO GIÁO VIÊN -->
+    <div id="teacherModal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" onclick="closeTeacherModal()">
+        <div class="bg-white rounded-3xl shadow-2xl border-4 border-blue-600 max-w-4xl w-full max-h-[88vh] flex flex-col overflow-hidden" onclick="event.stopPropagation()">
+            <div class="bg-blue-700 text-white px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl">📊</span>
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-black">Bảng Tổng Hợp Kết Quả Học Viên (Đề 5)</h3>
+                        <p class="text-xs text-blue-200 font-semibold">Khu vực dành riêng cho giáo viên • Lighthouse English - Ms. Linda's Class</p>
+                    </div>
+                </div>
+                <button onclick="closeTeacherModal()" class="bg-white/20 hover:bg-white/30 text-white w-9 h-9 rounded-full font-black transition">✕</button>
+            </div>
+
+            <div class="p-4 sm:p-6 overflow-y-auto flex-1">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <div class="text-sm font-bold text-slate-600">
+                        Tổng số lượt nộp bài: <span id="totalSubmissionsCount" class="text-blue-700 font-black text-base">0</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="exportResultsCSV()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-extrabold px-4 py-2 rounded-xl shadow transition">
+                            📥 Xuất file Excel (CSV)
+                        </button>
+                        <button onclick="clearAllResults()" class="bg-rose-100 hover:bg-rose-200 text-rose-700 text-xs sm:text-sm font-extrabold px-3.5 py-2 rounded-xl transition">
+                            🗑️ Xóa lịch sử
+                        </button>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border-2 border-slate-200 rounded-2xl">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 text-xs sm:text-sm uppercase border-b-2 border-slate-200">
+                                <th class="py-3 px-4 font-black">STT</th>
+                                <th class="py-3 px-4 font-black">Họ và tên học sinh</th>
+                                <th class="py-3 px-4 font-black">Lớp</th>
+                                <th class="py-3 px-4 font-black text-center">Số câu đúng</th>
+                                <th class="py-3 px-4 font-black text-center">Điểm (Hệ 10)</th>
+                                <th class="py-3 px-4 font-black">Thời gian nộp</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTableBody" class="divide-y divide-slate-100 text-sm font-semibold"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Thư mục test53 trên GitHub của Ms. Linda
+        const GITHUB_BASE = "https://lientran24d-cloud.github.io/test/test53/";
+        const STORAGE_KEY = "lighthouse_grade3_test5_results";
+
+        // Tên file âm thanh & hình ảnh tương ứng trong test53
+        const AUDIO_FILES = {
+            part1: GITHUB_BASE + encodeURIComponent("file nghe part 1.đề 5.3.mp3"),
+            part2: GITHUB_BASE + encodeURIComponent("file nghe part 2.đề 5.3.mp3"),
+            part3: GITHUB_BASE + encodeURIComponent("file nghe part 3.đề 5.3.mp3")
+        };
+
+        const PART_IMGS = {
+            part1Banner: GITHUB_BASE + encodeURIComponent("ảnh part1.5.3.jpg"),
+            part3Banner: GITHUB_BASE + encodeURIComponent("ảnh part3.5.3.jpg"),
+            q23: GITHUB_BASE + encodeURIComponent("anh question 23.de5.png"),
+            q24: GITHUB_BASE + encodeURIComponent("anh question 24.de5.png"),
+            q25: GITHUB_BASE + encodeURIComponent("anh question 25.de5.png")
+        };
+
+        // SVG minh họa dự phòng nếu ảnh chưa kịp tải
+        const SVG_BANK = {
+            q23: `<svg viewBox="0 0 220 140" class="w-56 h-36 mx-auto"><rect width="220" height="140" rx="18" fill="#f1f5f9"/><circle cx="110" cy="36" r="13" fill="#fed7aa"/><path d="M98 52 L122 52 L126 95 L94 95 Z" fill="#64748b"/><line x1="102" y1="95" x2="88" y2="125" stroke="#1e293b" stroke-width="5" stroke-linecap="round"/><line x1="118" y1="95" x2="132" y2="125" stroke="#1e293b" stroke-width="5" stroke-linecap="round"/><text x="110" y="135" font-size="10" font-weight="bold" text-anchor="middle" fill="#334155">Walking</text></svg>`,
+            q24: `<svg viewBox="0 0 220 140" class="w-56 h-36 mx-auto"><rect width="220" height="140" rx="18" fill="#e0f2fe"/><path d="M85 45 C105 30, 135 35, 145 55 C160 75, 140 105, 110 100 C80 95, 65 65, 85 45 Z" fill="#0284c7" stroke="#0369a1" stroke-width="3"/></svg>`,
+            q25: `<svg viewBox="0 0 220 140" class="w-56 h-36 mx-auto"><rect width="220" height="140" rx="18" fill="#dcfce7"/><polygon points="65,45 110,55 110,105 65,95" fill="#fff" stroke="#16a34a" stroke-width="3"/><polygon points="155,45 110,55 110,105 155,95" fill="#f8fafc" stroke="#16a34a" stroke-width="3"/><path d="M92 32 Q110 20 128 32" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/></svg>`
+        };
+
+        const QUIZ_DATA = [
+            {
+                part: 1,
+                title: "PART 1: Listen and write a or b",
+                subtitle: "Quan sát tranh 1 – 4 (a hoặc b), nghe ghi âm và chọn đáp án đúng (Câu 1 – 4)",
+                audioUrl: AUDIO_FILES.part1,
+                partBannerImg: PART_IMGS.part1Banner,
+                fallbackScript: "1. That is her pencil. 2. That is his eraser. 3. That is her pen. 4. That is his bag.",
+                questions: [
+                    { id: 1, type: "mcq", prompt: "Question 1. Picture 1:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }], correct: "B" },
+                    { id: 2, type: "mcq", prompt: "Question 2. Picture 2:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }], correct: "A" },
+                    { id: 3, type: "mcq", prompt: "Question 3. Picture 3:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }], correct: "B" },
+                    { id: 4, type: "mcq", prompt: "Question 4. Picture 4:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }], correct: "B" }
+                ]
+            },
+            {
+                part: 2,
+                title: "PART 2: LISTEN AND WRITE",
+                subtitle: "Nghe và điền từ chỉ tuổi còn thiếu vào ô trống (Câu 5 – 8)",
+                audioUrl: AUDIO_FILES.part2,
+                fallbackScript: "a) How old are you? - I'm seven years old. b) How old are you? - I'm eight years old. c) How old are you? - I'm nine years old. d) How old are you? - I'm ten years old.",
+                questions: [
+                    { id: 5, type: "spell", promptPrefix: "Question 5. a) How old are you? - I’m", promptSuffix: "years old.", length: 5, correct: "seven" },
+                    { id: 6, type: "spell", promptPrefix: "Question 6. b) How old are you? - I’m", promptSuffix: "years old.", length: 5, correct: "eight" },
+                    { id: 7, type: "spell", promptPrefix: "Question 7. c) How old are you? - I’m", promptSuffix: "years old.", length: 4, correct: "nine" },
+                    { id: 8, type: "spell", promptPrefix: "Question 8. d) How old are you? - I’m", promptSuffix: "years old.", length: 3, correct: "ten" }
+                ]
+            },
+            {
+                part: 3,
+                title: "PART 3: LISTEN AND NUMBER",
+                subtitle: "Quan sát 4 tranh (a, b, c, d), nghe ghi âm và chọn đáp án đúng (Câu 9 – 12)",
+                audioUrl: AUDIO_FILES.part3,
+                partBannerImg: PART_IMGS.part3Banner,
+                fallbackScript: "1. Is this Mary? Yes, it is. 2. Is that Ben? No, it isn't. It's Bill. 3. Is this Lucy? Yes, it is. 4. Is that Bill? No, it isn't. It's Ben.",
+                questions: [
+                    { id: 9, type: "mcq", prompt: "Question 9. Number 1:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }], correct: "D" },
+                    { id: 10, type: "mcq", prompt: "Question 10. Number 2:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }], correct: "A" },
+                    { id: 11, type: "mcq", prompt: "Question 11. Number 3:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }], correct: "B" },
+                    { id: 12, type: "mcq", prompt: "Question 12. Number 4:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }], correct: "C" }
+                ]
+            },
+            {
+                part: 4,
+                title: "PART 4: Read and choose the correct answer to complete the passage",
+                subtitle: "Đọc đoạn văn của Minh Anh và chọn đáp án đúng điền vào chỗ trống (13) – (17)",
+                passage: [
+                    { speaker: "Minh Anh", text: "Hello, I’m Minh Anh. I’m eight years old. I’m in class 3B at Trang Viet Primary school. My school is large and <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>(13)</span> ___________. My class is small but nice. This is my desk. It is brown. These <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>(14)</span> ___________ my books. They are yellow. These are my pens. They are black <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>(15)</span>___________ white. This is my eraser. It’s orange and white. And this is <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>(16)</span> ___________ school bag. It’s blue, green and red. What about you? What <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>(17)</span>___________ are your school things?" }
+                ],
+                questions: [
+                    { id: 13, type: "mcq", prompt: "Question 13. Chỗ trống (13):", options: [{ key: "A", text: "A. new" }, { key: "B", text: "B. ruler" }, { key: "C", text: "C. welcome" }, { key: "D", text: "D. pen" }], correct: "A" },
+                    { id: 14, type: "mcq", prompt: "Question 14. Chỗ trống (14):", options: [{ key: "A", text: "A. am" }, { key: "B", text: "B. is" }, { key: "C", text: "C. are" }, { key: "D", text: "D. have" }], correct: "C" },
+                    { id: 15, type: "mcq", prompt: "Question 15. Chỗ trống (15):", options: [{ key: "A", text: "A. are" }, { key: "B", text: "B. and" }, { key: "C", text: "C. do" }, { key: "D", text: "D. is" }], correct: "B" },
+                    { id: 16, type: "mcq", prompt: "Question 16. Chỗ trống (16):", options: [{ key: "A", text: "A. his" }, { key: "B", text: "B. they" }, { key: "C", text: "C. my" }, { key: "D", text: "D. her" }], correct: "C" },
+                    { id: 17, type: "mcq", prompt: "Question 17. Chỗ trống (17):", options: [{ key: "A", text: "A. coloures" }, { key: "B", text: "B. colour" }, { key: "C", text: "C. colouring" }, { key: "D", text: "D. colours" }], correct: "D" }
+                ]
+            },
+            {
+                part: 5,
+                title: "PART 5: Reorder words",
+                subtitle: "Bấm vào các thẻ từ để sắp xếp thành câu hoàn chỉnh (Câu 18 – 22)",
+                questions: [
+                    { id: 18, type: "reorder", prompt: "Question 18.", words: ["notebook?", "a", "have", "you", "Do"], correct: "Do you have a notebook?" },
+                    { id: 19, type: "reorder", prompt: "Question 19.", words: ["do", "at", "do", "time?", "you", "What", "break"], correct: "What do you do at break time?" },
+                    { id: 20, type: "reorder", prompt: "Question 20.", words: ["are", "They", "black."], correct: "They are black." },
+                    { id: 21, type: "reorder", prompt: "Question 21.", words: ["your", "hair!", "Touch"], correct: "Touch your hair!" },
+                    { id: 22, type: "reorder", prompt: "Question 22.", words: ["room.", "art", "Let’s", "go", "to", "the"], correct: "Let’s go to the art room." }
+                ]
+            },
+            {
+                part: 6,
+                title: "PART 6: LOOK AT THE PICTURES AND FIND CORRECT ANSWER",
+                subtitle: "Quan sát hình ảnh và chọn đáp án đúng A, B, C hoặc D (Câu 23 – 25)",
+                questions: [
+                    { id: 23, type: "single_pic_mcq", prompt: "Question 23. She is __________.", imgUrl: PART_IMGS.q23, fallbackSvg: SVG_BANK.q23, options: [{ key: "A", text: "A. walks" }, { key: "B", text: "B. walking" }, { key: "C", text: "C. dancing" }, { key: "D", text: "D. walk" }], correct: "B" },
+                    { id: 24, type: "single_pic_mcq", prompt: "Question 24. What color is it ? It is ...........", imgUrl: PART_IMGS.q24, fallbackSvg: SVG_BANK.q24, options: [{ key: "A", text: "A. yellow" }, { key: "B", text: "B. black" }, { key: "C", text: "C. orange" }, { key: "D", text: "D. blue" }], correct: "D" },
+                    { id: 25, type: "single_pic_mcq", prompt: "Question 25. Can you .........?", imgUrl: PART_IMGS.q25, fallbackSvg: SVG_BANK.q25, options: [{ key: "A", text: "A. open the book" }, { key: "B", text: "B. opening the book" }, { key: "C", text: "C. read a book" }, { key: "D", text: "D. close the book" }], correct: "A" }
+                ]
+            },
+            {
+                part: 7,
+                title: "PART 7: WRITE MISSING LETTERS",
+                subtitle: "Điền các chữ cái còn thiếu vào ô trống (Câu 26 – 30)",
+                questions: [
+                    { id: 26, type: "spell", promptPrefix: "Question 26. Open your", promptSuffix: "es!", length: 2, correct: "ey" },
+                    { id: 27, type: "spell", promptPrefix: "Question 27. I", promptSuffix: "walking.", length: 4, correct: "like" },
+                    { id: 28, type: "spell", promptPrefix: "Question 28. Look at this picture. Is this our", promptSuffix: "ol?", length: 4, correct: "scho" },
+                    { id: 29, type: "spell", promptPrefix: "Question 29. Is this our", promptSuffix: "ground?", length: 4, correct: "play" },
+                    { id: 30, type: "spell", promptPrefix: "Question 30. Do you", promptSuffix: "ve a notebook?", length: 2, correct: "ha" }
+                ]
+            }
+        ];
+
+        let currentStudent = { name: "", className: "" };
+        let currentPartIdx = 0;
+        let userAnswers = {};
+        let isSubmitted = false;
+
+        function init() {
+            renderTabs();
+            renderPart();
+            updateProgress();
+        }
+
+        function handleStudentLogin(e) {
+            e.preventDefault();
+            const nameVal = document.getElementById("studentNameInput").value.trim();
+            const classVal = document.getElementById("studentClassInput").value.trim();
+            if (!nameVal) return;
+
+            currentStudent = { name: nameVal, className: classVal || "Lớp 3" };
+            document.getElementById("studentBadge").textContent = `👤 ${currentStudent.name} (${currentStudent.className})`;
+            document.getElementById("loginScreen").classList.add("hidden");
+            playClickSound();
+        }
+
+        function switchStudent() {
+            resetQuiz();
+            document.getElementById("studentNameInput").value = "";
+            document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function saveStudentResult(correctCount, scoreTen) {
+            const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }) + " - " + now.toLocaleDateString('vi-VN');
+            list.unshift({
+                name: currentStudent.name || "Học sinh ẩn danh",
+                className: currentStudent.className || "Lớp 3",
+                correct: correctCount,
+                total: 30,
+                score: scoreTen,
+                submittedAt: timeStr
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+        }
+
+        function openTeacherModal() {
+            renderTeacherTable();
+            document.getElementById("teacherModal").classList.remove("hidden");
+        }
+
+        function closeTeacherModal() {
+            document.getElementById("teacherModal").classList.add("hidden");
+        }
+
+        function renderTeacherTable() {
+            const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+            document.getElementById("totalSubmissionsCount").textContent = list.length;
+            const tbody = document.getElementById("resultsTableBody");
+
+            if (list.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="py-8 text-center text-slate-400 font-bold">
+                            Chưa có học sinh nào nộp bài trên thiết bị này.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = list.map((item, idx) => `
+                <tr class="hover:bg-blue-50/50 transition">
+                    <td class="py-3 px-4 text-slate-500">${idx + 1}</td>
+                    <td class="py-3 px-4 font-extrabold text-slate-800">${escapeHtml(item.name)}</td>
+                    <td class="py-3 px-4 text-slate-600">${escapeHtml(item.className)}</td>
+                    <td class="py-3 px-4 text-center font-extrabold text-emerald-600">${item.correct} / ${item.total}</td>
+                    <td class="py-3 px-4 text-center">
+                        <span class="px-2.5 py-1 rounded-full font-black text-xs ${
+                            parseFloat(item.score) >= 8 ? 'bg-emerald-100 text-emerald-700' :
+                            parseFloat(item.score) >= 5 ? 'bg-amber-100 text-amber-800' : 'bg-rose-100 text-rose-700'
+                        }">
+                            ${item.score} điểm
+                        </span>
+                    </td>
+                    <td class="py-3 px-4 text-xs text-slate-500">${item.submittedAt}</td>
+                </tr>
+            `).join("");
+        }
+
+        function exportResultsCSV() {
+            const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+            if (list.length === 0) {
+                alert("Chưa có dữ liệu kết quả để xuất file!");
+                return;
+            }
+            let csvContent = "\uFEFFSTT,Họ và tên,Lớp,Số câu đúng,Tổng số câu,Điểm hệ 10,Thời gian nộp\n";
+            list.forEach((item, idx) => {
+                csvContent += `${idx + 1},"${item.name.replace(/"/g, '""')}","${item.className.replace(/"/g, '""')}",${item.correct},${item.total},${item.score},"${item.submittedAt}"\n`;
+            });
+            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Ket_qua_Tieng_Anh_Lop_3_De5_MsLinda.csv";
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function clearAllResults() {
+            if (confirm("Cô Linda có chắc chắn muốn xóa toàn bộ lịch sử điểm Đề 5 trên máy này không?")) {
+                localStorage.removeItem(STORAGE_KEY);
+                renderTeacherTable();
+            }
+        }
+
+        function escapeHtml(str) {
+            return String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+        }
+
+        function renderTabs() {
+            const tabsEl = document.getElementById("partTabs");
+            tabsEl.innerHTML = QUIZ_DATA.map((p, idx) => {
+                const active = idx === currentPartIdx;
+                const answeredInPart = p.questions.filter(q => isQuestionAnswered(q.id)).length;
+                const allDone = answeredInPart === p.questions.length;
+                return `
+                    <button onclick="goToPart(${idx})" class="flex-shrink-0 px-4 py-2 rounded-2xl font-extrabold text-sm transition flex items-center gap-2 border-2 ${
+                        active 
+                        ? 'bg-sky-500 text-white border-sky-600 shadow' 
+                        : allDone 
+                            ? 'bg-emerald-50 text-emerald-700 border-emerald-300' 
+                            : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
+                    }">
+                        <span>Part ${p.part}</span>
+                        <span class="text-xs px-1.5 py-0.5 rounded-full ${active ? 'bg-white/25 text-white' : 'bg-slate-200 text-slate-700'}">
+                            ${answeredInPart}/${p.questions.length}
+                        </span>
+                    </button>
+                `;
+            }).join("");
+        }
+
+        function isQuestionAnswered(qId) {
+            const val = userAnswers[qId];
+            if (Array.isArray(val)) return val.length > 0;
+            return val !== undefined && val !== null && val.toString().trim() !== "";
+        }
+
+        function updateProgress() {
+            let count = 0;
+            QUIZ_DATA.forEach(p => p.questions.forEach(q => {
+                if (isQuestionAnswered(q.id)) count++;
+            }));
+            document.getElementById("progressText").textContent = `${count} / 30 câu`;
+            renderTabs();
+        }
+
+        function goToPart(idx) {
+            currentPartIdx = idx;
+            renderPart();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function changePart(step) {
+            const next = currentPartIdx + step;
+            if (next >= 0 && next < QUIZ_DATA.length) {
+                goToPart(next);
+            }
+        }
+
+        function normalizeStr(s) {
+            return (s || "").toLowerCase().replace(/[’']/g, "'").replace(/\s+/g, " ").trim();
+        }
+
+        function checkQuestionCorrect(q) {
+            const ans = userAnswers[q.id];
+            if (!ans) return false;
+            if (q.type === "reorder") {
+                const userSentence = Array.isArray(ans) ? ans.map(idx => q.words[idx]).join(" ") : ans;
+                return normalizeStr(userSentence) === normalizeStr(q.correct);
+            }
+            if (q.type === "spell") {
+                return normalizeStr(ans) === normalizeStr(q.correct);
+            }
+            return ans === q.correct;
+        }
+
+        function renderPart() {
+            const p = QUIZ_DATA[currentPartIdx];
+            const container = document.getElementById("partContainer");
+
+            document.getElementById("prevPartBtn").disabled = currentPartIdx === 0;
+            document.getElementById("nextPartBtn").style.display = currentPartIdx === QUIZ_DATA.length - 1 ? "none" : "inline-block";
+
+            let html = `
+                <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-md border-2 border-sky-200 mb-6">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-black text-sky-700">${p.title}</h2>
+                            <p class="text-slate-600 font-semibold text-sm mt-1">${p.subtitle}</p>
+                        </div>
+                        <span class="bg-sky-100 text-sky-800 font-extrabold text-xs px-3 py-1.5 rounded-full">
+                            ${p.questions.length} câu hỏi
+                        </span>
+                    </div>
+            `;
+
+            if (p.partBannerImg) {
+                html += `
+                    <div class="mt-4 bg-slate-50 border-2 border-sky-200 rounded-2xl p-3 flex flex-col items-center relative">
+                        <button type="button" onclick="openZoomImage('${p.partBannerImg}', 'Part ${p.part} - Pictures')" class="absolute top-3 right-3 bg-white hover:bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded-lg shadow border border-slate-200 z-10">
+                            🔍 Phóng to bảng tranh
+                        </button>
+                        <img src="${p.partBannerImg}" alt="Part ${p.part} pictures" class="w-full max-h-48 object-contain rounded-xl" onerror="this.style.display='none';">
+                    </div>
+                `;
+            }
+
+            if (p.audioUrl) {
+                html += `
+                    <div class="mt-4 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl p-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="font-extrabold text-amber-900 text-sm flex items-center gap-2">
+                                🎧 Trình phát âm thanh Part ${p.part} (test53)
+                            </span>
+                            <button onclick="speakFallback(\`${p.fallbackScript.replace(/"/g, '&quot;')}\`)" class="text-xs bg-white hover:bg-amber-100 text-amber-800 font-bold px-3 py-1 rounded-full border border-amber-300 transition">
+                                🗣️ Đọc giọng mẫu dự phòng
+                            </button>
+                        </div>
+                        <audio controls preload="metadata" class="w-full h-11 rounded-xl">
+                            <source src="${p.audioUrl}" type="audio/mpeg">
+                            Trình duyệt của bạn không hỗ trợ phát âm thanh.
+                        </audio>
+                    </div>
+                `;
+            }
+
+            if (p.passage) {
+                html += `
+                    <div class="mt-5 bg-indigo-50/70 border-2 border-indigo-200 rounded-2xl p-4 sm:p-5 space-y-2.5">
+                        <div class="text-xs font-black uppercase text-indigo-600 tracking-wide mb-1">📖 Đoạn đọc của Minh Anh:</div>
+                        ${p.passage.map(line => `
+                            <div class="bg-white px-4 py-3 rounded-xl border border-indigo-100 text-sm sm:text-base font-semibold text-slate-700 leading-relaxed">
+                                <span class="font-black text-indigo-700">${line.speaker}:</span> ${line.text}
+                            </div>
+                        `).join("")}
+                    </div>
+                `;
+            }
+
+            html += `</div><div class="space-y-5">`;
+
+            p.questions.forEach(q => {
+                const isCorrect = isSubmitted ? checkQuestionCorrect(q) : null;
+                let statusBadge = "";
+                if (isSubmitted) {
+                    statusBadge = isCorrect 
+                        ? `<span class="bg-emerald-100 text-emerald-700 font-black text-xs px-3 py-1 rounded-full">✅ Đúng</span>`
+                        : `<span class="bg-rose-100 text-rose-700 font-black text-xs px-3 py-1 rounded-full">❌ Sai (Đáp án: ${q.correct})</span>`;
+                }
+
+                html += `
+                    <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border-2 ${
+                        isSubmitted 
+                        ? (isCorrect ? 'border-emerald-400' : 'border-rose-300') 
+                        : 'border-slate-200'
+                    }">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <h3 class="text-base sm:text-lg font-extrabold text-slate-800">
+                                ${q.type === 'spell' ? '' : formatPrompt(q.prompt)}
+                            </h3>
+                            ${statusBadge}
+                        </div>
+                `;
+
+                if (q.type === "mcq") {
+                    html += renderMcqOptions(q);
+                } else if (q.type === "single_pic_mcq") {
+                    html += `
+                        <div class="mb-4 flex flex-col items-center">
+                            <div class="relative bg-slate-50 border-2 border-slate-200 rounded-2xl p-3 max-w-sm w-full flex items-center justify-center">
+                                <button type="button" onclick="openZoomImage('${q.imgUrl}', '${q.prompt}')" class="absolute top-2 right-2 bg-white/95 hover:bg-white text-slate-700 text-xs font-bold px-2.5 py-1 rounded-lg shadow border border-slate-200 z-10">
+                                    🔍 Phóng to
+                                </button>
+                                <img src="${q.imgUrl}" alt="${q.prompt}" class="w-full max-h-56 object-contain rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <div class="hidden w-full">${q.fallbackSvg || ''}</div>
+                            </div>
+                        </div>
+                        ${renderMcqOptions(q)}
+                    `;
+                } else if (q.type === "reorder") {
+                    const selectedIndices = Array.isArray(userAnswers[q.id]) ? userAnswers[q.id] : [];
+                    html += `
+                        <div class="flex flex-wrap gap-2.5 mb-4">
+                            ${q.words.map((w, wIdx) => {
+                                const used = selectedIndices.includes(wIdx);
+                                return `
+                                    <button type="button" ${used || isSubmitted ? 'disabled' : ''} onclick="addReorderWord(${q.id}, ${wIdx})" class="px-4 py-2 rounded-xl font-extrabold text-base border-2 ${
+                                        used 
+                                        ? 'bg-slate-100 text-slate-300 border-slate-200 cursor-not-allowed' 
+                                        : 'bg-sky-100 hover:bg-sky-200 text-sky-900 border-sky-300 word-chip'
+                                    }">
+                                        ${w}
+                                    </button>
+                                `;
+                            }).join("")}
+                        </div>
+                        <div class="min-h-[56px] bg-slate-50 border-2 border-dashed border-sky-300 rounded-2xl p-2.5 flex flex-wrap items-center gap-2">
+                            ${selectedIndices.length === 0 
+                                ? `<span class="text-slate-400 text-sm font-semibold px-2">Bấm vào các thẻ từ ở trên để xếp thành câu...</span>` 
+                                : selectedIndices.map((wIdx, pos) => `
+                                    <button type="button" ${isSubmitted ? 'disabled' : ''} onclick="removeReorderWord(${q.id}, ${pos})" class="bg-amber-300 hover:bg-amber-400 text-amber-950 font-extrabold px-3.5 py-1.5 rounded-xl shadow-sm transition">
+                                        ${q.words[wIdx]}
+                                    </button>
+                                `).join("")
+                            }
+                            ${selectedIndices.length > 0 && !isSubmitted ? `
+                                <button type="button" onclick="clearReorder(${q.id})" class="ml-auto text-xs font-bold text-rose-600 hover:underline px-2">
+                                    Xóa xếp lại
+                                </button>
+                            ` : ''}
+                        </div>
+                    `;
+                } else if (q.type === "spell") {
+                    const currentVal = (userAnswers[q.id] || "").padEnd(q.length, " ");
+                    html += `
+                        <div class="flex flex-wrap items-center gap-2 text-base sm:text-lg font-extrabold text-slate-800">
+                            <span>${q.promptPrefix}</span>
+                            <div class="inline-flex gap-1.5 mx-1">
+                                ${Array.from({ length: q.length }).map((_, charIdx) => {
+                                    const ch = currentVal[charIdx] === " " ? "" : currentVal[charIdx];
+                                    return `
+                                        <input type="text" maxlength="1" value="${ch}" ${isSubmitted ? 'disabled' : ''}
+                                            id="spell_${q.id}_${charIdx}"
+                                            oninput="handleSpellInput(${q.id}, ${charIdx}, ${q.length}, this)"
+                                            onkeydown="handleSpellKeydown(${q.id}, ${charIdx}, event)"
+                                            placeholder="?"
+                                            class="letter-box w-10 h-11 text-center font-black text-lg uppercase rounded-xl border-2 border-sky-400 bg-sky-50 text-sky-900 transition"
+                                        />
+                                    `;
+                                }).join("")}
+                            </div>
+                            <span>${q.promptSuffix}</span>
+                        </div>
+                    `;
+                }
+
+                html += `</div>`;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        function formatPrompt(text) {
+            return text.replace(/______+/g, `<span class="inline-block px-4 border-b-2 border-sky-500 text-sky-600 font-black">______</span>`);
+        }
+
+        function renderMcqOptions(q) {
+            const cols = "sm:grid-cols-2";
+            return `
+                <div class="grid grid-cols-1 ${cols} gap-3">
+                    ${q.options.map(opt => {
+                        const selected = userAnswers[q.id] === opt.key;
+                        let extraClass = "bg-white border-slate-200 hover:border-sky-400 btn-3d";
+                        if (isSubmitted) {
+                            if (opt.key === q.correct) {
+                                extraClass = "option-correct";
+                            } else if (selected && opt.key !== q.correct) {
+                                extraClass = "option-wrong";
+                            } else {
+                                extraClass = "bg-slate-50 border-slate-200 opacity-70";
+                            }
+                        } else if (selected) {
+                            extraClass = "option-selected";
+                        }
+                        return `
+                            <button type="button" onclick="selectOption(${q.id}, '${opt.key}')" class="text-left px-4 py-3.5 rounded-2xl border-2 font-bold text-sm sm:text-base flex items-center gap-3 ${extraClass}">
+                                <span class="w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
+                                    selected ? 'border-sky-600 bg-sky-600 text-white' : 'border-slate-300'
+                                }">
+                                    ${selected ? '✓' : ''}
+                                </span>
+                                <span>${opt.text}</span>
+                            </button>
+                        `;
+                    }).join("")}
+                </div>
+            `;
+        }
+
+        function selectOption(qId, key) {
+            if (isSubmitted) return;
+            userAnswers[qId] = key;
+            playClickSound();
+            updateProgress();
+            renderPart();
+        }
+
+        function addReorderWord(qId, wordIdx) {
+            if (isSubmitted) return;
+            if (!Array.isArray(userAnswers[qId])) userAnswers[qId] = [];
+            userAnswers[qId].push(wordIdx);
+            playClickSound();
+            updateProgress();
+            renderPart();
+        }
+
+        function removeReorderWord(qId, pos) {
+            if (isSubmitted) return;
+            userAnswers[qId].splice(pos, 1);
+            updateProgress();
+            renderPart();
+        }
+
+        function clearReorder(qId) {
+            if (isSubmitted) return;
+            userAnswers[qId] = [];
+            updateProgress();
+            renderPart();
+        }
+
+        function handleSpellInput(qId, charIdx, totalLen, inputEl) {
+            if (isSubmitted) return;
+            const val = inputEl.value.replace(/[^a-zA-Z]/g, "");
+            inputEl.value = val;
+
+            let chars = [];
+            for (let i = 0; i < totalLen; i++) {
+                const box = document.getElementById(`spell_${qId}_${i}`);
+                chars.push(box && box.value ? box.value : " ");
+            }
+            const joined = chars.join("");
+            userAnswers[qId] = joined.trim() === "" ? "" : joined;
+            updateProgress();
+
+            if (val && charIdx + 1 < totalLen) {
+                const nextBox = document.getElementById(`spell_${qId}_${charIdx + 1}`);
+                if (nextBox) nextBox.focus();
+            }
+        }
+
+        function handleSpellKeydown(qId, charIdx, e) {
+            if (e.key === "Backspace" && !e.target.value && charIdx > 0) {
+                const prevBox = document.getElementById(`spell_${qId}_${charIdx - 1}`);
+                if (prevBox) prevBox.focus();
+            }
+        }
+
+        function submitQuiz() {
+            if (isSubmitted) return;
+            let correctCount = 0;
+            QUIZ_DATA.forEach(p => {
+                p.questions.forEach(q => {
+                    if (checkQuestionCorrect(q)) correctCount++;
+                });
+            });
+
+            isSubmitted = true;
+            const scoreTen = ((correctCount / 30) * 10).toFixed(1);
+            saveStudentResult(correctCount, scoreTen);
+
+            document.getElementById("resultStudentName").textContent = currentStudent.name || "con";
+            document.getElementById("scoreCount").textContent = `${correctCount} / 30`;
+            document.getElementById("scoreTen").textContent = scoreTen;
+            document.getElementById("resultBanner").classList.remove("hidden");
+            document.getElementById("submitBtn").disabled = true;
+            document.getElementById("submitBtn").classList.add("opacity-50", "cursor-not-allowed");
+
+            renderPart();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            userAnswers = {};
+            isSubmitted = false;
+            currentPartIdx = 0;
+            document.getElementById("resultBanner").classList.add("hidden");
+            document.getElementById("submitBtn").disabled = false;
+            document.getElementById("submitBtn").classList.remove("opacity-50", "cursor-not-allowed");
+            updateProgress();
+            renderPart();
+        }
+
+        function openZoomImage(imgUrl, caption) {
+            document.getElementById("zoomContent").innerHTML = `
+                <img src="${imgUrl}" alt="${caption}" class="max-h-[65vh] w-auto object-contain rounded-2xl mx-auto">
+                <p class="mt-3 font-extrabold text-slate-700 text-center">${caption}</p>
+            `;
+            document.getElementById("zoomModal").classList.remove("hidden");
+        }
+
+        function closeZoom() {
+            document.getElementById("zoomModal").classList.add("hidden");
+        }
+
+        function speakFallback(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utter = new SpeechSynthesisUtterance(text);
+                utter.lang = 'en-GB';
+                utter.rate = 0.85;
+                window.speechSynthesis.speak(utter);
+            }
+        }
+
+        function playClickSound() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = "sine";
+                osc.frequency.setValueAtTime(520, ctx.currentTime);
+                gain.gain.setValueAtTime(0.06, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.08);
+            } catch (e) {}
+        }
+
+        init();
+    </script>
+</body>
+</html>
