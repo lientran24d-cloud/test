@@ -298,7 +298,8 @@
                         prompt: "Question 1. Where’s the music room?",
                         imageUrl: GITHUB_BASE + encodeURIComponent("Anh question 1.part1.de1lop5.png"),
                         options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }],
-                        correct: "A"
+                        correct: "A",
+                        explanation: "Trong đoạn nghe câu 1, phòng âm nhạc mới nằm ở tầng một ('on the first floor') tương ứng với tòa nhà 1 tầng ở hình a, nên chọn A."
                     },
                     {
                         id: 2,
@@ -306,7 +307,8 @@
                         prompt: "Question 2. What school activity does Nam like?",
                         imageUrl: GITHUB_BASE + encodeURIComponent("Anh question 2.part1.de1lop5.png"),
                         options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }],
-                        correct: "A"
+                        correct: "A",
+                        explanation: "Trong đoạn nghe câu 2, Nam thích giải các bài toán ('solving maths problems') ứng với hình a, không phải thuyết trình dự án (b) hay đọc sách (c), nên chọn A."
                     },
                     {
                         id: 3,
@@ -314,7 +316,8 @@
                         prompt: "Question 3. Where are Mary’s notebooks?",
                         imageUrl: GITHUB_BASE + encodeURIComponent("Anh question 3.part1.de1lop5.png"),
                         options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }],
-                        correct: "C"
+                        correct: "C",
+                        explanation: "Trong đoạn nghe câu 3, vở của Mary ở trong ngăn bàn ('They're in the desk.') ứng với hình c, nên chọn C."
                     },
                     {
                         id: 4,
@@ -322,7 +325,8 @@
                         prompt: "Question 4. What did Minh and Mai do last Sunday?",
                         imageUrl: GITHUB_BASE + encodeURIComponent("Anh question 4.part1.de1lop5.png"),
                         options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }],
-                        correct: "B"
+                        correct: "B",
+                        explanation: "Trong đoạn nghe câu 4, Minh và Mai đi trang trại sinh thái và trồng cây ('We planted trees.') ứng với hình b (Eco-Farm), nên chọn B."
                     },
                     {
                         id: 5,
@@ -330,7 +334,8 @@
                         prompt: "Question 5. What did Lucy and Linh do last weekend?",
                         imageUrl: GITHUB_BASE + encodeURIComponent("Anh question 5.part1.de1lop5.png"),
                         options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }],
-                        correct: "A"
+                        correct: "A",
+                        explanation: "Trong đoạn nghe câu 5, các bạn nhảy múa quanh lửa trại ở khu cắm trại ('They danced around the campfire.') ứng với hình a, nên chọn A."
                     }
                 ]
             },
@@ -340,11 +345,46 @@
                 subtitle: "Chọn câu trả lời phù hợp (a – e) cho từng câu hỏi (Câu 6 – 10)",
                 isMatchingPart: true,
                 questions: [
-                    { id: 6, type: "match", num: 1, prompt: "1. What school activity does Minh like?", correct: "d" },
-                    { id: 7, type: "match", num: 2, prompt: "2. Whose set square is this?", correct: "b" },
-                    { id: 8, type: "match", num: 3, prompt: "3. Could you tell me the way to the art room?", correct: "e" },
-                    { id: 9, type: "match", num: 4, prompt: "4. Were you at Hoan Kiem Lake last weekend?", correct: "a" },
-                    { id: 10, type: "match", num: 5, prompt: "5. Why does Lan like reading books?", correct: "c" }
+                    {
+                        id: 6,
+                        type: "match",
+                        num: 1,
+                        prompt: "1. What school activity does Minh like?",
+                        correct: "d",
+                        explanation: "Câu hỏi hoạt động ở trường của Minh ứng với đáp án d: 'He likes doing projects.' (Cậu ấy thích làm dự án)."
+                    },
+                    {
+                        id: 7,
+                        type: "match",
+                        num: 2,
+                        prompt: "2. Whose set square is this?",
+                        correct: "b",
+                        explanation: "Câu hỏi đồ vật này của ai ('Whose set square is this?') ứng với đáp án b: 'It’s Lucy’s.' (Của Lucy)."
+                    },
+                    {
+                        id: 8,
+                        type: "match",
+                        num: 3,
+                        prompt: "3. Could you tell me the way to the art room?",
+                        correct: "e",
+                        explanation: "Câu hỏi đường đi tới phòng mỹ thuật ứng với đáp án e: 'Go upstairs. It’s on the first floor.' (Đi lên lầu, nó ở tầng một)."
+                    },
+                    {
+                        id: 9,
+                        type: "match",
+                        num: 4,
+                        prompt: "4. Were you at Hoan Kiem Lake last weekend?",
+                        correct: "a",
+                        explanation: "Câu hỏi quá khứ 'Were you...?' ứng với đáp án a: 'Yes, we were.'."
+                    },
+                    {
+                        id: 10,
+                        type: "match",
+                        num: 5,
+                        prompt: "5. Why does Lan like reading books?",
+                        correct: "c",
+                        explanation: "Câu hỏi lý do 'Why...?' ứng với đáp án c: 'Because she thinks it’s interesting.' (Vì bạn ấy thấy nó thú vị)."
+                    }
                 ]
             },
             {
@@ -355,11 +395,41 @@
                     { speaker: "Lan's Trip", text: "Last Saturday, Lan and her class went to Ba Na Hills. They arrived there early in the morning. First, they walked over Golden Bridge. They enjoyed the cable car ride. Then they visited the old buildings and went to the wax museum. After that, they played some games at the amusement park. They went home late in the afternoon. Their trip was a lot of fun. I really want to visit Ba Na Hills again next summer." }
                 ],
                 questions: [
-                    { id: 11, type: "tf", prompt: "11. Lan and her class went to Ba Na Hills, last Saturday.", correct: "True" },
-                    { id: 12, type: "tf", prompt: "12. They arrived there early in the afternoon.", correct: "False" },
-                    { id: 13, type: "tf", prompt: "13. Then they visited the small buildings and went to the wax museum.", correct: "False" },
-                    { id: 14, type: "tf", prompt: "14. They played some games at the amusement park.", correct: "True" },
-                    { id: 15, type: "tf", prompt: "15. They went home late in the evening.", correct: "False" }
+                    {
+                        id: 11,
+                        type: "tf",
+                        prompt: "11. Lan and her class went to Ba Na Hills, last Saturday.",
+                        correct: "True",
+                        explanation: "Đoạn văn viết 'Last Saturday, Lan and her class went to Ba Na Hills.' nên câu này là True."
+                    },
+                    {
+                        id: 12,
+                        type: "tf",
+                        prompt: "12. They arrived there early in the afternoon.",
+                        correct: "False",
+                        explanation: "Đoạn văn viết 'They arrived there early in the morning.' (đến vào đầu buổi sáng), không phải đầu buổi chiều nên chọn False."
+                    },
+                    {
+                        id: 13,
+                        type: "tf",
+                        prompt: "13. Then they visited the small buildings and went to the wax museum.",
+                        correct: "False",
+                        explanation: "Đoạn văn viết 'visited the old buildings' (các tòa nhà cổ), không phải 'small buildings' nên chọn False."
+                    },
+                    {
+                        id: 14,
+                        type: "tf",
+                        prompt: "14. They played some games at the amusement park.",
+                        correct: "True",
+                        explanation: "Đoạn văn viết 'After that, they played some games at the amusement park.' nên câu này là True."
+                    },
+                    {
+                        id: 15,
+                        type: "tf",
+                        prompt: "15. They went home late in the evening.",
+                        correct: "False",
+                        explanation: "Đoạn văn viết 'They went home late in the afternoon.' (về nhà vào cuối buổi chiều), không phải tối muộn nên chọn False."
+                    }
                 ]
             },
             {
@@ -369,11 +439,46 @@
                 audioUrl: AUDIO_PART_4,
                 fallbackScript: "Number one. What did you do yesterday, Bill? We had a school trip. I played the guitar. Number two. Lily, where is the library? It's on the third floor next to the art room. Number three. Lan, what does your mother do? She's a reporter. Number four. Molly from Malaysia, I think he's in the library on the second floor. Number five. Where do you live, Mai? I live at 62 Quang Trung Street.",
                 questions: [
-                    { id: 16, type: "mcq", prompt: "Question 16. What did Bill do yesterday?", options: [{ key: "A", text: "A. played the guitar" }, { key: "B", text: "B. had a campfire and danced around it" }, { key: "C", text: "C. planted trees" }], correct: "A" },
-                    { id: 17, type: "mcq", prompt: "Question 17. Where is the library?", options: [{ key: "A", text: "A. next to the music room" }, { key: "B", text: "B. opposite the art room" }, { key: "C", text: "C. next to the art room" }], correct: "C" },
-                    { id: 18, type: "mcq", prompt: "Question 18. What is Lan’s mother job?", options: [{ key: "A", text: "A. teacher" }, { key: "B", text: "B. reporter" }, { key: "C", text: "C. gardener" }], correct: "B" },
-                    { id: 19, type: "mcq", prompt: "Question 19. Where is the Malaysian boy now?", options: [{ key: "A", text: "A. on the third floor" }, { key: "B", text: "B. on the second floor" }, { key: "C", text: "C. on the ground floor" }], correct: "B" },
-                    { id: 20, type: "mcq", prompt: "Question 20. What’s Mai’s address?", options: [{ key: "A", text: "A. sixty-two Quang Trung street" }, { key: "B", text: "B. sixty Quang Trung street" }, { key: "C", text: "C. sixteen Quang Trung street" }], correct: "A" }
+                    {
+                        id: 16,
+                        type: "mcq",
+                        prompt: "Question 16. What did Bill do yesterday?",
+                        options: [{ key: "A", text: "A. played the guitar" }, { key: "B", text: "B. had a campfire and danced around it" }, { key: "C", text: "C. planted trees" }],
+                        correct: "A",
+                        explanation: "Trong đoạn nghe số 1, Bill nói 'I played the guitar.' nên chọn 'A. played the guitar'."
+                    },
+                    {
+                        id: 17,
+                        type: "mcq",
+                        prompt: "Question 17. Where is the library?",
+                        options: [{ key: "A", text: "A. next to the music room" }, { key: "B", text: "B. opposite the art room" }, { key: "C", text: "C. next to the art room" }],
+                        correct: "C",
+                        explanation: "Trong đoạn nghe số 2, Lily nói thư viện ở tầng ba bên cạnh phòng mỹ thuật ('next to the art room'), nên chọn C."
+                    },
+                    {
+                        id: 18,
+                        type: "mcq",
+                        prompt: "Question 18. What is Lan’s mother job?",
+                        options: [{ key: "A", text: "A. teacher" }, { key: "B", text: "B. reporter" }, { key: "C", text: "C. gardener" }],
+                        correct: "B",
+                        explanation: "Trong đoạn nghe số 3, Lan nói mẹ là phóng viên ('She's a reporter.'), nên chọn 'B. reporter'."
+                    },
+                    {
+                        id: 19,
+                        type: "mcq",
+                        prompt: "Question 19. Where is the Malaysian boy now?",
+                        options: [{ key: "A", text: "A. on the third floor" }, { key: "B", text: "B. on the second floor" }, { key: "C", text: "C. on the ground floor" }],
+                        correct: "B",
+                        explanation: "Trong đoạn nghe số 4, bạn ấy ở thư viện trên tầng hai ('on the second floor'), nên chọn 'B. on the second floor'."
+                    },
+                    {
+                        id: 20,
+                        type: "mcq",
+                        prompt: "Question 20. What’s Mai’s address?",
+                        options: [{ key: "A", text: "A. sixty-two Quang Trung street" }, { key: "B", text: "B. sixty Quang Trung street" }, { key: "C", text: "C. sixteen Quang Trung street" }],
+                        correct: "A",
+                        explanation: "Trong đoạn nghe số 5, Mai sống ở số 62 đường Quang Trung ('62 Quang Trung Street' -> 'sixty-two Quang Trung street'), chọn A."
+                    }
                 ]
             },
             {
@@ -385,11 +490,47 @@
                     { speaker: "Ben's Letter", text: "Dear penfriend,<br>My name’s Ben. I live in a small <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(21)___</span> in Australia. I love being outside, especially going for a <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(22)___</span> in the park. I want to be a doctor <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(23)___</span> I want to help people when they don’t feel well. My <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(24)___</span> animal is a dog. I have a nice dog, Max, and I take good care of him. In my free time, I enjoy <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(25)___</span> flowers in the garden. It helps me relax after a busy day. What about you? What are your hobbies?<br>Write to me soon.<br>Best, Ben" }
                 ],
                 questions: [
-                    { id: 21, type: "long", promptBefore: "Question 21. Chỗ trống (21):", promptAfter: "", correct: "town" },
-                    { id: 22, type: "long", promptBefore: "Question 22. Chỗ trống (22):", promptAfter: "", correct: "walk" },
-                    { id: 23, type: "long", promptBefore: "Question 23. Chỗ trống (23):", promptAfter: "", correct: "because" },
-                    { id: 24, type: "long", promptBefore: "Question 24. Chỗ trống (24):", promptAfter: "", correct: "favourite", altCorrect: ["favorite"] },
-                    { id: 25, type: "long", promptBefore: "Question 25. Chỗ trống (25):", promptAfter: "", correct: "growing" }
+                    {
+                        id: 21,
+                        type: "long",
+                        promptBefore: "Question 21. Chỗ trống (21):",
+                        promptAfter: "",
+                        correct: "town",
+                        explanation: "Cụm từ 'a small town in Australia' (một thị trấn nhỏ ở Úc) dùng từ 'town'."
+                    },
+                    {
+                        id: 22,
+                        type: "long",
+                        promptBefore: "Question 22. Chỗ trống (22):",
+                        promptAfter: "",
+                        correct: "walk",
+                        explanation: "Cụm từ đi dạo trong công viên là 'going for a walk in the park' nên điền 'walk'."
+                    },
+                    {
+                        id: 23,
+                        type: "long",
+                        promptBefore: "Question 23. Chỗ trống (23):",
+                        promptAfter: "",
+                        correct: "because",
+                        explanation: "Liên từ chỉ lý do 'bởi vì tớ muốn giúp mọi người khi họ không khỏe' là 'because'."
+                    },
+                    {
+                        id: 24,
+                        type: "long",
+                        promptBefore: "Question 24. Chỗ trống (24):",
+                        promptAfter: "",
+                        correct: "favourite",
+                        altCorrect: ["favorite"],
+                        explanation: "Cụm 'My favourite animal is a dog.' (Con vật yêu thích của tớ là chó) dùng từ 'favourite'."
+                    },
+                    {
+                        id: 25,
+                        type: "long",
+                        promptBefore: "Question 25. Chỗ trống (25):",
+                        promptAfter: "",
+                        correct: "growing",
+                        explanation: "Sau 'enjoy' là động từ thêm '-ing'; hoạt động trồng hoa trong vườn là 'growing' ('growing flowers')."
+                    }
                 ]
             },
             {
@@ -407,7 +548,8 @@
                             { key: "B", text: "B. She grows flowers in her free time." },
                             { key: "C", text: "C. She doesn’t enjoy table tennis." }
                         ],
-                        correct: "A"
+                        correct: "A",
+                        explanation: "Trong hình, bạn gái đang cầm vợt chơi bóng bàn nên câu đúng là 'A. She often plays table tennis in her free time.'."
                     },
                     {
                         id: 27,
@@ -419,7 +561,8 @@
                             { key: "B", text: "B. She grows flowers in her free time." },
                             { key: "C", text: "C. She doesn’t like planting flowers." }
                         ],
-                        correct: "B"
+                        correct: "B",
+                        explanation: "Trong hình, người làm vườn đang chăm sóc chậu hoa/cây trong vườn nên câu đúng là 'B. She grows flowers in her free time.'."
                     },
                     {
                         id: 28,
@@ -431,7 +574,8 @@
                             { key: "B", text: "B. She’s clever." },
                             { key: "C", text: "C. She’s helpful." }
                         ],
-                        correct: "A"
+                        correct: "A",
+                        explanation: "Hình minh họa các bạn nhỏ cười tươi, thân thiện khoác vai nhau nên chọn 'A. She’s friendly.'."
                     },
                     {
                         id: 29,
@@ -443,7 +587,8 @@
                             { key: "B", text: "B. Her favourite food is fish." },
                             { key: "C", text: "C. Her favourite food is chicken." }
                         ],
-                        correct: "A"
+                        correct: "A",
+                        explanation: "Trong hình, bạn gái đang ăn pizza nên câu đúng là 'A. Her favourite food is pizza.'."
                     },
                     {
                         id: 30,
@@ -455,7 +600,8 @@
                             { key: "B", text: "B. He has one dog." },
                             { key: "C", text: "C. He has two cats." }
                         ],
-                        correct: "A"
+                        correct: "A",
+                        explanation: "Trong hình, bạn nam đang dắt hai chú chó ('two dogs') nên câu đúng là 'A. He has two dogs.'."
                     }
                 ]
             }
@@ -488,6 +634,32 @@
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getStudentDisplayName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getStudentDisplayName();
+            const correctDisplay = q.type === "match" && typeof MATCH_ANSWERS !== "undefined"
+                ? `${q.correct}. ${MATCH_ANSWERS.find(m => m.key === q.correct)?.text || ""}`
+                : q.correct;
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Cô Linda chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(String(correctDisplay))}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -799,6 +971,7 @@
                     `;
                 }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
