@@ -298,16 +298,86 @@
                 title: "PART 1: Choose the correct answer",
                 subtitle: "Chọn dạng động từ đúng A, B hoặc C hoàn thành câu (Câu 1 – 10)",
                 questions: [
-                    { id: 1, type: "mcq", prompt: "Question 1. Sophia ________________ English very well.", options: [{ key: "A", text: "A. speak" }, { key: "B", text: "B. speaks" }, { key: "C", text: "C. speaking" }], correct: "B" },
-                    { id: 2, type: "mcq", prompt: "Question 2. Emily ________________ delicious cookies.", options: [{ key: "A", text: "A. make" }, { key: "B", text: "B. makes" }, { key: "C", text: "C. making" }], correct: "B" },
-                    { id: 3, type: "mcq", prompt: "Question 3. She ________________ with her parents.", options: [{ key: "A", text: "A. live" }, { key: "B", text: "B. lives" }, { key: "C", text: "C. living" }], correct: "B" },
-                    { id: 4, type: "mcq", prompt: "Question 4. Janet ________________ to be a singer.", options: [{ key: "A", text: "A. want" }, { key: "B", text: "B. wants" }, { key: "C", text: "C. wanting" }], correct: "B" },
-                    { id: 5, type: "mcq", prompt: "Question 5. Martin ________________ for a walk in the morning.", options: [{ key: "A", text: "A. go" }, { key: "B", text: "B. goes" }, { key: "C", text: "C. going" }], correct: "B" },
-                    { id: 6, type: "mcq", prompt: "Question 6. Martin ________________ for a walk in the morning.", options: [{ key: "A", text: "A. go" }, { key: "B", text: "B. goes" }, { key: "C", text: "C. going" }], correct: "B" },
-                    { id: 7, type: "mcq", prompt: "Question 7. Emily ________________ delicious cookies.", options: [{ key: "A", text: "A. make" }, { key: "B", text: "B. makes" }, { key: "C", text: "C. making" }], correct: "B" },
-                    { id: 8, type: "mcq", prompt: "Question 8. He ________________ a handsome salary.", options: [{ key: "A", text: "A. earn" }, { key: "B", text: "B. earns" }, { key: "C", text: "C. earning" }], correct: "B" },
-                    { id: 9, type: "mcq", prompt: "Question 9. Janet ________________ to be a singer.", options: [{ key: "A", text: "A. want" }, { key: "B", text: "B. wants" }, { key: "C", text: "C. wanting" }], correct: "B" },
-                    { id: 10, type: "mcq", prompt: "Question 10. I ________________ at a bank.", options: [{ key: "A", text: "A. work" }, { key: "B", text: "B. works" }, { key: "C", text: "C. working" }], correct: "A" }
+                    {
+                        id: 1,
+                        type: "mcq",
+                        prompt: "Question 1. Sophia ________________ English very well.",
+                        options: [{ key: "A", text: "A. speak" }, { key: "B", text: "B. speaks" }, { key: "C", text: "C. speaking" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'Sophia' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'speak' thêm '-s' thành 'speaks' (chọn B)."
+                    },
+                    {
+                        id: 2,
+                        type: "mcq",
+                        prompt: "Question 2. Emily ________________ delicious cookies.",
+                        options: [{ key: "A", text: "A. make" }, { key: "B", text: "B. makes" }, { key: "C", text: "C. making" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'Emily' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'make' thêm '-s' thành 'makes' (chọn B)."
+                    },
+                    {
+                        id: 3,
+                        type: "mcq",
+                        prompt: "Question 3. She ________________ with her parents.",
+                        options: [{ key: "A", text: "A. live" }, { key: "B", text: "B. lives" }, { key: "C", text: "C. living" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'She' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'live' thêm '-s' thành 'lives' (chọn B)."
+                    },
+                    {
+                        id: 4,
+                        type: "mcq",
+                        prompt: "Question 4. Janet ________________ to be a singer.",
+                        options: [{ key: "A", text: "A. want" }, { key: "B", text: "B. wants" }, { key: "C", text: "C. wanting" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'Janet' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'want' thêm '-s' thành 'wants' (chọn B)."
+                    },
+                    {
+                        id: 5,
+                        type: "mcq",
+                        prompt: "Question 5. Martin ________________ for a walk in the morning.",
+                        options: [{ key: "A", text: "A. go" }, { key: "B", text: "B. goes" }, { key: "C", text: "C. going" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'Martin' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'go' thêm '-es' thành 'goes' (chọn B)."
+                    },
+                    {
+                        id: 6,
+                        type: "mcq",
+                        prompt: "Question 6. Martin ________________ for a walk in the morning.",
+                        options: [{ key: "A", text: "A. go" }, { key: "B", text: "B. goes" }, { key: "C", text: "C. going" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'Martin' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'go' thêm '-es' thành 'goes' (chọn B)."
+                    },
+                    {
+                        id: 7,
+                        type: "mcq",
+                        prompt: "Question 7. Emily ________________ delicious cookies.",
+                        options: [{ key: "A", text: "A. make" }, { key: "B", text: "B. makes" }, { key: "C", text: "C. making" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'Emily' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'make' thêm '-s' thành 'makes' (chọn B)."
+                    },
+                    {
+                        id: 8,
+                        type: "mcq",
+                        prompt: "Question 8. He ________________ a handsome salary.",
+                        options: [{ key: "A", text: "A. earn" }, { key: "B", text: "B. earns" }, { key: "C", text: "C. earning" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'He' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'earn' thêm '-s' thành 'earns' (chọn B)."
+                    },
+                    {
+                        id: 9,
+                        type: "mcq",
+                        prompt: "Question 9. Janet ________________ to be a singer.",
+                        options: [{ key: "A", text: "A. want" }, { key: "B", text: "B. wants" }, { key: "C", text: "C. wanting" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'Janet' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'want' thêm '-s' thành 'wants' (chọn B)."
+                    },
+                    {
+                        id: 10,
+                        type: "mcq",
+                        prompt: "Question 10. I ________________ at a bank.",
+                        options: [{ key: "A", text: "A. work" }, { key: "B", text: "B. works" }, { key: "C", text: "C. working" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ là 'I' ở thì hiện tại đơn nên động từ giữ nguyên dạng 'work' (không thêm '-s' hay dùng '-ing' đứng một mình), chọn A."
+                    }
                 ]
             },
             {
@@ -316,16 +386,86 @@
                 subtitle: "Chọn câu trả lời phù hợp (a – j) cho từng câu hỏi (Câu 11 – 20)",
                 isMatchingPart: true,
                 questions: [
-                    { id: 11, type: "match", num: 1, prompt: "1. What do you want to eat?", correct: "c" },
-                    { id: 12, type: "match", num: 2, prompt: "2. What do you do on Saturdays?", correct: "h" },
-                    { id: 13, type: "match", num: 3, prompt: "3. Where’s he from?", correct: "b" },
-                    { id: 14, type: "match", num: 4, prompt: "4. Where’s your school?", correct: "j" },
-                    { id: 15, type: "match", num: 5, prompt: "5. What time do you get up?", correct: "g" },
-                    { id: 16, type: "match", num: 6, prompt: "6. When’s your birthday?", correct: "e" },
-                    { id: 17, type: "match", num: 7, prompt: "7. How many buildings are there at your school?", correct: "a" },
-                    { id: 18, type: "match", num: 8, prompt: "8. What subjects do you have today?", correct: "i" },
-                    { id: 19, type: "match", num: 9, prompt: "9. What time is it?", correct: "d" },
-                    { id: 20, type: "match", num: 10, prompt: "10. Where are you from?", correct: "f" }
+                    {
+                        id: 11,
+                        type: "match",
+                        num: 1,
+                        prompt: "1. What do you want to eat?",
+                        correct: "c",
+                        explanation: "Câu hỏi 'Bạn muốn ăn gì?' ứng với đáp án c: 'I want some jam.' (Tớ muốn ăn một ít mứt)."
+                    },
+                    {
+                        id: 12,
+                        type: "match",
+                        num: 2,
+                        prompt: "2. What do you do on Saturdays?",
+                        correct: "h",
+                        explanation: "Câu hỏi 'Bạn làm gì vào các ngày thứ Bảy?' ứng với đáp án h: 'I do housework.' (Tớ làm việc nhà)."
+                    },
+                    {
+                        id: 13,
+                        type: "match",
+                        num: 3,
+                        prompt: "3. Where’s he from?",
+                        correct: "b",
+                        explanation: "Câu hỏi 'Anh ấy đến từ đâu?' ứng với đáp án b: 'He's from Malaysia.' (Anh ấy đến từ Malaysia)."
+                    },
+                    {
+                        id: 14,
+                        type: "match",
+                        num: 4,
+                        prompt: "4. Where’s your school?",
+                        correct: "j",
+                        explanation: "Câu hỏi 'Trường của bạn ở đâu?' ứng với đáp án j: 'It's in the town.' (Trường ở thị trấn)."
+                    },
+                    {
+                        id: 15,
+                        type: "match",
+                        num: 5,
+                        prompt: "5. What time do you get up?",
+                        correct: "g",
+                        explanation: "Câu hỏi 'Bạn thức dậy lúc mấy giờ?' ứng với đáp án g: 'I get up at six o'clock.' (Tớ dậy lúc 6 giờ)."
+                    },
+                    {
+                        id: 16,
+                        type: "match",
+                        num: 6,
+                        prompt: "6. When’s your birthday?",
+                        correct: "e",
+                        explanation: "Câu hỏi 'Sinh nhật của bạn khi nào?' ứng với đáp án e: 'It's in March.' (Vào tháng Ba)."
+                    },
+                    {
+                        id: 17,
+                        type: "match",
+                        num: 7,
+                        prompt: "7. How many buildings are there at your school?",
+                        correct: "a",
+                        explanation: "Câu hỏi 'Có bao nhiêu tòa nhà ở trường bạn?' ứng với đáp án a: 'There are three buildings'."
+                    },
+                    {
+                        id: 18,
+                        type: "match",
+                        num: 8,
+                        prompt: "8. What subjects do you have today?",
+                        correct: "i",
+                        explanation: "Câu hỏi 'Hôm nay bạn có những môn học nào?' ứng với đáp án i: 'I have English.' (Tớ có môn Tiếng Anh)."
+                    },
+                    {
+                        id: 19,
+                        type: "match",
+                        num: 9,
+                        prompt: "9. What time is it?",
+                        correct: "d",
+                        explanation: "Câu hỏi 'Bây giờ là mấy giờ?' ứng với đáp án d: 'It's eight thirty.' (Bây giờ là 8 giờ 30)."
+                    },
+                    {
+                        id: 20,
+                        type: "match",
+                        num: 10,
+                        prompt: "10. Where are you from?",
+                        correct: "f",
+                        explanation: "Câu hỏi 'Bạn đến từ đâu?' ứng với đáp án f: 'I'm from America.' (Tớ đến từ nước Mỹ)."
+                    }
                 ]
             },
             {
@@ -336,10 +476,46 @@
                     { speaker: "Nick", text: "My name is Nick. I go to school from Mondays to Fridays. It is Wednesday today. I have PE, IT, music and English. Music is my favourite subject. I like it because I want to be a dancer. What is your favourite subject?" }
                 ],
                 questions: [
-                    { id: 21, type: "spell", promptPrefix: "Question 21. What is his name?", promptSuffix: "", length: 16, correct: "His name is Nick", altCorrect: ["Nick", "His name is Nick."] },
-                    { id: 22, type: "spell", promptPrefix: "Question 22. What day is it today?", promptSuffix: "", length: 15, correct: "It is Wednesday", altCorrect: ["Wednesday", "It's Wednesday", "It is Wednesday."] },
-                    { id: 23, type: "spell", promptPrefix: "Question 23. What is his favourite subject?", promptSuffix: "", length: 11, correct: "It is music", altCorrect: ["music", "It's music", "His favourite subject is music"] },
-                    { id: 24, type: "spell", promptPrefix: "Question 24. Why does he like this subject?", promptSuffix: "", length: 34, correct: "Because he wants to be a dancer", altCorrect: ["Because I want to be a dancer", "Because he wants to be a dancer."] }
+                    {
+                        id: 21,
+                        type: "spell",
+                        promptPrefix: "Question 21. What is his name?",
+                        promptSuffix: "",
+                        length: 16,
+                        correct: "His name is Nick",
+                        altCorrect: ["Nick", "His name is Nick."],
+                        explanation: "Câu đầu tiên viết 'My name is Nick.', khi hỏi 'What is his name?' ta trả lời 'His name is Nick' (hoặc 'Nick')."
+                    },
+                    {
+                        id: 22,
+                        type: "spell",
+                        promptPrefix: "Question 22. What day is it today?",
+                        promptSuffix: "",
+                        length: 15,
+                        correct: "It is Wednesday",
+                        altCorrect: ["Wednesday", "It's Wednesday", "It is Wednesday."],
+                        explanation: "Trong đoạn văn có câu 'It is Wednesday today.' nên câu trả lời đúng là 'It is Wednesday' (hoặc 'Wednesday')."
+                    },
+                    {
+                        id: 23,
+                        type: "spell",
+                        promptPrefix: "Question 23. What is his favourite subject?",
+                        promptSuffix: "",
+                        length: 11,
+                        correct: "It is music",
+                        altCorrect: ["music", "It's music", "His favourite subject is music"],
+                        explanation: "Đoạn văn viết 'Music is my favourite subject.' nên môn yêu thích của Nick là 'It is music' (hoặc 'music')."
+                    },
+                    {
+                        id: 24,
+                        type: "spell",
+                        promptPrefix: "Question 24. Why does he like this subject?",
+                        promptSuffix: "",
+                        length: 34,
+                        correct: "Because he wants to be a dancer",
+                        altCorrect: ["Because I want to be a dancer", "Because he wants to be a dancer."],
+                        explanation: "Nick thích môn âm nhạc vì muốn trở thành vũ công ('Because he wants to be a dancer')."
+                    }
                 ]
             }
         ];
@@ -371,6 +547,32 @@
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getStudentDisplayName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getStudentDisplayName();
+            const correctDisplay = q.type === "match" && typeof MATCH_ANSWERS !== "undefined"
+                ? `${q.correct}. ${MATCH_ANSWERS.find(m => m.key === q.correct)?.text || ""}`
+                : q.correct;
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Cô Linda chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(String(correctDisplay))}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -629,20 +831,21 @@
                             </select>
                         </div>
                     `;
-               } else if (q.type === "spell") {
-                  const currentVal = userAnswers[q.id] || "";
-                  html += `
-                      <div class="flex flex-col gap-2.5 text-base sm:text-lg font-extrabold text-slate-800">
-                          <span>${q.promptPrefix}</span>
-                          <input type="text" value="${escapeHtml(currentVal)}" ${isSubmitted ? 'disabled' : ''}
-                              oninput="handleLongInput(${q.id}, this.value)"
-                              placeholder="Con gõ câu trả lời vào đây nhé..."
-                              class="w-full px-4 py-3 rounded-2xl border-2 border-sky-400 focus:border-amber-500 focus:bg-amber-50/40 focus:outline-none font-bold text-base text-slate-800 bg-sky-50/40 transition"
-                          />
-                      </div>
-                  `;
-              }
+                } else if (q.type === "spell") {
+                    const currentVal = userAnswers[q.id] || "";
+                    html += `
+                        <div class="flex flex-col gap-2.5 text-base sm:text-lg font-extrabold text-slate-800">
+                            <span>${q.promptPrefix}</span>
+                            <input type="text" value="${escapeHtml(currentVal)}" ${isSubmitted ? 'disabled' : ''}
+                                oninput="handleLongInput(${q.id}, this.value)"
+                                placeholder="Con gõ câu trả lời vào đây nhé..."
+                                class="w-full px-4 py-3 rounded-2xl border-2 border-sky-400 focus:border-amber-500 focus:bg-amber-50/40 focus:outline-none font-bold text-base text-slate-800 bg-sky-50/40 transition"
+                            />
+                        </div>
+                    `;
+                }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
@@ -694,7 +897,7 @@
             renderPart();
         }
 
-       function handleLongInput(qId, val) {
+        function handleLongInput(qId, val) {
             if (isSubmitted) return;
             userAnswers[qId] = val;
             updateProgress();
