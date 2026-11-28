@@ -301,11 +301,46 @@
                 audioUrl: AUDIO_FILES.part1,
                 fallbackScript: "1. Nancy can skip rope very well. 2. Where is your school? 3. There are many clouds in the sky. 5. Let me take a look at my schedule. 6. The boys are playing football in the street.",
                 questions: [
-                    { id: 1, type: "mcq", prompt: "Question 1. Nancy can ______ rope very well.", options: [{ key: "A", text: "A. play" }, { key: "B", text: "B. skip" }, { key: "C", text: "C. swing" }, { key: "D", text: "D. skate" }], correct: "B" },
-                    { id: 2, type: "mcq", prompt: "Question 2. Where is your ______?", options: [{ key: "A", text: "A. house" }, { key: "B", text: "B. school" }, { key: "C", text: "C. home" }, { key: "D", text: "D. class" }], correct: "B" },
-                    { id: 3, type: "mcq", prompt: "Question 3. There are many ______ in the sky.", options: [{ key: "A", text: "A. birds" }, { key: "B", text: "B. cloud" }, { key: "C", text: "C. kites" }, { key: "D", text: "D. clouds" }], correct: "D" },
-                    { id: 4, type: "mcq", prompt: "Question 4. Let me take a look at my ______.", options: [{ key: "A", text: "A. timetable" }, { key: "B", text: "B. book" }, { key: "C", text: "C. schedule" }, { key: "D", text: "D. phone" }], correct: "C" },
-                    { id: 5, type: "mcq", prompt: "Question 5. The boys are playing ______ in the street.", options: [{ key: "A", text: "A. basketball" }, { key: "B", text: "B. baseball" }, { key: "C", text: "C. football" }, { key: "D", text: "D. tennis" }], correct: "C" }
+                    {
+                        id: 1,
+                        type: "mcq",
+                        prompt: "Question 1. Nancy can ______ rope very well.",
+                        options: [{ key: "A", text: "A. play" }, { key: "B", text: "B. skip" }, { key: "C", text: "C. swing" }, { key: "D", text: "D. skate" }],
+                        correct: "B",
+                        explanation: "Cụm từ 'skip rope' có nghĩa là nhảy dây ('Nancy can skip rope very well.' - Nancy có thể nhảy dây rất giỏi), nên chọn B."
+                    },
+                    {
+                        id: 2,
+                        type: "mcq",
+                        prompt: "Question 2. Where is your ______?",
+                        options: [{ key: "A", text: "A. house" }, { key: "B", text: "B. school" }, { key: "C", text: "C. home" }, { key: "D", text: "D. class" }],
+                        correct: "B",
+                        explanation: "Trong đoạn nghe câu 2, từ được đọc là 'school' ('Where is your school?' - Trường của bạn ở đâu?), nên chọn B."
+                    },
+                    {
+                        id: 3,
+                        type: "mcq",
+                        prompt: "Question 3. There are many ______ in the sky.",
+                        options: [{ key: "A", text: "A. birds" }, { key: "B", text: "B. cloud" }, { key: "C", text: "C. kites" }, { key: "D", text: "D. clouds" }],
+                        correct: "D",
+                        explanation: "Sau 'many' (nhiều) cần danh từ đếm được số nhiều; trong đoạn nghe là 'clouds' ('There are many clouds in the sky.'), nên chọn D."
+                    },
+                    {
+                        id: 4,
+                        type: "mcq",
+                        prompt: "Question 4. Let me take a look at my ______.",
+                        options: [{ key: "A", text: "A. timetable" }, { key: "B", text: "B. book" }, { key: "C", text: "C. schedule" }, { key: "D", text: "D. phone" }],
+                        correct: "C",
+                        explanation: "Trong đoạn nghe có câu 'Let me take a look at my schedule.' (Hãy để tớ xem thời khóa biểu/lịch trình của tớ), nên chọn C."
+                    },
+                    {
+                        id: 5,
+                        type: "mcq",
+                        prompt: "Question 5. The boys are playing ______ in the street.",
+                        options: [{ key: "A", text: "A. basketball" }, { key: "B", text: "B. baseball" }, { key: "C", text: "C. football" }, { key: "D", text: "D. tennis" }],
+                        correct: "C",
+                        explanation: "Trong đoạn nghe có câu 'The boys are playing football in the street.' (Các bạn trai đang chơi bóng đá trên đường), nên chọn C."
+                    }
                 ]
             },
             {
@@ -313,19 +348,110 @@
                 title: "PART 2: Reorder words",
                 subtitle: "Bấm vào các thẻ từ để sắp xếp thành câu hoàn chỉnh (Câu 6 – 18)",
                 questions: [
-                    { id: 6, type: "reorder", prompt: "Question 6.", words: ["When", "birthday?", "your", "is"], correct: "When is your birthday?" },
-                    { id: 7, type: "reorder", prompt: "Question 7.", words: ["the", "is", "today?", "date", "What"], correct: "What is the date today?" },
-                    { id: 8, type: "reorder", prompt: "Question 8.", words: ["and", "she", "does", "have", "Math?", "When", "English"], correct: "When does she have Math and English?" },
-                    { id: 9, type: "reorder", prompt: "Question 9.", words: ["of", "My", "is", "December.", "the", "birthday", "on", "second"], correct: "My birthday is on the second of December." },
-                    { id: 10, type: "reorder", prompt: "Question 10.", words: ["play", "you", "the", "Can", "guitar?"], correct: "Can you play the guitar?" },
-                    { id: 11, type: "reorder", prompt: "Question 11.", words: ["your", "sports", "Is", "October?", "day", "in"], correct: "Is your sports day in October?" },
-                    { id: 12, type: "reorder", prompt: "Question 12.", words: ["because", "English", "want", "to", "English", "be", "It’s", "I", "an", "teacher."], correct: "It’s because I want to be an English teacher." },
-                    { id: 13, type: "reorder", prompt: "Question 13.", words: ["your", "What’s", "subject?", "favourite"], correct: "What’s your favourite subject?" },
-                    { id: 14, type: "reorder", prompt: "Question 14.", words: ["you", "summer?", "were", "last", "Where"], correct: "Where were you last summer?" },
-                    { id: 15, type: "reorder", prompt: "Question 15.", words: ["buildings", "in", "your", "are", "many", "there", "school?", "How"], correct: "How many buildings are there in your school?" },
-                    { id: 16, type: "reorder", prompt: "Question 16.", words: ["you", "last", "at", "camp", "weekend?", "Were", "the"], correct: "Were you at the camp last weekend?" },
-                    { id: 17, type: "reorder", prompt: "Question 17.", words: ["today?", "do", "have", "you", "What", "subjects"], correct: "What subjects do you have today?" },
-                    { id: 18, type: "reorder", prompt: "Question 18.", words: ["When", "music?", "do", "you", "have"], correct: "When do you have music?" }
+                    {
+                        id: 6,
+                        type: "reorder",
+                        prompt: "Question 6.",
+                        words: ["When", "birthday?", "your", "is"],
+                        correct: "When is your birthday?",
+                        explanation: "Câu hỏi ngày sinh nhật chuẩn là 'When is your birthday?' (Sinh nhật của bạn khi nào?)."
+                    },
+                    {
+                        id: 7,
+                        type: "reorder",
+                        prompt: "Question 7.",
+                        words: ["the", "is", "today?", "date", "What"],
+                        correct: "What is the date today?",
+                        explanation: "Câu hỏi ngày tháng hôm nay xếp đúng thứ tự là: 'What is the date today?'."
+                    },
+                    {
+                        id: 8,
+                        type: "reorder",
+                        prompt: "Question 8.",
+                        words: ["and", "she", "does", "have", "Math?", "When", "English"],
+                        correct: "When does she have Math and English?",
+                        explanation: "Câu hỏi thời gian có môn Toán và Tiếng Anh của cô ấy xếp là: 'When does she have Math and English?'."
+                    },
+                    {
+                        id: 9,
+                        type: "reorder",
+                        prompt: "Question 9.",
+                        words: ["of", "My", "is", "December.", "the", "birthday", "on", "second"],
+                        correct: "My birthday is on the second of December.",
+                        explanation: "Câu nêu ngày sinh nhật theo thứ tự: 'My birthday is on the second of December.' (Sinh nhật của tớ vào ngày mùng 2 tháng 12)."
+                    },
+                    {
+                        id: 10,
+                        type: "reorder",
+                        prompt: "Question 10.",
+                        words: ["play", "you", "the", "Can", "guitar?"],
+                        correct: "Can you play the guitar?",
+                        explanation: "Câu hỏi khả năng chơi đàn ghi-ta đưa 'Can' lên đầu: 'Can you play the guitar?'."
+                    },
+                    {
+                        id: 11,
+                        type: "reorder",
+                        prompt: "Question 11.",
+                        words: ["your", "sports", "Is", "October?", "day", "in"],
+                        correct: "Is your sports day in October?",
+                        explanation: "Câu hỏi ngày hội thể thao có diễn ra vào tháng Mười không xếp là: 'Is your sports day in October?'."
+                    },
+                    {
+                        id: 12,
+                        type: "reorder",
+                        prompt: "Question 12.",
+                        words: ["because", "English", "want", "to", "English", "be", "It’s", "I", "an", "teacher."],
+                        correct: "It’s because I want to be an English teacher.",
+                        explanation: "Câu giải thích lý do xếp theo thứ tự: 'It's because I want to be an English teacher.'."
+                    },
+                    {
+                        id: 13,
+                        type: "reorder",
+                        prompt: "Question 13.",
+                        words: ["your", "What’s", "subject?", "favourite"],
+                        correct: "What’s your favourite subject?",
+                        explanation: "Câu hỏi môn học yêu thích chuẩn là: 'What's your favourite subject?'."
+                    },
+                    {
+                        id: 14,
+                        type: "reorder",
+                        prompt: "Question 14.",
+                        words: ["you", "summer?", "were", "last", "Where"],
+                        correct: "Where were you last summer?",
+                        explanation: "Câu hỏi ở đâu vào mùa hè năm ngoái dùng thì quá khứ: 'Where were you last summer?'."
+                    },
+                    {
+                        id: 15,
+                        type: "reorder",
+                        prompt: "Question 15.",
+                        words: ["buildings", "in", "your", "are", "many", "there", "school?", "How"],
+                        correct: "How many buildings are there in your school?",
+                        explanation: "Câu hỏi số lượng tòa nhà trong trường xếp đúng là: 'How many buildings are there in your school?'."
+                    },
+                    {
+                        id: 16,
+                        type: "reorder",
+                        prompt: "Question 16.",
+                        words: ["you", "last", "at", "camp", "weekend?", "Were", "the"],
+                        correct: "Were you at the camp last weekend?",
+                        explanation: "Câu hỏi ở trại cuối tuần trước xếp đúng thứ tự là: 'Were you at the camp last weekend?'."
+                    },
+                    {
+                        id: 17,
+                        type: "reorder",
+                        prompt: "Question 17.",
+                        words: ["today?", "do", "have", "you", "What", "subjects"],
+                        correct: "What subjects do you have today?",
+                        explanation: "Câu hỏi hôm nay bạn có những môn học nào xếp là: 'What subjects do you have today?'."
+                    },
+                    {
+                        id: 18,
+                        type: "reorder",
+                        prompt: "Question 18.",
+                        words: ["When", "music?", "do", "you", "have"],
+                        correct: "When do you have music?",
+                        explanation: "Câu hỏi khi nào bạn có môn âm nhạc xếp là: 'When do you have music?'."
+                    }
                 ]
             },
             {
@@ -338,15 +464,87 @@
                 ],
                 fallbackScript: "My school is in the village. There are twenty classrooms, two computer rooms and a beautiful garden. My favorite subject is music. I can play the piano and sing with my friends. It was our sports day yesterday. These activities there were fun. It was great. Tell me about your school.",
                 questions: [
-                    { id: 19, type: "spell", promptPrefix: "Question 19. Chỗ trống (19):", promptSuffix: "", length: 7, correct: "village" },
-                    { id: 20, type: "spell", promptPrefix: "Question 20. Chỗ trống (20):", promptSuffix: "", length: 6, correct: "twenty" },
-                    { id: 21, type: "spell", promptPrefix: "Question 21. Chỗ trống (21):", promptSuffix: "", length: 8, correct: "computer" },
-                    { id: 22, type: "spell", promptPrefix: "Question 22. Chỗ trống (22):", promptSuffix: "", length: 9, correct: "beautiful" },
-                    { id: 23, type: "spell", promptPrefix: "Question 23. Chỗ trống (23):", promptSuffix: "", length: 7, correct: "subject" },
-                    { id: 24, type: "spell", promptPrefix: "Question 24. Chỗ trống (24):", promptSuffix: "", length: 3, correct: "can" },
-                    { id: 25, type: "spell", promptPrefix: "Question 25. Chỗ trống (25):", promptSuffix: "", length: 6, correct: "sports" },
-                    { id: 26, type: "spell", promptPrefix: "Question 26. Chỗ trống (26):", promptSuffix: "", length: 10, correct: "activities" },
-                    { id: 27, type: "spell", promptPrefix: "Question 27. Chỗ trống (27):", promptSuffix: "", length: 6, correct: "school" }
+                    {
+                        id: 19,
+                        type: "spell",
+                        promptPrefix: "Question 19. Chỗ trống (19):",
+                        promptSuffix: "",
+                        length: 7,
+                        correct: "village",
+                        explanation: "Trong đoạn nghe mở đầu, ngôi trường nằm ở miền quê/làng ('in the village' - 7 chữ cái: v-i-l-l-a-g-e)."
+                    },
+                    {
+                        id: 20,
+                        type: "spell",
+                        promptPrefix: "Question 20. Chỗ trống (20):",
+                        promptSuffix: "",
+                        length: 6,
+                        correct: "twenty",
+                        explanation: "Số phòng học được nghe là hai mươi ('twenty' - 6 chữ cái: t-w-e-n-t-y)."
+                    },
+                    {
+                        id: 21,
+                        type: "spell",
+                        promptPrefix: "Question 21. Chỗ trống (21):",
+                        promptSuffix: "",
+                        length: 8,
+                        correct: "computer",
+                        explanation: "Cụm 'two computer rooms' (hai phòng tin học) dùng từ 'computer' (8 chữ cái)."
+                    },
+                    {
+                        id: 22,
+                        type: "spell",
+                        promptPrefix: "Question 22. Chỗ trống (22):",
+                        promptSuffix: "",
+                        length: 9,
+                        correct: "beautiful",
+                        explanation: "Tính từ miêu tả khu vườn được nghe là 'beautiful' (đẹp - 9 chữ cái: b-e-a-u-t-i-f-u-l)."
+                    },
+                    {
+                        id: 23,
+                        type: "spell",
+                        promptPrefix: "Question 23. Chỗ trống (23):",
+                        promptSuffix: "",
+                        length: 7,
+                        correct: "subject",
+                        explanation: "Câu 'My favorite subject is music.' dùng từ 'subject' (môn học - 7 chữ cái)."
+                    },
+                    {
+                        id: 24,
+                        type: "spell",
+                        promptPrefix: "Question 24. Chỗ trống (24):",
+                        promptSuffix: "",
+                        length: 3,
+                        correct: "can",
+                        explanation: "Động từ khuyết thiếu chỉ khả năng chơi đàn và hát là 'can' (3 chữ cái: c-a-n)."
+                    },
+                    {
+                        id: 25,
+                        type: "spell",
+                        promptPrefix: "Question 25. Chỗ trống (25):",
+                        promptSuffix: "",
+                        length: 6,
+                        correct: "sports",
+                        explanation: "Cụm 'sports day' (ngày hội thể thao) dùng từ 'sports' (6 chữ cái: s-p-o-r-t-s)."
+                    },
+                    {
+                        id: 26,
+                        type: "spell",
+                        promptPrefix: "Question 26. Chỗ trống (26):",
+                        promptSuffix: "",
+                        length: 10,
+                        correct: "activities",
+                        explanation: "Danh từ số nhiều chỉ các hoạt động vui chơi là 'activities' (10 chữ cái)."
+                    },
+                    {
+                        id: 27,
+                        type: "spell",
+                        promptPrefix: "Question 27. Chỗ trống (27):",
+                        promptSuffix: "",
+                        length: 6,
+                        correct: "school",
+                        explanation: "Câu kết thúc là 'Tell me about your school.' (Hãy kể cho tớ nghe về trường của bạn - 'school', 6 chữ cái)."
+                    }
                 ]
             }
         ];
@@ -378,6 +576,29 @@
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getStudentDisplayName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getStudentDisplayName();
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Cô Linda chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(q.correct)}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -673,6 +894,7 @@
                     `;
                 }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
