@@ -300,13 +300,69 @@
                 ],
                 fallbackScript: "My school is in the city. There are thirty classrooms, two computer rooms, a beautiful garden and a playground. My favorite subject is English. I like it because I want to become a translator in the future. I also love sports. Our last sports day was in March.",
                 questions: [
-                    { id: 1, type: "spell", promptPrefix: "Question 1. Chỗ trống (1):", promptSuffix: "", length: 4, correct: "city" },
-                    { id: 2, type: "spell", promptPrefix: "Question 2. Chỗ trống (2):", promptSuffix: "", length: 6, correct: "thirty" },
-                    { id: 3, type: "spell", promptPrefix: "Question 3. Chỗ trống (3):", promptSuffix: "", length: 13, correct: "computer rooms" },
-                    { id: 4, type: "spell", promptPrefix: "Question 4. Chỗ trống (4):", promptSuffix: "", length: 10, correct: "playground" },
-                    { id: 5, type: "spell", promptPrefix: "Question 5. Chỗ trống (5):", promptSuffix: "", length: 7, correct: "subject" },
-                    { id: 6, type: "spell", promptPrefix: "Question 6. Chỗ trống (6):", promptSuffix: "", length: 7, correct: "because" },
-                    { id: 7, type: "spell", promptPrefix: "Question 7. Chỗ trống (7):", promptSuffix: "", length: 6, correct: "sports" }
+                    {
+                        id: 1,
+                        type: "spell",
+                        promptPrefix: "Question 1. Chỗ trống (1):",
+                        promptSuffix: "",
+                        length: 4,
+                        correct: "city",
+                        explanation: "Trong đoạn nghe mở đầu, trường học nằm ở thành phố ('in the city' - 4 chữ cái: c-i-t-y)."
+                    },
+                    {
+                        id: 2,
+                        type: "spell",
+                        promptPrefix: "Question 2. Chỗ trống (2):",
+                        promptSuffix: "",
+                        length: 6,
+                        correct: "thirty",
+                        explanation: "Số lớp học được nghe là ba mươi ('thirty' - 6 chữ cái: t-h-i-r-t-y)."
+                    },
+                    {
+                        id: 3,
+                        type: "spell",
+                        promptPrefix: "Question 3. Chỗ trống (3):",
+                        promptSuffix: "",
+                        length: 13,
+                        correct: "computer rooms",
+                        explanation: "Sau 'two' là danh từ số nhiều 'computer rooms' (các phòng tin học)."
+                    },
+                    {
+                        id: 4,
+                        type: "spell",
+                        promptPrefix: "Question 4. Chỗ trống (4):",
+                        promptSuffix: "",
+                        length: 10,
+                        correct: "playground",
+                        explanation: "Khu vực chơi ngoài trời ở trường được nhắc tới là 'playground' (sân chơi - 10 chữ cái)."
+                    },
+                    {
+                        id: 5,
+                        type: "spell",
+                        promptPrefix: "Question 5. Chỗ trống (5):",
+                        promptSuffix: "",
+                        length: 7,
+                        correct: "subject",
+                        explanation: "Cụm từ 'My favorite subject is English.' (Môn học yêu thích của tớ là tiếng Anh) dùng từ 'subject'."
+                    },
+                    {
+                        id: 6,
+                        type: "spell",
+                        promptPrefix: "Question 6. Chỗ trống (6):",
+                        promptSuffix: "",
+                        length: 7,
+                        correct: "because",
+                        explanation: "Để nêu lý do 'vì tớ muốn trở thành người dịch', ta dùng liên từ 'because' (7 chữ cái)."
+                    },
+                    {
+                        id: 7,
+                        type: "spell",
+                        promptPrefix: "Question 7. Chỗ trống (7):",
+                        promptSuffix: "",
+                        length: 6,
+                        correct: "sports",
+                        explanation: "Cụm từ 'sports day' (ngày hội thể thao) cần từ 'sports' (6 chữ cái: s-p-o-r-t-s)."
+                    }
                 ]
             },
             {
@@ -314,13 +370,62 @@
                 title: "PART 2: Choose the correct answer",
                 subtitle: "Chọn đáp án đúng nhất A, B hoặc C (Câu 8 – 14)",
                 questions: [
-                    { id: 8, type: "mcq", prompt: "Question 8. Can she ______ a bike?", options: [{ key: "A", text: "A. ride" }, { key: "B", text: "B. rides" }, { key: "C", text: "C. riding" }], correct: "A" },
-                    { id: 9, type: "mcq", prompt: "Question 9. Where ______ she from?", options: [{ key: "A", text: "A. does" }, { key: "B", text: "B. are" }, { key: "C", text: "C. is" }], correct: "C" },
-                    { id: 10, type: "mcq", prompt: "Question 10. What ______ she want to drink?", options: [{ key: "A", text: "A. does" }, { key: "B", text: "B. do" }, { key: "C", text: "C. is" }], correct: "A" },
-                    { id: 11, type: "mcq", prompt: "Question 11. Why do you ______ English?", options: [{ key: "A", text: "A. favourite" }, { key: "B", text: "B. was" }, { key: "C", text: "C. like" }], correct: "C" },
-                    { id: 12, type: "mcq", prompt: "Question 12. Why do you like art? - ______ I want to be a painter.", options: [{ key: "A", text: "A. But" }, { key: "B", text: "B. And" }, { key: "C", text: "C. Because" }], correct: "C" },
-                    { id: 13, type: "mcq", prompt: "Question 13. ______ two playgrounds in my school.", options: [{ key: "A", text: "A. There" }, { key: "B", text: "B. There is" }, { key: "C", text: "C. There are" }], correct: "C" },
-                    { id: 14, type: "mcq", prompt: "Question 14. What do you do ______ Saturdays?", options: [{ key: "A", text: "A. on" }, { key: "B", text: "B. in" }, { key: "C", text: "C. at" }], correct: "A" }
+                    {
+                        id: 8,
+                        type: "mcq",
+                        prompt: "Question 8. Can she ______ a bike?",
+                        options: [{ key: "A", text: "A. ride" }, { key: "B", text: "B. rides" }, { key: "C", text: "C. riding" }],
+                        correct: "A",
+                        explanation: "Sau động từ khuyết thiếu 'Can' và chủ ngữ 'she', động từ chính giữ nguyên dạng 'ride' (không thêm -s hay -ing), nên chọn A."
+                    },
+                    {
+                        id: 9,
+                        type: "mcq",
+                        prompt: "Question 9. Where ______ she from?",
+                        options: [{ key: "A", text: "A. does" }, { key: "B", text: "B. are" }, { key: "C", text: "C. is" }],
+                        correct: "C",
+                        explanation: "Cấu trúc hỏi quê quán 'Where + tobe + S + from?' với chủ ngữ số ít 'she' dùng 'is': 'Where is she from?' (chọn C)."
+                    },
+                    {
+                        id: 10,
+                        type: "mcq",
+                        prompt: "Question 10. What ______ she want to drink?",
+                        options: [{ key: "A", text: "A. does" }, { key: "B", text: "B. do" }, { key: "C", text: "C. is" }],
+                        correct: "A",
+                        explanation: "Trong câu hỏi thì hiện tại đơn có động từ thường 'want' và chủ ngữ số ít 'she', ta dùng trợ động từ 'does' (chọn A)."
+                    },
+                    {
+                        id: 11,
+                        type: "mcq",
+                        prompt: "Question 11. Why do you ______ English?",
+                        options: [{ key: "A", text: "A. favourite" }, { key: "B", text: "B. was" }, { key: "C", text: "C. like" }],
+                        correct: "C",
+                        explanation: "Sau 'Why do you' cần một động từ chỉ sở thích/hành động: 'like' ('Why do you like English?' - Tại sao bạn thích tiếng Anh?), chọn C."
+                    },
+                    {
+                        id: 12,
+                        type: "mcq",
+                        prompt: "Question 12. Why do you like art? - ______ I want to be a painter.",
+                        options: [{ key: "A", text: "A. But" }, { key: "B", text: "B. And" }, { key: "C", text: "C. Because" }],
+                        correct: "C",
+                        explanation: "Câu hỏi bắt đầu bằng 'Why' (tại sao) thường được trả lời bằng 'Because' (bởi vì), nên chọn C."
+                    },
+                    {
+                        id: 13,
+                        type: "mcq",
+                        prompt: "Question 13. ______ two playgrounds in my school.",
+                        options: [{ key: "A", text: "A. There" }, { key: "B", text: "B. There is" }, { key: "C", text: "C. There are" }],
+                        correct: "C",
+                        explanation: "'two playgrounds' là danh từ số nhiều nên cấu trúc 'Có...' dùng 'There are' ('There are two playgrounds...'), chọn C."
+                    },
+                    {
+                        id: 14,
+                        type: "mcq",
+                        prompt: "Question 14. What do you do ______ Saturdays?",
+                        options: [{ key: "A", text: "A. on" }, { key: "B", text: "B. in" }, { key: "C", text: "C. at" }],
+                        correct: "A",
+                        explanation: "Trước các thứ trong tuần như 'Saturdays' (những ngày thứ Bảy), ta dùng giới từ 'on' ('on Saturdays'), chọn A."
+                    }
                 ]
             },
             {
@@ -332,11 +437,51 @@
                     { speaker: "Yuko", text: "Hello, my name is Yuko. I am ten years old. I'm from <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(15)___</span>. I study in a school in London. There is a big <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(16)___</span> at my school. My favourite subject is <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(17)___</span>. I also like computers a lot! There are two <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(18)___</span> where we learn IT every Wednesday. After school, I often go for a walk in the <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(19)___</span> with my friends." }
                 ],
                 questions: [
-                    { id: 15, type: "spell", promptPrefix: "Question 15. Chỗ trống (15):", promptSuffix: "", length: 5, correct: "Japan" },
-                    { id: 16, type: "spell", promptPrefix: "Question 16. Chỗ trống (16):", promptSuffix: "", length: 6, correct: "garden" },
-                    { id: 17, type: "spell", promptPrefix: "Question 17. Chỗ trống (17):", promptSuffix: "", length: 3, correct: "art" },
-                    { id: 18, type: "spell", promptPrefix: "Question 18. Chỗ trống (18):", promptSuffix: "", length: 14, correct: "computer rooms" },
-                    { id: 19, type: "spell", promptPrefix: "Question 19. Chỗ trống (19):", promptSuffix: "", length: 4, correct: "park" }
+                    {
+                        id: 15,
+                        type: "spell",
+                        promptPrefix: "Question 15. Chỗ trống (15):",
+                        promptSuffix: "",
+                        length: 5,
+                        correct: "Japan",
+                        explanation: "Tên Yuko và câu 'I'm from ...' (5 chữ cái) ứng với tên nước 'Japan' (Nhật Bản)."
+                    },
+                    {
+                        id: 16,
+                        type: "spell",
+                        promptPrefix: "Question 16. Chỗ trống (16):",
+                        promptSuffix: "",
+                        length: 6,
+                        correct: "garden",
+                        explanation: "Sau 'There is a big' và trước 'at my school' (6 chữ cái) là từ 'garden' (khu vườn)."
+                    },
+                    {
+                        id: 17,
+                        type: "spell",
+                        promptPrefix: "Question 17. Chỗ trống (17):",
+                        promptSuffix: "",
+                        length: 3,
+                        correct: "art",
+                        explanation: "Môn học yêu thích gồm 3 chữ cái trong từ gợi ý là 'art' (môn Mỹ thuật)."
+                    },
+                    {
+                        id: 18,
+                        type: "spell",
+                        promptPrefix: "Question 18. Chỗ trống (18):",
+                        promptSuffix: "",
+                        length: 14,
+                        correct: "computer rooms",
+                        explanation: "Nơi học môn tin học (IT) gồm hai phòng là 'computer rooms' (14 ký tự)."
+                    },
+                    {
+                        id: 19,
+                        type: "spell",
+                        promptPrefix: "Question 19. Chỗ trống (19):",
+                        promptSuffix: "",
+                        length: 4,
+                        correct: "park",
+                        explanation: "Cụm từ đi dạo sau giờ học là 'go for a walk in the park' (đi dạo trong công viên - 'park', 4 chữ cái)."
+                    }
                 ]
             },
             {
@@ -347,11 +492,51 @@
                     { speaker: "Nicky", text: "Hi, I’m Nicky. This is my school. It’s in Sydney. It has four buildings, a gym and an art room. We study PE at the gym on Tuesdays. On Mondays we have art. It is my favourite subject. To me, art is fun!" }
                 ],
                 questions: [
-                    { id: 20, type: "spell", promptPrefix: "Question 20. Where is Nicky’s school?", promptSuffix: "", length: 6, correct: "Sydney" },
-                    { id: 21, type: "spell", promptPrefix: "Question 21. How many buildings are there in his school?", promptSuffix: "", length: 4, correct: "four" },
-                    { id: 22, type: "spell", promptPrefix: "Question 22. Where does he study PE?", promptSuffix: "", length: 3, correct: "gym" },
-                    { id: 23, type: "spell", promptPrefix: "Question 23. What is his favourite subject?", promptSuffix: "", length: 3, correct: "art" },
-                    { id: 24, type: "spell", promptPrefix: "Question 24. When does he have his favourite subject?", promptSuffix: "", length: 7, correct: "Mondays" }
+                    {
+                        id: 20,
+                        type: "spell",
+                        promptPrefix: "Question 20. Where is Nicky’s school?",
+                        promptSuffix: "",
+                        length: 6,
+                        correct: "Sydney",
+                        explanation: "Trong đoạn văn có câu 'This is my school. It's in Sydney.' nên đáp án 1 từ là 'Sydney'."
+                    },
+                    {
+                        id: 21,
+                        type: "spell",
+                        promptPrefix: "Question 21. How many buildings are there in his school?",
+                        promptSuffix: "",
+                        length: 4,
+                        correct: "four",
+                        explanation: "Đoạn văn viết 'It has four buildings' (Có bốn tòa nhà), nên đáp án là 'four'."
+                    },
+                    {
+                        id: 22,
+                        type: "spell",
+                        promptPrefix: "Question 22. Where does he study PE?",
+                        promptSuffix: "",
+                        length: 3,
+                        correct: "gym",
+                        explanation: "Đoạn văn viết 'We study PE at the gym' (Học thể dục ở phòng thể chất), nên đáp án là 'gym'."
+                    },
+                    {
+                        id: 23,
+                        type: "spell",
+                        promptPrefix: "Question 23. What is his favourite subject?",
+                        promptSuffix: "",
+                        length: 3,
+                        correct: "art",
+                        explanation: "Nicky viết 'On Mondays we have art. It is my favourite subject.' nên môn yêu thích là 'art'."
+                    },
+                    {
+                        id: 24,
+                        type: "spell",
+                        promptPrefix: "Question 24. When does he have his favourite subject?",
+                        promptSuffix: "",
+                        length: 7,
+                        correct: "Mondays",
+                        explanation: "Nicky có môn yêu thích (art) vào các ngày thứ Hai: 'On Mondays', nên đáp án là 'Mondays'."
+                    }
                 ]
             },
             {
@@ -359,15 +544,78 @@
                 title: "PART 5: Reorder words",
                 subtitle: "Bấm vào các thẻ từ để sắp xếp thành câu hoàn chỉnh (Câu 25 – 33)",
                 questions: [
-                    { id: 25, type: "reorder", prompt: "Question 25.", words: ["at", "six", "up", "thirty.", "I", "get"], correct: "I get up at six thirty." },
-                    { id: 26, type: "reorder", prompt: "Question 26.", words: ["listen", "I", "Mondays", "to", "on", "music"], correct: "I listen to music on Mondays" },
-                    { id: 27, type: "reorder", prompt: "Question 27.", words: ["you", "do", "on", "What", "do", "Mondays?"], correct: "What do you do on Mondays?" },
-                    { id: 28, type: "reorder", prompt: "Question 28.", words: ["do", "time", "school?", "you", "What", "go", "to"], correct: "What time do you go to school?" },
-                    { id: 29, type: "reorder", prompt: "Question 29.", words: ["What", "day", "today?", "is", "it"], correct: "What day is it today?" },
-                    { id: 30, type: "reorder", prompt: "Question 30.", words: ["some", "to", "want", "I", "eat", "chips."], correct: "I want to eat some chips." },
-                    { id: 31, type: "reorder", prompt: "Question 31.", words: ["Ha", "very", "well.", "can", "draw"], correct: "Ha can draw very well." },
-                    { id: 32, type: "reorder", prompt: "Question 32.", words: ["you", "eat?", "do", "to", "What", "want"], correct: "What do you want to eat?" },
-                    { id: 33, type: "reorder", prompt: "Question 33.", words: ["does", "Mai", "have", "time", "breakfast?", "What"], correct: "What time does Mai have breakfast?" }
+                    {
+                        id: 25,
+                        type: "reorder",
+                        prompt: "Question 25.",
+                        words: ["at", "six", "up", "thirty.", "I", "get"],
+                        correct: "I get up at six thirty.",
+                        explanation: "Câu kể giờ thức dậy theo thứ tự: 'I get up at six thirty.' (Tớ thức dậy lúc 6 giờ 30)."
+                    },
+                    {
+                        id: 26,
+                        type: "reorder",
+                        prompt: "Question 26.",
+                        words: ["listen", "I", "Mondays", "to", "on", "music"],
+                        correct: "I listen to music on Mondays",
+                        explanation: "Thứ tự đúng của câu là: 'I listen to music on Mondays' (Tớ nghe nhạc vào các ngày thứ Hai)."
+                    },
+                    {
+                        id: 27,
+                        type: "reorder",
+                        prompt: "Question 27.",
+                        words: ["you", "do", "on", "What", "do", "Mondays?"],
+                        correct: "What do you do on Mondays?",
+                        explanation: "Câu hỏi 'Bạn làm gì vào các ngày thứ Hai?' xếp đúng là: 'What do you do on Mondays?'."
+                    },
+                    {
+                        id: 28,
+                        type: "reorder",
+                        prompt: "Question 28.",
+                        words: ["do", "time", "school?", "you", "What", "go", "to"],
+                        correct: "What time do you go to school?",
+                        explanation: "Câu hỏi mấy giờ đi học bắt đầu bằng 'What time do you go to school?'."
+                    },
+                    {
+                        id: 29,
+                        type: "reorder",
+                        prompt: "Question 29.",
+                        words: ["What", "day", "today?", "is", "it"],
+                        correct: "What day is it today?",
+                        explanation: "Câu hỏi hôm nay là thứ mấy xếp đúng là: 'What day is it today?'."
+                    },
+                    {
+                        id: 30,
+                        type: "reorder",
+                        prompt: "Question 30.",
+                        words: ["some", "to", "want", "I", "eat", "chips."],
+                        correct: "I want to eat some chips.",
+                        explanation: "Cấu trúc 'want to + V' với tân ngữ 'some chips' xếp thành: 'I want to eat some chips.'."
+                    },
+                    {
+                        id: 31,
+                        type: "reorder",
+                        prompt: "Question 31.",
+                        words: ["Ha", "very", "well.", "can", "draw"],
+                        correct: "Ha can draw very well.",
+                        explanation: "Sau 'Ha can' là động từ nguyên thể 'draw' và trạng từ 'very well.': 'Ha can draw very well.'."
+                    },
+                    {
+                        id: 32,
+                        type: "reorder",
+                        prompt: "Question 32.",
+                        words: ["you", "eat?", "do", "to", "What", "want"],
+                        correct: "What do you want to eat?",
+                        explanation: "Câu hỏi 'Bạn muốn ăn gì?' xếp đúng thứ tự là: 'What do you want to eat?'."
+                    },
+                    {
+                        id: 33,
+                        type: "reorder",
+                        prompt: "Question 33.",
+                        words: ["does", "Mai", "have", "time", "breakfast?", "What"],
+                        correct: "What time does Mai have breakfast?",
+                        explanation: "Câu hỏi Mai ăn sáng lúc mấy giờ với chủ ngữ số ít 'Mai' dùng trợ động từ 'does': 'What time does Mai have breakfast?'."
+                    }
                 ]
             }
         ];
@@ -399,6 +647,29 @@
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getStudentDisplayName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getStudentDisplayName();
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Cô Linda chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(q.correct)}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -703,6 +974,7 @@
                     `;
                 }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
