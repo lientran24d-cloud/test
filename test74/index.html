@@ -285,14 +285,76 @@
                     { speaker: "Đoạn 2 (Câu 5–8)", text: "My name is Minh. I go to school from Mondays to Fridays. I have Vietnamese and maths every school day. I have English on Mondays, Thursdays and Fridays. I have science on Wednesdays and Thursdays. I have music on Tuesdays. I like music very much." }
                 ],
                 questions: [
-                    { id: 1, type: "long", promptBefore: "Question 1. Our school is in the", promptAfter: ".", correct: "village" },
-                    { id: 2, type: "long", promptBefore: "Question 2. There are", promptAfter: "buildings at our school.", correct: "three", altCorrect: ["3"] },
-                    { id: 3, type: "long", promptBefore: "Question 3. There is a", promptAfter: "many trees and flowers.", correct: "garden with", altCorrect: ["garden has"] },
-                    { id: 4, type: "long", promptBefore: "Question 4. We can play sports in", promptAfter: ".", correct: "the playground", altCorrect: ["a big playground", "playground"] },
-                    { id: 5, type: "long", promptBefore: "Question 5. Minh has", promptAfter: "every school day.", correct: "Vietnamese and maths", altCorrect: ["maths and Vietnamese"] },
-                    { id: 6, type: "long", promptBefore: "Question 6. He has English on Mondays,", promptAfter: ".", correct: "Thursdays and Fridays", altCorrect: ["Thursdays, and Fridays"] },
-                    { id: 7, type: "long", promptBefore: "Question 7. He has music on", promptAfter: ".", correct: "Tuesdays", altCorrect: ["Tuesday"] },
-                    { id: 8, type: "long", promptBefore: "Question 8. He like", promptAfter: "very much.", correct: "music" }
+                    {
+                        id: 1,
+                        type: "long",
+                        promptBefore: "Question 1. Our school is in the",
+                        promptAfter: ".",
+                        correct: "village",
+                        explanation: "Trong đoạn 1 có câu 'It is in the village.' nên từ còn thiếu là 'village' (ngôi làng)."
+                    },
+                    {
+                        id: 2,
+                        type: "long",
+                        promptBefore: "Question 2. There are",
+                        promptAfter: "buildings at our school.",
+                        correct: "three",
+                        altCorrect: ["3"],
+                        explanation: "Đoạn 1 viết 'There are three buildings and a garden at our school.' nên đáp án là 'three' (ba)."
+                    },
+                    {
+                        id: 3,
+                        type: "long",
+                        promptBefore: "Question 3. There is a",
+                        promptAfter: "many trees and flowers.",
+                        correct: "garden with",
+                        altCorrect: ["garden has"],
+                        explanation: "Trong đoạn 1, khu vườn có nhiều cây và hoa: 'The garden has many trees and flowers.' nên điền 'garden with' (hoặc 'garden has')."
+                    },
+                    {
+                        id: 4,
+                        type: "long",
+                        promptBefore: "Question 4. We can play sports in",
+                        promptAfter: ".",
+                        correct: "the playground",
+                        altCorrect: ["a big playground", "playground"],
+                        explanation: "Đoạn 1 viết 'There is a big playground. We can play football, badminton and volleyball there.' nên điền 'the playground'."
+                    },
+                    {
+                        id: 5,
+                        type: "long",
+                        promptBefore: "Question 5. Minh has",
+                        promptAfter: "every school day.",
+                        correct: "Vietnamese and maths",
+                        altCorrect: ["maths and Vietnamese"],
+                        explanation: "Trong đoạn 2, Minh viết 'I have Vietnamese and maths every school day.' nên điền 'Vietnamese and maths'."
+                    },
+                    {
+                        id: 6,
+                        type: "long",
+                        promptBefore: "Question 6. He has English on Mondays,",
+                        promptAfter: ".",
+                        correct: "Thursdays and Fridays",
+                        altCorrect: ["Thursdays, and Fridays"],
+                        explanation: "Đoạn 2 viết 'I have English on Mondays, Thursdays and Fridays.' nên phần còn lại là 'Thursdays and Fridays'."
+                    },
+                    {
+                        id: 7,
+                        type: "long",
+                        promptBefore: "Question 7. He has music on",
+                        promptAfter: ".",
+                        correct: "Tuesdays",
+                        altCorrect: ["Tuesday"],
+                        explanation: "Đoạn 2 viết 'I have music on Tuesdays.' nên điền 'Tuesdays'."
+                    },
+                    {
+                        id: 8,
+                        type: "long",
+                        promptBefore: "Question 8. He like",
+                        promptAfter: "very much.",
+                        correct: "music",
+                        explanation: "Câu cuối đoạn 2 viết 'I like music very much.' nên môn Minh thích nhất là 'music' (âm nhạc)."
+                    }
                 ]
             },
             {
@@ -303,10 +365,38 @@
                     { speaker: "Bill's Letter", text: "Dear pen friend,<br>My name’s Bill. I’m from Britain. I’m nine years old. My birthday’s in March. It’s coming soon. I want some chips and some lemonade at my party. What about you? When’s your birthday? What do you want to eat and drink at your party?<br>Write to me soon.<br>Bill" }
                 ],
                 questions: [
-                    { id: 9, type: "mcq", prompt: "Question 9. He wants some ____.", options: [{ key: "A", text: "A. chips" }, { key: "B", text: "B. grapes" }, { key: "C", text: "C. jam" }], correct: "A" },
-                    { id: 10, type: "mcq", prompt: "Question 10. Bill is from ______.", options: [{ key: "A", text: "A. America" }, { key: "B", text: "B. Britain" }, { key: "C", text: "C. Australia" }], correct: "B" },
-                    { id: 11, type: "mcq", prompt: "Question 11. He want some _____.", options: [{ key: "A", text: "A. milk" }, { key: "B", text: "B. lemonade" }, { key: "C", text: "C. water" }], correct: "B" },
-                    { id: 12, type: "mcq", prompt: "Question 12. His birthday is in ____.", options: [{ key: "A", text: "A. March" }, { key: "B", text: "B. January" }, { key: "C", text: "C. April" }], correct: "A" }
+                    {
+                        id: 9,
+                        type: "mcq",
+                        prompt: "Question 9. He wants some ____.",
+                        options: [{ key: "A", text: "A. chips" }, { key: "B", text: "B. grapes" }, { key: "C", text: "C. jam" }],
+                        correct: "A",
+                        explanation: "Trong thư, Bill viết 'I want some chips and some lemonade at my party.' nên đáp án là 'A. chips'."
+                    },
+                    {
+                        id: 10,
+                        type: "mcq",
+                        prompt: "Question 10. Bill is from ______.",
+                        options: [{ key: "A", text: "A. America" }, { key: "B", text: "B. Britain" }, { key: "C", text: "C. Australia" }],
+                        correct: "B",
+                        explanation: "Bill viết 'I’m from Britain.' (Tớ đến từ nước Anh), nên chọn 'B. Britain'."
+                    },
+                    {
+                        id: 11,
+                        type: "mcq",
+                        prompt: "Question 11. He want some _____.",
+                        options: [{ key: "A", text: "A. milk" }, { key: "B", text: "B. lemonade" }, { key: "C", text: "C. water" }],
+                        correct: "B",
+                        explanation: "Bill muốn có khoai tây chiên và nước chanh ('some chips and some lemonade') ở bữa tiệc của mình, nên chọn 'B. lemonade'."
+                    },
+                    {
+                        id: 12,
+                        type: "mcq",
+                        prompt: "Question 12. His birthday is in ____.",
+                        options: [{ key: "A", text: "A. March" }, { key: "B", text: "B. January" }, { key: "C", text: "C. April" }],
+                        correct: "A",
+                        explanation: "Bill viết 'My birthday’s in March.' (Sinh nhật của tớ vào tháng Ba), nên chọn 'A. March'."
+                    }
                 ]
             },
             {
@@ -316,8 +406,22 @@
                 audioUrl: AUDIO_PART_3,
                 fallbackScript: "One. I listen to music. Two. I study at school.",
                 questions: [
-                    { id: 13, type: "mcq", prompt: "Question 13.", options: [{ key: "A", text: "A. I listen to music." }, { key: "B", text: "B. I stay at home on Sundays." }, { key: "C", text: "C. I study at school." }], correct: "A" },
-                    { id: 14, type: "mcq", prompt: "Question 14.", options: [{ key: "A", text: "A. I listen to music." }, { key: "B", text: "B. I study at school." }, { key: "C", text: "C. I like music." }], correct: "B" }
+                    {
+                        id: 13,
+                        type: "mcq",
+                        prompt: "Question 13.",
+                        options: [{ key: "A", text: "A. I listen to music." }, { key: "B", text: "B. I stay at home on Sundays." }, { key: "C", text: "C. I study at school." }],
+                        correct: "A",
+                        explanation: "Ở câu One trong file nghe, người nói đọc: 'I listen to music.' (Tớ nghe nhạc), nên chọn A."
+                    },
+                    {
+                        id: 14,
+                        type: "mcq",
+                        prompt: "Question 14.",
+                        options: [{ key: "A", text: "A. I listen to music." }, { key: "B", text: "B. I study at school." }, { key: "C", text: "C. I like music." }],
+                        correct: "B",
+                        explanation: "Ở câu Two trong file nghe, người nói đọc: 'I study at school.' (Tớ học ở trường), nên chọn B."
+                    }
                 ]
             },
             {
@@ -325,16 +429,86 @@
                 title: "PART 4: Choose the correct answer (15 – 24)",
                 subtitle: "Chọn dạng động từ đúng A, B hoặc C hoàn thành câu (Câu 15 – 24)",
                 questions: [
-                    { id: 15, type: "mcq", prompt: "Question 15. Jo is so smart that she _______ every exam without even trying.", options: [{ key: "A", text: "A. pass" }, { key: "B", text: "B. passes" }, { key: "C", text: "C. is passes" }], correct: "B" },
-                    { id: 16, type: "mcq", prompt: "Question 16. John always _______ on time for meetings.", options: [{ key: "A", text: "A. arrives" }, { key: "B", text: "B. are arriving" }, { key: "C", text: "C. is arriving" }], correct: "A" },
-                    { id: 17, type: "mcq", prompt: "Question 17. It ______ almost every day in Manchester.", options: [{ key: "A", text: "A. rain" }, { key: "B", text: "B. rains" }, { key: "C", text: "C. raines" }], correct: "B" },
-                    { id: 18, type: "mcq", prompt: "Question 18. I ____ (be) a student.", options: [{ key: "A", text: "A. am" }, { key: "B", text: "B. is" }, { key: "C", text: "C. are" }], correct: "A" },
-                    { id: 19, type: "mcq", prompt: "Question 19. I ________ (not, know) what you mean.", options: [{ key: "A", text: "A. doesn’t know" }, { key: "B", text: "B. not know" }, { key: "C", text: "C. don’t know" }], correct: "C" },
-                    { id: 20, type: "mcq", prompt: "Question 20. John ______ (work) in a supermarket.", options: [{ key: "A", text: "A. works" }, { key: "B", text: "B. working" }, { key: "C", text: "C. work" }], correct: "A" },
-                    { id: 21, type: "mcq", prompt: "Question 21. barbara usually ________ dinner for her husband after work.", options: [{ key: "A", text: "A. cooks" }, { key: "B", text: "B. are cooking" }, { key: "C", text: "C. is cooking" }], correct: "A" },
-                    { id: 22, type: "mcq", prompt: "Question 22. My father _______ excuses when I feel like going to the cinema.", options: [{ key: "A", text: "A. make always" }, { key: "B", text: "B. make always" }, { key: "C", text: "C. always makes" }], correct: "C" },
-                    { id: 23, type: "mcq", prompt: "Question 23. The flowers ___________ (be, normally) watered by Bob.", options: [{ key: "A", text: "A. are normally" }, { key: "B", text: "B. normally are" }, { key: "C", text: "C. normally is" }], correct: "A" },
-                    { id: 24, type: "mcq", prompt: "Question 24. My parents normally ________ breakfast at 7:00 a.m.", options: [{ key: "A", text: "A. eat" }, { key: "B", text: "B. are eating" }, { key: "C", text: "C. is eating" }], correct: "A" }
+                    {
+                        id: 15,
+                        type: "mcq",
+                        prompt: "Question 15. Jo is so smart that she _______ every exam without even trying.",
+                        options: [{ key: "A", text: "A. pass" }, { key: "B", text: "B. passes" }, { key: "C", text: "C. is passes" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'she' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'pass' kết thúc bằng '-ss' thêm '-es' thành 'passes', chọn B."
+                    },
+                    {
+                        id: 16,
+                        type: "mcq",
+                        prompt: "Question 16. John always _______ on time for meetings.",
+                        options: [{ key: "A", text: "A. arrives" }, { key: "B", text: "B. are arriving" }, { key: "C", text: "C. is arriving" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ 'John' là số ít có 'always' (hiện tại đơn) nên động từ 'arrive' thêm '-s' thành 'arrives', chọn A."
+                    },
+                    {
+                        id: 17,
+                        type: "mcq",
+                        prompt: "Question 17. It ______ almost every day in Manchester.",
+                        options: [{ key: "A", text: "A. rain" }, { key: "B", text: "B. rains" }, { key: "C", text: "C. raines" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'It' ở thì hiện tại đơn nên động từ 'rain' thêm '-s' thành 'rains' (không viết 'raines'), chọn B."
+                    },
+                    {
+                        id: 18,
+                        type: "mcq",
+                        prompt: "Question 18. I ____ (be) a student.",
+                        options: [{ key: "A", text: "A. am" }, { key: "B", text: "B. is" }, { key: "C", text: "C. are" }],
+                        correct: "A",
+                        explanation: "Động từ tobe đi với chủ ngữ 'I' ở thì hiện tại đơn là 'am' ('I am a student.'), chọn A."
+                    },
+                    {
+                        id: 19,
+                        type: "mcq",
+                        prompt: "Question 19. I ________ (not, know) what you mean.",
+                        options: [{ key: "A", text: "A. doesn’t know" }, { key: "B", text: "B. not know" }, { key: "C", text: "C. don’t know" }],
+                        correct: "C",
+                        explanation: "Với chủ ngữ 'I' ở thì hiện tại đơn, câu phủ định dùng trợ động từ 'don't' + động từ nguyên thể 'know': 'I don't know...', chọn C."
+                    },
+                    {
+                        id: 20,
+                        type: "mcq",
+                        prompt: "Question 20. John ______ (work) in a supermarket.",
+                        options: [{ key: "A", text: "A. works" }, { key: "B", text: "B. working" }, { key: "C", text: "C. work" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ 'John' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'work' thêm '-s' thành 'works', chọn A."
+                    },
+                    {
+                        id: 21,
+                        type: "mcq",
+                        prompt: "Question 21. barbara usually ________ dinner for her husband after work.",
+                        options: [{ key: "A", text: "A. cooks" }, { key: "B", text: "B. are cooking" }, { key: "C", text: "C. is cooking" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ 'Barbara' là số ít có 'usually' (hiện tại đơn) nên động từ 'cook' thêm '-s' thành 'cooks', chọn A."
+                    },
+                    {
+                        id: 22,
+                        type: "mcq",
+                        prompt: "Question 22. My father _______ excuses when I feel like going to the cinema.",
+                        options: [{ key: "A", text: "A. make always" }, { key: "B", text: "B. make always" }, { key: "C", text: "C. always makes" }],
+                        correct: "C",
+                        explanation: "Trạng từ tần suất 'always' đứng trước động từ chính, và chủ ngữ 'My father' là số ít nên chia thành 'always makes', chọn C."
+                    },
+                    {
+                        id: 23,
+                        type: "mcq",
+                        prompt: "Question 23. The flowers ___________ (be, normally) watered by Bob.",
+                        options: [{ key: "A", text: "A. are normally" }, { key: "B", text: "B. normally are" }, { key: "C", text: "C. normally is" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ 'The flowers' là số nhiều nên dùng 'are', và trạng từ 'normally' đứng sau động từ tobe: 'are normally', chọn A."
+                    },
+                    {
+                        id: 24,
+                        type: "mcq",
+                        prompt: "Question 24. My parents normally ________ breakfast at 7:00 a.m.",
+                        options: [{ key: "A", text: "A. eat" }, { key: "B", text: "B. are eating" }, { key: "C", text: "C. is eating" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ 'My parents' (bố mẹ) là danh từ số nhiều có 'normally' (hiện tại đơn) nên động từ giữ nguyên 'eat', chọn A."
+                    }
                 ]
             },
             {
@@ -342,16 +516,86 @@
                 title: "PART 5: Choose the correct answer (25 – 34)",
                 subtitle: "Chọn dạng động từ đúng A, B hoặc C hoàn thành câu (Câu 25 – 34)",
                 questions: [
-                    { id: 25, type: "mcq", prompt: "Question 25. The bank ______ at four o’clock.", options: [{ key: "A", text: "A. closes" }, { key: "B", text: "B. will close" }, { key: "C", text: "C. is close" }], correct: "A" },
-                    { id: 26, type: "mcq", prompt: "Question 26. Mr. and Mrs. Parsons ________ to work together every day.", options: [{ key: "A", text: "A. drive" }, { key: "B", text: "B. drives" }, { key: "C", text: "C. are driving" }], correct: "A" },
-                    { id: 27, type: "mcq", prompt: "Question 27. My best friend ______ to me every week.", options: [{ key: "A", text: "A. write" }, { key: "B", text: "B. writies" }, { key: "C", text: "C. writes" }], correct: "C" },
-                    { id: 28, type: "mcq", prompt: "Question 28. My husband and his colleague ________ golf whenever they are not too busy.", options: [{ key: "A", text: "A. play" }, { key: "B", text: "B. plays" }, { key: "C", text: "C. are playing" }], correct: "A" },
-                    { id: 29, type: "mcq", prompt: "Question 29. My life is so boring -- I just _______ TV every night.", options: [{ key: "A", text: "A. watch" }, { key: "B", text: "B. watchies" }, { key: "C", text: "C. watches" }], correct: "A" },
-                    { id: 30, type: "mcq", prompt: "Question 30. She ______ (not, be) six years old.", options: [{ key: "A", text: "A. isn’t" }, { key: "B", text: "B. not is" }, { key: "C", text: "C. are not" }], correct: "A" },
-                    { id: 31, type: "mcq", prompt: "Question 31. John ______ very hard in class, but I don’t think he’ll pass the course.", options: [{ key: "A", text: "A. try" }, { key: "B", text: "B. trys" }, { key: "C", text: "C. tries" }], correct: "C" },
-                    { id: 32, type: "mcq", prompt: "Question 32. His students ______ (not, speak) German in class.", options: [{ key: "A", text: "A. don’t speak" }, { key: "B", text: "B. doesn’t speak" }, { key: "C", text: "C. not speak" }], correct: "A" },
-                    { id: 33, type: "mcq", prompt: "Question 33. Danny ______ (phone) his father on Sundays.", options: [{ key: "A", text: "A. phons" }, { key: "B", text: "B. phones" }, { key: "C", text: "C. phone" }], correct: "B" },
-                    { id: 34, type: "mcq", prompt: "Question 34. My mother ______ eggs for breakfast every morning.", options: [{ key: "A", text: "A. is frying" }, { key: "B", text: "B. is fry" }, { key: "C", text: "C. fries" }], correct: "C" }
+                    {
+                        id: 25,
+                        type: "mcq",
+                        prompt: "Question 25. The bank ______ at four o’clock.",
+                        options: [{ key: "A", text: "A. closes" }, { key: "B", text: "B. will close" }, { key: "C", text: "C. is close" }],
+                        correct: "A",
+                        explanation: "Giờ mở/đóng cửa cố định dùng thì hiện tại đơn; 'The bank' là số ít nên động từ 'close' thêm '-s' thành 'closes', chọn A."
+                    },
+                    {
+                        id: 26,
+                        type: "mcq",
+                        prompt: "Question 26. Mr. and Mrs. Parsons ________ to work together every day.",
+                        options: [{ key: "A", text: "A. drive" }, { key: "B", text: "B. drives" }, { key: "C", text: "C. are driving" }],
+                        correct: "A",
+                        explanation: "Hai người ('Mr. and Mrs. Parsons') là số nhiều có 'every day' (hiện tại đơn) nên động từ giữ nguyên 'drive', chọn A."
+                    },
+                    {
+                        id: 27,
+                        type: "mcq",
+                        prompt: "Question 27. My best friend ______ to me every week.",
+                        options: [{ key: "A", text: "A. write" }, { key: "B", text: "B. writies" }, { key: "C", text: "C. writes" }],
+                        correct: "C",
+                        explanation: "Chủ ngữ 'My best friend' là số ít ở thì hiện tại đơn nên động từ 'write' thêm '-s' thành 'writes', chọn C."
+                    },
+                    {
+                        id: 28,
+                        type: "mcq",
+                        prompt: "Question 28. My husband and his colleague ________ golf whenever they are not too busy.",
+                        options: [{ key: "A", text: "A. play" }, { key: "B", text: "B. plays" }, { key: "C", text: "C. are playing" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ kép số nhiều ('My husband and his colleague') ở hiện tại đơn dùng động từ nguyên thể 'play', chọn A."
+                    },
+                    {
+                        id: 29,
+                        type: "mcq",
+                        prompt: "Question 29. My life is so boring -- I just _______ TV every night.",
+                        options: [{ key: "A", text: "A. watch" }, { key: "B", text: "B. watchies" }, { key: "C", text: "C. watches" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ 'I' ở thì hiện tại đơn dùng động từ nguyên thể 'watch' ('I just watch TV every night.'), chọn A."
+                    },
+                    {
+                        id: 30,
+                        type: "mcq",
+                        prompt: "Question 30. She ______ (not, be) six years old.",
+                        options: [{ key: "A", text: "A. isn’t" }, { key: "B", text: "B. not is" }, { key: "C", text: "C. are not" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ 'She' đi với dạng phủ định của động từ tobe là 'isn't' (không viết 'not is'), chọn A."
+                    },
+                    {
+                        id: 31,
+                        type: "mcq",
+                        prompt: "Question 31. John ______ very hard in class, but I don’t think he’ll pass the course.",
+                        options: [{ key: "A", text: "A. try" }, { key: "B", text: "B. trys" }, { key: "C", text: "C. tries" }],
+                        correct: "C",
+                        explanation: "Chủ ngữ 'John' là số ít; động từ 'try' kết thúc bằng phụ âm + 'y' nên đổi 'y' thành 'i' rồi thêm '-es' thành 'tries' (không viết 'trys'), chọn C."
+                    },
+                    {
+                        id: 32,
+                        type: "mcq",
+                        prompt: "Question 32. His students ______ (not, speak) German in class.",
+                        options: [{ key: "A", text: "A. don’t speak" }, { key: "B", text: "B. doesn’t speak" }, { key: "C", text: "C. not speak" }],
+                        correct: "A",
+                        explanation: "'His students' là danh từ số nhiều nên câu phủ định ở hiện tại đơn dùng 'don't speak', chọn A."
+                    },
+                    {
+                        id: 33,
+                        type: "mcq",
+                        prompt: "Question 33. Danny ______ (phone) his father on Sundays.",
+                        options: [{ key: "A", text: "A. phons" }, { key: "B", text: "B. phones" }, { key: "C", text: "C. phone" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'Danny' là số ít có 'on Sundays' (hiện tại đơn) nên động từ 'phone' thêm '-s' thành 'phones', chọn B."
+                    },
+                    {
+                        id: 34,
+                        type: "mcq",
+                        prompt: "Question 34. My mother ______ eggs for breakfast every morning.",
+                        options: [{ key: "A", text: "A. is frying" }, { key: "B", text: "B. is fry" }, { key: "C", text: "C. fries" }],
+                        correct: "C",
+                        explanation: "Có 'every morning' (mỗi sáng - thói quen ở hiện tại đơn) và chủ ngữ 'My mother' số ít nên 'fry' đổi 'y' thành 'ies' thành 'fries', chọn C."
+                    }
                 ]
             }
         ];
@@ -383,6 +627,29 @@
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getStudentDisplayName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getStudentDisplayName();
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Cô Linda chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(q.correct)}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -636,6 +903,7 @@
                     `;
                 }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
