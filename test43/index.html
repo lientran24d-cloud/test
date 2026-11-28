@@ -292,11 +292,9 @@
     </div>
 
     <script>
-        // Thư mục test43 trên GitHub của Ms. Linda
         const GITHUB_BASE = "https://lientran24d-cloud.github.io/test/test43/";
         const STORAGE_KEY = "lighthouse_grade3_test4_results";
 
-        // Tên file âm thanh & hình ảnh tương ứng trong test43
         const AUDIO_FILES = {
             part1: GITHUB_BASE + encodeURIComponent("file nghe part 1.đề 4.3.mp3"),
             part2: GITHUB_BASE + encodeURIComponent("file nghe part 2.đề 4.3.mp3"),
@@ -311,7 +309,6 @@
             q24: GITHUB_BASE + encodeURIComponent("anh question 24.de4.png")
         };
 
-        // SVG minh họa dự phòng nếu ảnh chưa kịp tải
         const SVG_BANK = {
             q21: `<svg viewBox="0 0 220 140" class="w-56 h-36 mx-auto"><rect width="220" height="140" rx="18" fill="#dcfce7"/><polygon points="50,105 90,45 130,105" fill="#facc15" stroke="#ca8a04" stroke-width="3"/><line x1="150" y1="35" x2="150" y2="108" stroke="#0284c7" stroke-width="4"/><line x1="185" y1="35" x2="185" y2="108" stroke="#0284c7" stroke-width="4"/><line x1="150" y1="35" x2="185" y2="35" stroke="#0284c7" stroke-width="4"/><text x="110" y="128" font-size="12" font-weight="bold" text-anchor="middle" fill="#166534">Playground</text></svg>`,
             q22: `<svg viewBox="0 0 220 140" class="w-56 h-36 mx-auto"><rect width="220" height="140" rx="18" fill="#fefce8"/><rect x="96" y="25" width="28" height="72" rx="4" fill="#facc15" stroke="#ca8a04" stroke-width="2.5"/><rect x="96" y="16" width="28" height="10" rx="4" fill="#f472b6"/><polygon points="96,97 124,97 110,124" fill="#fed7aa"/><polygon points="106,116 114,116 110,124" fill="#1e293b"/></svg>`,
@@ -328,10 +325,38 @@
                 partBannerImg: PART_IMGS.part1Banner,
                 fallbackScript: "1. Let's go to the gym. Okay, let's go. 2. I like drawing. Me too. Let's go to the art room. 3. Is that the computer room? Yes, it is. Let's go. 4. Let's go to the music room. Okay, let's go.",
                 questions: [
-                    { id: 1, type: "mcq", prompt: "Question 1. Number 1:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }], correct: "C" },
-                    { id: 2, type: "mcq", prompt: "Question 2. Number 2:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }], correct: "B" },
-                    { id: 3, type: "mcq", prompt: "Question 3. Number 3:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }], correct: "D" },
-                    { id: 4, type: "mcq", prompt: "Question 4. Number 4:", options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }], correct: "A" }
+                    {
+                        id: 1,
+                        type: "mcq",
+                        prompt: "Question 1. Number 1:",
+                        options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }],
+                        correct: "C",
+                        explanation: "Trong đoạn nghe số 1, nhân vật rủ: 'Let's go to the gym.' (Đi tới phòng thể chất nhé) ứng với tranh c, nên chọn C."
+                    },
+                    {
+                        id: 2,
+                        type: "mcq",
+                        prompt: "Question 2. Number 2:",
+                        options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }],
+                        correct: "B",
+                        explanation: "Trong đoạn nghe số 2, nhân vật nói thích vẽ và rủ tới phòng mỹ thuật ('Let's go to the art room.') ứng với tranh b, nên chọn B."
+                    },
+                    {
+                        id: 3,
+                        type: "mcq",
+                        prompt: "Question 3. Number 3:",
+                        options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }],
+                        correct: "D",
+                        explanation: "Trong đoạn nghe số 3, câu nói là 'Is that the computer room? Yes, it is. Let's go.' (phòng tin học) ứng với tranh d, nên chọn D."
+                    },
+                    {
+                        id: 4,
+                        type: "mcq",
+                        prompt: "Question 4. Number 4:",
+                        options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }, { key: "D", text: "D. d" }],
+                        correct: "A",
+                        explanation: "Trong đoạn nghe số 4, nhân vật rủ: 'Let's go to the music room.' (phòng âm nhạc) ứng với tranh a, nên chọn A."
+                    }
                 ]
             },
             {
@@ -341,10 +366,38 @@
                 audioUrl: AUDIO_FILES.part2,
                 fallbackScript: "May I go out? Yes, you can. May I speak Vietnamese? Yes. May I open the book? No, you can't. May I sit down? No.",
                 questions: [
-                    { id: 5, type: "mcq", prompt: "Question 5. May I go out?", options: [{ key: "A", text: "A. No, you can't." }, { key: "B", text: "B. Yes, you can." }], correct: "B" },
-                    { id: 6, type: "mcq", prompt: "Question 6. May I come in?", options: [{ key: "A", text: "A. Yes, you can." }, { key: "B", text: "B. No, you can." }, { key: "C", text: "C. Yes, you can't." }], correct: "A" },
-                    { id: 7, type: "mcq", prompt: "Question 7. May I __________ the book?", options: [{ key: "A", text: "A. close" }, { key: "B", text: "B. see" }, { key: "C", text: "C. open" }], correct: "C" },
-                    { id: 8, type: "mcq", prompt: "Question 8. May I __________ Vietnamese?", options: [{ key: "A", text: "A. spell" }, { key: "B", text: "B. swim" }, { key: "C", text: "C. speak" }], correct: "C" }
+                    {
+                        id: 5,
+                        type: "mcq",
+                        prompt: "Question 5. May I go out?",
+                        options: [{ key: "A", text: "A. No, you can't." }, { key: "B", text: "B. Yes, you can." }],
+                        correct: "B",
+                        explanation: "Trong hội thoại nghe, câu trả lời cho 'May I go out?' là 'Yes, you can.' (Vâng, bạn có thể), nên chọn B."
+                    },
+                    {
+                        id: 6,
+                        type: "mcq",
+                        prompt: "Question 6. May I come in?",
+                        options: [{ key: "A", text: "A. Yes, you can." }, { key: "B", text: "B. No, you can." }, { key: "C", text: "C. Yes, you can't." }],
+                        correct: "A",
+                        explanation: "Câu trả lời khẳng định đúng với 'May I...?' là 'Yes, you can.' (lưu ý 'Yes' không đi cùng 'can't' như ở đáp án C), nên chọn A."
+                    },
+                    {
+                        id: 7,
+                        type: "mcq",
+                        prompt: "Question 7. May I __________ the book?",
+                        options: [{ key: "A", text: "A. close" }, { key: "B", text: "B. see" }, { key: "C", text: "C. open" }],
+                        correct: "C",
+                        explanation: "Trong đoạn nghe có câu 'May I open the book?' (Mình mở sách ra được không?), nên động từ đúng là 'open' (chọn C)."
+                    },
+                    {
+                        id: 8,
+                        type: "mcq",
+                        prompt: "Question 8. May I __________ Vietnamese?",
+                        options: [{ key: "A", text: "A. spell" }, { key: "B", text: "B. swim" }, { key: "C", text: "C. speak" }],
+                        correct: "C",
+                        explanation: "Trong đoạn nghe có câu 'May I speak Vietnamese?' (Mình nói tiếng Việt được không?), nên động từ đúng là 'speak' (chọn C)."
+                    }
                 ]
             },
             {
@@ -354,13 +407,69 @@
                 audioUrl: AUDIO_FILES.part3,
                 fallbackScript: "What do you do at break time? Football. I play football. What do you do at break time? Volleyball. I play volleyball.",
                 questions: [
-                    { id: 9, type: "spell", promptPrefix: "Question 9. What do you do at break", promptSuffix: "? Football. Football.", length: 4, correct: "time" },
-                    { id: 10, type: "spell", promptPrefix: "Question 10. I", promptSuffix: "football.", length: 4, correct: "play" },
-                    { id: 11, type: "spell", promptPrefix: "Question 11.", promptSuffix: "play football.", length: 1, correct: "I" },
-                    { id: 12, type: "spell", promptPrefix: "Question 12. What do you", promptSuffix: "at break time?", length: 2, correct: "do" },
-                    { id: 13, type: "spell", promptPrefix: "Question 13. Volleyball.", promptSuffix: ".", length: 9, correct: "play ball" },
-                    { id: 14, type: "spell", promptPrefix: "Question 14. I play volley", promptSuffix: ".", length: 4, correct: "ball" },
-                    { id: 15, type: "spell", promptPrefix: "Question 15. I", promptSuffix: "volleyball.", length: 4, correct: "like" }
+                    {
+                        id: 9,
+                        type: "spell",
+                        promptPrefix: "Question 9. What do you do at break",
+                        promptSuffix: "? Football. Football.",
+                        length: 4,
+                        correct: "time",
+                        explanation: "Từ còn thiếu là 'time' (4 chữ cái: t-i-m-e) trong cụm 'at break time' (vào giờ giải lao)."
+                    },
+                    {
+                        id: 10,
+                        type: "spell",
+                        promptPrefix: "Question 10. I",
+                        promptSuffix: "football.",
+                        length: 4,
+                        correct: "play",
+                        explanation: "Động từ 'play' (4 chữ cái: p-l-a-y) đứng sau 'I' trong câu 'I play football.' (Tớ chơi bóng đá)."
+                    },
+                    {
+                        id: 11,
+                        type: "spell",
+                        promptPrefix: "Question 11.",
+                        promptSuffix: "play football.",
+                        length: 1,
+                        correct: "I",
+                        explanation: "Chủ ngữ còn thiếu ở đầu câu là 'I' (viết hoa): 'I play football.'."
+                    },
+                    {
+                        id: 12,
+                        type: "spell",
+                        promptPrefix: "Question 12. What do you",
+                        promptSuffix: "at break time?",
+                        length: 2,
+                        correct: "do",
+                        explanation: "Động từ chính còn thiếu trong câu hỏi là 'do' (2 chữ cái: d-o): 'What do you do at break time?'."
+                    },
+                    {
+                        id: 13,
+                        type: "spell",
+                        promptPrefix: "Question 13. Volleyball.",
+                        promptSuffix: ".",
+                        length: 9,
+                        correct: "play ball",
+                        explanation: "Theo đáp án chuẩn của câu này là 'play ball' (9 ký tự gồm chữ và khoảng trắng)."
+                    },
+                    {
+                        id: 14,
+                        type: "spell",
+                        promptPrefix: "Question 14. I play volley",
+                        promptSuffix: ".",
+                        length: 4,
+                        correct: "ball",
+                        explanation: "Ghép 4 chữ cái 'ball' vào sau 'volley' ta được từ 'volleyball' (bóng chuyền): 'I play volleyball.'."
+                    },
+                    {
+                        id: 15,
+                        type: "spell",
+                        promptPrefix: "Question 15. I",
+                        promptSuffix: "volleyball.",
+                        length: 4,
+                        correct: "like",
+                        explanation: "Động từ 'like' (4 chữ cái: l-i-k-e) hoàn chỉnh câu 'I like volleyball.' (Tớ thích bóng chuyền)."
+                    }
                 ]
             },
             {
@@ -368,11 +477,46 @@
                 title: "PART 4: Reorder words",
                 subtitle: "Bấm vào các thẻ từ để sắp xếp thành câu hoàn chỉnh (Câu 16 – 20)",
                 questions: [
-                    { id: 16, type: "reorder", prompt: "Question 16.", words: ["What", "they?", "are", "colour"], correct: "What colour are they?" },
-                    { id: 17, type: "reorder", prompt: "Question 17.", words: ["The", "yellow.", "ruler’s"], correct: "The ruler’s yellow." },
-                    { id: 18, type: "reorder", prompt: "Question 18.", words: ["case?", "have", "you", "a", "pencil", "Do"], correct: "Do you have a pencil case?" },
-                    { id: 19, type: "reorder", prompt: "Question 19.", words: ["come", "in?", "May", "I"], correct: "May I come in?" },
-                    { id: 20, type: "reorder", prompt: "Question 20.", words: ["the", "music", "go", "to", "Let’s", "room."], correct: "Let’s go to the music room." }
+                    {
+                        id: 16,
+                        type: "reorder",
+                        prompt: "Question 16.",
+                        words: ["What", "they?", "are", "colour"],
+                        correct: "What colour are they?",
+                        explanation: "Câu hỏi màu sắc với danh từ số nhiều 'they' là 'What colour are they?' (Chúng có màu gì?)."
+                    },
+                    {
+                        id: 17,
+                        type: "reorder",
+                        prompt: "Question 17.",
+                        words: ["The", "yellow.", "ruler’s"],
+                        correct: "The ruler’s yellow.",
+                        explanation: "Thứ tự đúng của câu là 'The ruler's yellow.' (Chiếc thước kẻ màu vàng)."
+                    },
+                    {
+                        id: 18,
+                        type: "reorder",
+                        prompt: "Question 18.",
+                        words: ["case?", "have", "you", "a", "pencil", "Do"],
+                        correct: "Do you have a pencil case?",
+                        explanation: "Câu hỏi 'Bạn có hộp bút không?' được xếp là: 'Do you have a pencil case?'."
+                    },
+                    {
+                        id: 19,
+                        type: "reorder",
+                        prompt: "Question 19.",
+                        words: ["come", "in?", "May", "I"],
+                        correct: "May I come in?",
+                        explanation: "Câu xin phép vào lớp là 'May I come in?' (Em vào được không?)."
+                    },
+                    {
+                        id: 20,
+                        type: "reorder",
+                        prompt: "Question 20.",
+                        words: ["the", "music", "go", "to", "Let’s", "room."],
+                        correct: "Let’s go to the music room.",
+                        explanation: "Câu rủ tới phòng âm nhạc được xếp là: 'Let's go to the music room.'."
+                    }
                 ]
             },
             {
@@ -380,10 +524,46 @@
                 title: "PART 5: Look at the picture and choose A, or B, C or D",
                 subtitle: "Quan sát hình ảnh và chọn đáp án đúng hoàn thành câu (Câu 21 – 24)",
                 questions: [
-                    { id: 21, type: "single_pic_mcq", prompt: "Question 21. Let's go to the __________.", imgUrl: PART_IMGS.q21, fallbackSvg: SVG_BANK.q21, options: [{ key: "A", text: "A. school" }, { key: "B", text: "B. play game" }, { key: "C", text: "C. playschool" }, { key: "D", text: "D. playground" }], correct: "D" },
-                    { id: 22, type: "single_pic_mcq", prompt: "Question 22. What colour is it?", imgUrl: PART_IMGS.q22, fallbackSvg: SVG_BANK.q22, options: [{ key: "A", text: "A. pink" }, { key: "B", text: "B. orange" }, { key: "C", text: "C. red" }, { key: "D", text: "D. yellow" }], correct: "D" },
-                    { id: 23, type: "single_pic_mcq", prompt: "Question 23. I have a __________.", imgUrl: PART_IMGS.q23, fallbackSvg: SVG_BANK.q23, options: [{ key: "A", text: "A. rubber" }, { key: "B", text: "B. ruler" }, { key: "C", text: "C. book" }, { key: "D", text: "D. pencil" }], correct: "B" },
-                    { id: 24, type: "single_pic_mcq", prompt: "Question 24. She likes playing __________.", imgUrl: PART_IMGS.q24, fallbackSvg: SVG_BANK.q24, options: [{ key: "A", text: "A. tennis" }, { key: "B", text: "B. game" }, { key: "C", text: "C. badminton" }, { key: "D", text: "D. football" }], correct: "C" }
+                    {
+                        id: 21,
+                        type: "single_pic_mcq",
+                        prompt: "Question 21. Let's go to the __________.",
+                        imgUrl: PART_IMGS.q21,
+                        fallbackSvg: SVG_BANK.q21,
+                        options: [{ key: "A", text: "A. school" }, { key: "B", text: "B. play game" }, { key: "C", text: "C. playschool" }, { key: "D", text: "D. playground" }],
+                        correct: "D",
+                        explanation: "Hình ảnh có cầu trượt/khung thành là sân chơi ('playground') nên chọn 'D. playground'."
+                    },
+                    {
+                        id: 22,
+                        type: "single_pic_mcq",
+                        prompt: "Question 22. What colour is it?",
+                        imgUrl: PART_IMGS.q22,
+                        fallbackSvg: SVG_BANK.q22,
+                        options: [{ key: "A", text: "A. pink" }, { key: "B", text: "B. orange" }, { key: "C", text: "C. red" }, { key: "D", text: "D. yellow" }],
+                        correct: "D",
+                        explanation: "Chiếc bút chì trong hình có màu vàng ('yellow') nên chọn 'D. yellow'."
+                    },
+                    {
+                        id: 23,
+                        type: "single_pic_mcq",
+                        prompt: "Question 23. I have a __________.",
+                        imgUrl: PART_IMGS.q23,
+                        fallbackSvg: SVG_BANK.q23,
+                        options: [{ key: "A", text: "A. rubber" }, { key: "B", text: "B. ruler" }, { key: "C", text: "C. book" }, { key: "D", text: "D. pencil" }],
+                        correct: "B",
+                        explanation: "Đồ vật trong hình là chiếc thước kẻ ('ruler') nên chọn 'B. ruler'."
+                    },
+                    {
+                        id: 24,
+                        type: "single_pic_mcq",
+                        prompt: "Question 24. She likes playing __________.",
+                        imgUrl: PART_IMGS.q24,
+                        fallbackSvg: SVG_BANK.q24,
+                        options: [{ key: "A", text: "A. tennis" }, { key: "B", text: "B. game" }, { key: "C", text: "C. badminton" }, { key: "D", text: "D. football" }],
+                        correct: "C",
+                        explanation: "Bạn gái trong hình cầm vợt chơi cầu lông ('badminton') nên chọn 'C. badminton'."
+                    }
                 ]
             },
             {
@@ -394,10 +574,38 @@
                     { speaker: "Lucy", text: "Hello! My name is Lucy . I don't like watching TV. I like playing chess with my father. I play games with my brother. Badminton is his favorite sport. I don’t know how to play table tennis. My father usually plays basketball after working time." }
                 ],
                 questions: [
-                    { id: 25, type: "mcq", prompt: "Question 25. Her name is Jessica.", options: [{ key: "A", text: "A. TRUE" }, { key: "B", text: "B. FALSE" }], correct: "B" },
-                    { id: 26, type: "mcq", prompt: "Question 26. She likes watching TV.", options: [{ key: "A", text: "A. TRUE" }, { key: "B", text: "B. FALSE" }], correct: "B" },
-                    { id: 27, type: "mcq", prompt: "Question 27. She likes playing chess with her father.", options: [{ key: "A", text: "A. TRUE" }, { key: "B", text: "B. FALSE" }], correct: "A" },
-                    { id: 28, type: "mcq", prompt: "Question 28. Her father usually plays chess after working time.", options: [{ key: "A", text: "A. TRUE" }, { key: "B", text: "B. FALSE" }], correct: "B" }
+                    {
+                        id: 25,
+                        type: "mcq",
+                        prompt: "Question 25. Her name is Jessica.",
+                        options: [{ key: "A", text: "A. TRUE" }, { key: "B", text: "B. FALSE" }],
+                        correct: "B",
+                        explanation: "Đoạn văn viết 'My name is Lucy.' (Tên tớ là Lucy), không phải Jessica, nên câu này là FALSE (chọn B)."
+                    },
+                    {
+                        id: 26,
+                        type: "mcq",
+                        prompt: "Question 26. She likes watching TV.",
+                        options: [{ key: "A", text: "A. TRUE" }, { key: "B", text: "B. FALSE" }],
+                        correct: "B",
+                        explanation: "Lucy viết 'I don't like watching TV.' (Tớ không thích xem TV), trái với câu hỏi nên chọn B (FALSE)."
+                    },
+                    {
+                        id: 27,
+                        type: "mcq",
+                        prompt: "Question 27. She likes playing chess with her father.",
+                        options: [{ key: "A", text: "A. TRUE" }, { key: "B", text: "B. FALSE" }],
+                        correct: "A",
+                        explanation: "Trong đoạn văn có câu 'I like playing chess with my father.' (Tớ thích chơi cờ vua với bố), khớp với câu hỏi nên chọn A (TRUE)."
+                    },
+                    {
+                        id: 28,
+                        type: "mcq",
+                        prompt: "Question 28. Her father usually plays chess after working time.",
+                        options: [{ key: "A", text: "A. TRUE" }, { key: "B", text: "B. FALSE" }],
+                        correct: "B",
+                        explanation: "Cuối đoạn văn viết 'My father usually plays basketball after working time.' (Bố tớ thường chơi bóng rổ sau giờ làm việc), không phải bóng bàn/cờ như câu hỏi nên chọn B (FALSE)."
+                    }
                 ]
             },
             {
@@ -405,8 +613,24 @@
                 title: "PART 7: Read and write",
                 subtitle: "Điền các chữ cái còn thiếu vào ô trống (Câu 29 – 30)",
                 questions: [
-                    { id: 29, type: "spell", promptPrefix: "Question 29. Let’s", promptSuffix: "to the computer room.", length: 2, correct: "go" },
-                    { id: 30, type: "spell", promptPrefix: "Question 30. Touch", promptSuffix: "nose!", length: 4, correct: "your" }
+                    {
+                        id: 29,
+                        type: "spell",
+                        promptPrefix: "Question 29. Let’s",
+                        promptSuffix: "to the computer room.",
+                        length: 2,
+                        correct: "go",
+                        explanation: "Từ còn thiếu là 'go' (2 chữ cái: g-o) trong mẫu rủ 'Let's go to the computer room.'."
+                    },
+                    {
+                        id: 30,
+                        type: "spell",
+                        promptPrefix: "Question 30. Touch",
+                        promptSuffix: "nose!",
+                        length: 4,
+                        correct: "your",
+                        explanation: "Tính từ sở hữu còn thiếu là 'your' (4 chữ cái: y-o-u-r): 'Touch your nose!' (Chạm vào mũi của con!)."
+                    }
                 ]
             }
         ];
@@ -438,6 +662,29 @@
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getStudentDisplayName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getStudentDisplayName();
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Cô Linda chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(q.correct)}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -633,7 +880,7 @@
                     <div class="mt-4 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl p-4">
                         <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
                             <span class="font-extrabold text-amber-900 text-sm flex items-center gap-2">
-                                🎧 Trình phát âm thanh Part ${p.part} (test44)
+                                🎧 Trình phát âm thanh Part ${p.part} (test43)
                             </span>
                             <button onclick="speakFallback(\`${p.fallbackScript.replace(/"/g, '&quot;')}\`)" class="text-xs bg-white hover:bg-amber-100 text-amber-800 font-bold px-3 py-1 rounded-full border border-amber-300 transition">
                                 🗣️ Đọc giọng mẫu dự phòng
@@ -757,6 +1004,7 @@
                     `;
                 }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
