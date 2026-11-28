@@ -292,17 +292,18 @@
     </div>
 
     <script>
-       const GITHUB_BASE = "https://lientran24d-cloud.github.io/test/test13/";
-const AUDIO_PART_1 = GITHUB_BASE + encodeURIComponent("file nghe part 1.đề 1.3.mp3");
-const AUDIO_PART_2 = GITHUB_BASE + encodeURIComponent("file nghe part 2.đề 1.3.mp3");
+        const GITHUB_BASE = "https://lientran24d-cloud.github.io/test/test13/";
+        const AUDIO_PART_1 = GITHUB_BASE + encodeURIComponent("file nghe part 1.đề 1.3.mp3");
+        const AUDIO_PART_2 = GITHUB_BASE + encodeURIComponent("file nghe part 2.đề 1.3.mp3");
 
-const IMG_PART_6 = {
-    q26: GITHUB_BASE + encodeURIComponent("ảnh 1.1.lop3.png"),
-    q27: GITHUB_BASE + encodeURIComponent("ảnh 2.1.lop3.png"),
-    q28: GITHUB_BASE + encodeURIComponent("ảnh 3.1.lop3.png"),
-    q29: GITHUB_BASE + encodeURIComponent("ảnh 4.1.lop3.png"),
-    q30: GITHUB_BASE + encodeURIComponent("ảnh 5.1.lop3.png")
-};
+        const IMG_PART_6 = {
+            q26: GITHUB_BASE + encodeURIComponent("ảnh 1.1.lop3.png"),
+            q27: GITHUB_BASE + encodeURIComponent("ảnh 2.1.lop3.png"),
+            q28: GITHUB_BASE + encodeURIComponent("ảnh 3.1.lop3.png"),
+            q29: GITHUB_BASE + encodeURIComponent("ảnh 4.1.lop3.png"),
+            q30: GITHUB_BASE + encodeURIComponent("ảnh 5.1.lop3.png")
+        };
+
         const SVG_BANK = {
             q5_a: `<svg viewBox="0 0 160 110" class="w-full h-28"><rect width="160" height="110" rx="12" fill="#e0f2fe"/><rect x="65" y="15" width="85" height="55" rx="6" fill="#0f766e" stroke="#92400e" stroke-width="4"/><text x="107" y="47" fill="#fff" font-size="15" font-weight="bold" text-anchor="middle">English</text><circle cx="38" cy="42" r="14" fill="#fed7aa"/><path d="M26 36 Q38 22 50 36" fill="#1e293b"/><rect x="29" y="39" width="7" height="5" fill="none" stroke="#000" stroke-width="1.5"/><rect x="40" y="39" width="7" height="5" fill="none" stroke="#000" stroke-width="1.5"/><path d="M18 95 C18 65, 58 65, 58 95 Z" fill="#3b82f6"/><text x="80" y="103" font-size="11" fill="#334155" font-weight="bold" text-anchor="middle">Mr Long (Teacher)</text></svg>`,
             q5_b: `<svg viewBox="0 0 160 110" class="w-full h-28"><rect width="160" height="110" rx="12" fill="#fef3c7"/><rect x="85" y="15" width="65" height="45" rx="4" fill="#15803d"/><text x="117" y="38" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">Unit 3</text><circle cx="65" cy="40" r="12" fill="#fed7aa"/><path d="M50 92 C50 62, 80 62, 80 92 Z" fill="#ec4899"/><rect x="15" y="25" width="24" height="65" fill="#d97706" rx="2"/><text x="80" y="103" font-size="11" fill="#334155" font-weight="bold" text-anchor="middle">Ms Hoa (Female Teacher)</text></svg>`,
@@ -335,10 +336,38 @@ const IMG_PART_6 = {
                 audioUrl: AUDIO_PART_1,
                 fallbackScript: "1. We play badminton at school. 2. There are five pencils. 3. Let's go home. 4. Stand up, please.",
                 questions: [
-                    { id: 1, type: "mcq", prompt: "Question 1.", options: [{ key: "A", text: "A. We play badminton at school." }, { key: "B", text: "B. I have a blue notebook." }], correct: "A" },
-                    { id: 2, type: "mcq", prompt: "Question 2.", options: [{ key: "A", text: "A. This is my new pen." }, { key: "B", text: "B. There are five pencils." }], correct: "B" },
-                    { id: 3, type: "mcq", prompt: "Question 3.", options: [{ key: "A", text: "A. They are my books." }, { key: "B", text: "B. Let’s go home!" }], correct: "B" },
-                    { id: 4, type: "mcq", prompt: "Question 4.", options: [{ key: "A", text: "A. Stand up, please!" }, { key: "B", text: "B. Can you speak louder, Mai?" }], correct: "A" }
+                    {
+                        id: 1,
+                        type: "mcq",
+                        prompt: "Question 1.",
+                        options: [{ key: "A", text: "A. We play badminton at school." }, { key: "B", text: "B. I have a blue notebook." }],
+                        correct: "A",
+                        explanation: "Trong file nghe câu 1, người nói đọc: 'We play badminton at school.' (Chúng tớ chơi cầu lông ở trường), không phải 'I have a blue notebook.'."
+                    },
+                    {
+                        id: 2,
+                        type: "mcq",
+                        prompt: "Question 2.",
+                        options: [{ key: "A", text: "A. This is my new pen." }, { key: "B", text: "B. There are five pencils." }],
+                        correct: "B",
+                        explanation: "Trong file nghe câu 2, người nói đọc: 'There are five pencils.' (Có năm chiếc bút chì), chứ không phải 'This is my new pen.'."
+                    },
+                    {
+                        id: 3,
+                        type: "mcq",
+                        prompt: "Question 3.",
+                        options: [{ key: "A", text: "A. They are my books." }, { key: "B", text: "B. Let’s go home!" }],
+                        correct: "B",
+                        explanation: "Trong file nghe câu 3, người nói rủ: 'Let's go home!' (Chúng mình cùng về nhà thôi!), khác với 'They are my books.'."
+                    },
+                    {
+                        id: 4,
+                        type: "mcq",
+                        prompt: "Question 4.",
+                        options: [{ key: "A", text: "A. Stand up, please!" }, { key: "B", text: "B. Can you speak louder, Mai?" }],
+                        correct: "A",
+                        explanation: "Trong file nghe câu 4, câu lệnh được đọc là 'Stand up, please!' (Làm ơn đứng lên!), không phải 'Can you speak louder, Mai?'."
+                    }
                 ]
             },
             {
@@ -348,10 +377,42 @@ const IMG_PART_6 = {
                 audioUrl: AUDIO_PART_2,
                 fallbackScript: "1. Ben, is that... My teacher, Mum. Good morning, Mr Long. 2. What's this? A hand? No, it isn't. It's an ear. 3. What's your hobby? Well, I like swimming. 4. Look, Ben. I have a pen and a ruler.",
                 questions: [
-                    { id: 5, type: "pic_mcq", prompt: "Question 5.", pictures: [{ key: "A", label: "a", svg: SVG_BANK.q5_a }, { key: "B", label: "b", svg: SVG_BANK.q5_b }, { key: "C", label: "c", svg: SVG_BANK.q5_c }], options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }], correct: "A" },
-                    { id: 6, type: "pic_mcq", prompt: "Question 6.", pictures: [{ key: "A", label: "a", svg: SVG_BANK.q6_a }, { key: "B", label: "b", svg: SVG_BANK.q6_b }, { key: "C", label: "c", svg: SVG_BANK.q6_c }], options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }], correct: "C" },
-                    { id: 7, type: "pic_mcq", prompt: "Question 7.", pictures: [{ key: "A", label: "a", svg: SVG_BANK.q7_a }, { key: "B", label: "b", svg: SVG_BANK.q7_b }, { key: "C", label: "c", svg: SVG_BANK.q7_c }], options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }], correct: "B" },
-                    { id: 8, type: "pic_mcq", prompt: "Question 8.", pictures: [{ key: "A", label: "a", svg: SVG_BANK.q8_a }, { key: "B", label: "b", svg: SVG_BANK.q8_b }, { key: "C", label: "c", svg: SVG_BANK.q8_c }], options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }], correct: "B" }
+                    {
+                        id: 5,
+                        type: "pic_mcq",
+                        prompt: "Question 5.",
+                        pictures: [{ key: "A", label: "a", svg: SVG_BANK.q5_a }, { key: "B", label: "b", svg: SVG_BANK.q5_b }, { key: "C", label: "c", svg: SVG_BANK.q5_c }],
+                        options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }],
+                        correct: "A",
+                        explanation: "Hội thoại nhắc đến 'My teacher... Good morning, Mr Long' — thầy giáo Long đứng cạnh bảng tiếng Anh chính là bức tranh a."
+                    },
+                    {
+                        id: 6,
+                        type: "pic_mcq",
+                        prompt: "Question 6.",
+                        pictures: [{ key: "A", label: "a", svg: SVG_BANK.q6_a }, { key: "B", label: "b", svg: SVG_BANK.q6_b }, { key: "C", label: "c", svg: SVG_BANK.q6_c }],
+                        options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }],
+                        correct: "C",
+                        explanation: "Hội thoại hỏi 'What's this? A hand? No, it isn't. It's an ear.' (Đó là cái tai) nên bức tranh đúng là c (hình cái tai), không phải bàn tay (b) hay bạn trai (a)."
+                    },
+                    {
+                        id: 7,
+                        type: "pic_mcq",
+                        prompt: "Question 7.",
+                        pictures: [{ key: "A", label: "a", svg: SVG_BANK.q7_a }, { key: "B", label: "b", svg: SVG_BANK.q7_b }, { key: "C", label: "c", svg: SVG_BANK.q7_c }],
+                        options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }],
+                        correct: "B",
+                        explanation: "Nhân vật nói 'I like swimming.' (Tớ thích bơi lội), tương ứng với bức tranh b (cảnh bơi dưới nước), khác với vẽ tranh (a) và đọc sách (c)."
+                    },
+                    {
+                        id: 8,
+                        type: "pic_mcq",
+                        prompt: "Question 8.",
+                        pictures: [{ key: "A", label: "a", svg: SVG_BANK.q8_a }, { key: "B", label: "b", svg: SVG_BANK.q8_b }, { key: "C", label: "c", svg: SVG_BANK.q8_c }],
+                        options: [{ key: "A", text: "A. a" }, { key: "B", text: "B. b" }, { key: "C", text: "C. c" }],
+                        correct: "B",
+                        explanation: "Câu nghe là 'I have a pen and a ruler.' (Tớ có một chiếc bút mực và một chiếc thước kẻ) — đúng với hình b, không phải sách/cặp (a) hay bút chì/cặp (c)."
+                    }
                 ]
             },
             {
@@ -359,11 +420,46 @@ const IMG_PART_6 = {
                 title: "PART 3: Circle the correct answer",
                 subtitle: "Chọn đáp án đúng nhất A, B hoặc C để hoàn thành câu (Câu 9 – 13)",
                 questions: [
-                    { id: 9, type: "mcq", prompt: "Question 9. I ______ chess at break time.", options: [{ key: "A", text: "A. play" }, { key: "B", text: "B. playing" }, { key: "C", text: "C. plays" }], correct: "A" },
-                    { id: 10, type: "mcq", prompt: "Question 10. I play badminton ______ break time.", options: [{ key: "A", text: "A. on" }, { key: "B", text: "B. in" }, { key: "C", text: "C. at" }], correct: "C" },
-                    { id: 11, type: "mcq", prompt: "Question 11. What colour is it? – It’s ______.", options: [{ key: "A", text: "A. ruler" }, { key: "B", text: "B. house" }, { key: "C", text: "C. brown" }], correct: "C" },
-                    { id: 12, type: "mcq", prompt: "Question 12. What ______ is it? – The ruler’s yellow.", options: [{ key: "A", text: "A. pen" }, { key: "B", text: "B. ruler" }, { key: "C", text: "C. colour" }], correct: "C" },
-                    { id: 13, type: "mcq", prompt: "Question 13. I have a ______.", options: [{ key: "A", text: "A. school bag" }, { key: "B", text: "B. bag's school" }, { key: "C", text: "C. bag school" }], correct: "A" }
+                    {
+                        id: 9,
+                        type: "mcq",
+                        prompt: "Question 9. I ______ chess at break time.",
+                        options: [{ key: "A", text: "A. play" }, { key: "B", text: "B. playing" }, { key: "C", text: "C. plays" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ là 'I' ở thì hiện tại đơn nên ta dùng động từ nguyên thể 'play'. Không dùng 'plays' (dùng cho he/she/it) hay 'playing' đứng một mình."
+                    },
+                    {
+                        id: 10,
+                        type: "mcq",
+                        prompt: "Question 10. I play badminton ______ break time.",
+                        options: [{ key: "A", text: "A. on" }, { key: "B", text: "B. in" }, { key: "C", text: "C. at" }],
+                        correct: "C",
+                        explanation: "Cụm từ chỉ thời điểm giờ ra chơi trong tiếng Anh là 'at break time' (vào giờ ra chơi), nên giới từ đúng là 'at'."
+                    },
+                    {
+                        id: 11,
+                        type: "mcq",
+                        prompt: "Question 11. What colour is it? – It’s ______.",
+                        options: [{ key: "A", text: "A. ruler" }, { key: "B", text: "B. house" }, { key: "C", text: "C. brown" }],
+                        correct: "C",
+                        explanation: "Câu hỏi 'What colour is it?' hỏi về màu sắc. Trong các lựa chọn, 'brown' (màu nâu) là từ chỉ màu sắc, còn 'ruler' (thước kẻ) và 'house' (ngôi nhà) là danh từ chỉ đồ vật/nơi chốn."
+                    },
+                    {
+                        id: 12,
+                        type: "mcq",
+                        prompt: "Question 12. What ______ is it? – The ruler’s yellow.",
+                        options: [{ key: "A", text: "A. pen" }, { key: "B", text: "B. ruler" }, { key: "C", text: "C. colour" }],
+                        correct: "C",
+                        explanation: "Câu trả lời 'The ruler's yellow.' (Chiếc thước kẻ màu vàng) nêu màu sắc nên câu hỏi phải là 'What colour is it?' (Nó màu gì?)."
+                    },
+                    {
+                        id: 13,
+                        type: "mcq",
+                        prompt: "Question 13. I have a ______.",
+                        options: [{ key: "A", text: "A. school bag" }, { key: "B", text: "B. bag's school" }, { key: "C", text: "C. bag school" }],
+                        correct: "A",
+                        explanation: "Cặp học sinh / cặp sách trong tiếng Anh là 'school bag' (cụm danh từ ghép đúng trật tự), không viết ngược là 'bag school' hay thêm sở hữu cách 'bag's school'."
+                    }
                 ]
             },
             {
@@ -377,10 +473,38 @@ const IMG_PART_6 = {
                     { speaker: "Linh", text: "May I go out? &nbsp; <b>Ms Hoa:</b> Yes, __________ <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>(17)</span> can." }
                 ],
                 questions: [
-                    { id: 14, type: "mcq", prompt: "Question 14. Chỗ trống (14):", options: [{ key: "A", text: "A. open" }, { key: "B", text: "B. stand up" }, { key: "C", text: "C. sit" }], correct: "A" },
-                    { id: 15, type: "mcq", prompt: "Question 15. Chỗ trống (15):", options: [{ key: "A", text: "A. spell" }, { key: "B", text: "B. sing" }, { key: "C", text: "C. speak" }], correct: "C" },
-                    { id: 16, type: "mcq", prompt: "Question 16. Chỗ trống (16):", options: [{ key: "A", text: "A. down" }, { key: "B", text: "B. up" }, { key: "C", text: "C. on" }], correct: "A" },
-                    { id: 17, type: "mcq", prompt: "Question 17. Chỗ trống (17):", options: [{ key: "A", text: "A. your" }, { key: "B", text: "B. I" }, { key: "C", text: "C. you" }], correct: "C" }
+                    {
+                        id: 14,
+                        type: "mcq",
+                        prompt: "Question 14. Chỗ trống (14):",
+                        options: [{ key: "A", text: "A. open" }, { key: "B", text: "B. stand up" }, { key: "C", text: "C. sit" }],
+                        correct: "A",
+                        explanation: "Với tân ngữ 'the book' (quyển sách), động từ phù hợp là 'open' ('May I open the book?' - Tớ mở sách ra được không?), không dùng 'stand up' hay 'sit'."
+                    },
+                    {
+                        id: 15,
+                        type: "mcq",
+                        prompt: "Question 15. Chỗ trống (15):",
+                        options: [{ key: "A", text: "A. spell" }, { key: "B", text: "B. sing" }, { key: "C", text: "C. speak" }],
+                        correct: "C",
+                        explanation: "Nói một ngôn ngữ ('Vietnamese' - tiếng Việt) dùng động từ 'speak' ('May I speak Vietnamese?' - Tớ nói tiếng Việt được không?)."
+                    },
+                    {
+                        id: 16,
+                        type: "mcq",
+                        prompt: "Question 16. Chỗ trống (16):",
+                        options: [{ key: "A", text: "A. down" }, { key: "B", text: "B. up" }, { key: "C", text: "C. on" }],
+                        correct: "A",
+                        explanation: "Cụm động từ 'sit down' có nghĩa là ngồi xuống ('May I sit down?' - Tớ ngồi xuống được không?), ngược với 'stand up' (đứng lên)."
+                    },
+                    {
+                        id: 17,
+                        type: "mcq",
+                        prompt: "Question 17. Chỗ trống (17):",
+                        options: [{ key: "A", text: "A. your" }, { key: "B", text: "B. I" }, { key: "C", text: "C. you" }],
+                        correct: "C",
+                        explanation: "Khi người khác hỏi 'May I...?', cô Hoa trả lời cho người hỏi nên dùng đại từ nhân xưng chủ ngữ 'you' ('Yes, you can.' - Vâng, em có thể)."
+                    }
                 ]
             },
             {
@@ -388,14 +512,73 @@ const IMG_PART_6 = {
                 title: "PART 5: Reorder words & Complete words",
                 subtitle: "Bấm vào các thẻ từ để xếp thành câu đúng (18–22) và điền chữ cái còn thiếu (23–25)",
                 questions: [
-                    { id: 18, type: "reorder", prompt: "Question 18.", words: ["mouth.", "a", "It’s"], correct: "It’s a mouth." },
-                    { id: 19, type: "reorder", prompt: "Question 19.", words: ["your", "What’s", "hobby?"], correct: "What’s your hobby?" },
-                    { id: 20, type: "reorder", prompt: "Question 20.", words: ["Is", "classroom?", "our", "this"], correct: "Is this our classroom?" },
-                    { id: 21, type: "reorder", prompt: "Question 21.", words: ["It’s", "drawing"], correct: "It’s drawing" },
-                    { id: 22, type: "reorder", prompt: "Question 22.", words: ["It", "drawing.", "is"], correct: "It is drawing." },
-                    { id: 23, type: "spell", promptPrefix: "Question 23. Let’s go to the computer", promptSuffix: ".", length: 4, correct: "room" },
-                    { id: 24, type: "spell", promptPrefix: "Question 24. What’s your", promptSuffix: "?", length: 5, correct: "hobby" },
-                    { id: 25, type: "spell", promptPrefix: "Question 25. I", promptSuffix: "a school bag.", length: 4, correct: "have" }
+                    {
+                        id: 18,
+                        type: "reorder",
+                        prompt: "Question 18.",
+                        words: ["mouth.", "a", "It’s"],
+                        correct: "It’s a mouth.",
+                        explanation: "Cấu trúc giới thiệu một vật/bộ phận cơ thể số ít là 'It's + a/an + danh từ': 'It's a mouth.' (Đó là một cái miệng)."
+                    },
+                    {
+                        id: 19,
+                        type: "reorder",
+                        prompt: "Question 19.",
+                        words: ["your", "What’s", "hobby?"],
+                        correct: "What’s your hobby?",
+                        explanation: "Câu hỏi sở thích chuẩn là 'What's your hobby?' (Sở thích của bạn là gì?), đặt 'What's' ở đầu câu và dấu '?' ở cuối."
+                    },
+                    {
+                        id: 20,
+                        type: "reorder",
+                        prompt: "Question 20.",
+                        words: ["Is", "classroom?", "our", "this"],
+                        correct: "Is this our classroom?",
+                        explanation: "Câu nghi vấn Yes/No đưa động từ 'Is' lên đầu câu: 'Is this our classroom?' (Đây có phải lớp học của chúng mình không?)."
+                    },
+                    {
+                        id: 21,
+                        type: "reorder",
+                        prompt: "Question 21.",
+                        words: ["It’s", "drawing"],
+                        correct: "It’s drawing",
+                        explanation: "Câu trả lời ngắn gọn về sở thích/hoạt động ghép 'It's' + 'drawing': 'It's drawing' (Là vẽ tranh)."
+                    },
+                    {
+                        id: 22,
+                        type: "reorder",
+                        prompt: "Question 22.",
+                        words: ["It", "drawing.", "is"],
+                        correct: "It is drawing.",
+                        explanation: "Câu trần thuật đầy đủ theo thứ tự Chủ ngữ + Động từ + Tân ngữ: 'It is drawing.' (Nó là vẽ tranh)."
+                    },
+                    {
+                        id: 23,
+                        type: "spell",
+                        promptPrefix: "Question 23. Let’s go to the computer",
+                        promptSuffix: ".",
+                        length: 4,
+                        correct: "room",
+                        explanation: "Từ còn thiếu là 'room' (4 chữ cái: r-o-o-m) để tạo thành cụm 'computer room' (phòng tin học)."
+                    },
+                    {
+                        id: 24,
+                        type: "spell",
+                        promptPrefix: "Question 24. What’s your",
+                        promptSuffix: "?",
+                        length: 5,
+                        correct: "hobby",
+                        explanation: "Từ còn thiếu là 'hobby' (5 chữ cái: h-o-b-b-y) để hoàn chỉnh câu hỏi 'What's your hobby?' (Sở thích của con là gì?)."
+                    },
+                    {
+                        id: 25,
+                        type: "spell",
+                        promptPrefix: "Question 25. I",
+                        promptSuffix: "a school bag.",
+                        length: 4,
+                        correct: "have",
+                        explanation: "Với chủ ngữ 'I', động từ chỉ sự sở hữu là 'have' (4 chữ cái: h-a-v-e): 'I have a school bag.' (Tớ có một chiếc cặp sách)."
+                    }
                 ]
             },
             {
@@ -403,11 +586,56 @@ const IMG_PART_6 = {
                 title: "PART 6: Look at the picture and choose A, or B, or C",
                 subtitle: "Quan sát tranh và chọn đáp án đúng hoàn thành câu (Câu 26 – 30)",
                 questions: [
-                    { id: 26, type: "single_pic_mcq", prompt: "Question 26. This is my ________.", imgUrl: IMG_PART_6.q26, fallbackSvg: SVG_BANK.q26, options: [{ key: "A", text: "A. ear" }, { key: "B", text: "B. eye" }, { key: "C", text: "C. nose" }], correct: "A" },
-                    { id: 27, type: "single_pic_mcq", prompt: "Question 27. She is ________.", imgUrl: IMG_PART_6.q27, fallbackSvg: SVG_BANK.q27, options: [{ key: "A", text: "A. cook" }, { key: "B", text: "B. cooking" }, { key: "C", text: "C. cooks" }], correct: "B" },
-                    { id: 28, type: "single_pic_mcq", prompt: "Question 28. Let's go to the ________.", imgUrl: IMG_PART_6.q28, fallbackSvg: SVG_BANK.q28, options: [{ key: "A", text: "A. music ground" }, { key: "B", text: "B. music house" }, { key: "C", text: "C. music room" }], correct: "C" },
-                    { id: 29, type: "single_pic_mcq", prompt: "Question 29. He is ________.", imgUrl: IMG_PART_6.q29, fallbackSvg: SVG_BANK.q29, options: [{ key: "A", text: "A. running" }, { key: "B", text: "B. playing" }, { key: "C", text: "C. watching" }], correct: "A" },
-                    { id: 30, type: "single_pic_mcq", prompt: "Question 30. I am in the ________.", imgUrl: IMG_PART_6.q30, fallbackSvg: SVG_BANK.q30, options: [{ key: "A", text: "A. kitchen" }, { key: "B", text: "B. computer room" }, { key: "C", text: "C. library" }], correct: "B" }
+                    {
+                        id: 26,
+                        type: "single_pic_mcq",
+                        prompt: "Question 26. This is my ________.",
+                        imgUrl: IMG_PART_6.q26,
+                        fallbackSvg: SVG_BANK.q26,
+                        options: [{ key: "A", text: "A. ear" }, { key: "B", text: "B. eye" }, { key: "C", text: "C. nose" }],
+                        correct: "A",
+                        explanation: "Hình ảnh chỉ vào bộ phận cái tai ('ear'), không phải mắt ('eye') hay mũi ('nose'), nên chọn 'A. ear'."
+                    },
+                    {
+                        id: 27,
+                        type: "single_pic_mcq",
+                        prompt: "Question 27. She is ________.",
+                        imgUrl: IMG_PART_6.q27,
+                        fallbackSvg: SVG_BANK.q27,
+                        options: [{ key: "A", text: "A. cook" }, { key: "B", text: "B. cooking" }, { key: "C", text: "C. cooks" }],
+                        correct: "B",
+                        explanation: "Sau 'She is' (thì hiện tại tiếp diễn diễn tả hành động đang diễn ra) ta dùng động từ thêm '-ing': 'cooking' (đang nấu ăn)."
+                    },
+                    {
+                        id: 28,
+                        type: "single_pic_mcq",
+                        prompt: "Question 28. Let's go to the ________.",
+                        imgUrl: IMG_PART_6.q28,
+                        fallbackSvg: SVG_BANK.q28,
+                        options: [{ key: "A", text: "A. music ground" }, { key: "B", text: "B. music house" }, { key: "C", text: "C. music room" }],
+                        correct: "C",
+                        explanation: "Hình ảnh có nhạc cụ và nốt nhạc là phòng âm nhạc ('music room'), nên chọn 'C. music room'."
+                    },
+                    {
+                        id: 29,
+                        type: "single_pic_mcq",
+                        prompt: "Question 29. He is ________.",
+                        imgUrl: IMG_PART_6.q29,
+                        fallbackSvg: SVG_BANK.q29,
+                        options: [{ key: "A", text: "A. running" }, { key: "B", text: "B. playing" }, { key: "C", text: "C. watching" }],
+                        correct: "A",
+                        explanation: "Trong tranh bạn nam đang chạy ('running') nên chọn 'A. running'."
+                    },
+                    {
+                        id: 30,
+                        type: "single_pic_mcq",
+                        prompt: "Question 30. I am in the ________.",
+                        imgUrl: IMG_PART_6.q30,
+                        fallbackSvg: SVG_BANK.q30,
+                        options: [{ key: "A", text: "A. kitchen" }, { key: "B", text: "B. computer room" }, { key: "C", text: "C. library" }],
+                        correct: "B",
+                        explanation: "Trong tranh có các máy tính đặt trên bàn nên đây là phòng tin học ('computer room'), chọn 'B. computer room'."
+                    }
                 ]
             }
         ];
@@ -439,6 +667,29 @@ const IMG_PART_6 = {
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getShortStudentName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getShortStudentName();
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Xin chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(q.correct)}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -764,6 +1015,7 @@ const IMG_PART_6 = {
                     `;
                 }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
