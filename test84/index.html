@@ -297,10 +297,38 @@
                 subtitle: "Quan sát hình gợi ý và điền từ hoàn chỉnh vào ô trống (Câu 1 – 4)",
                 imageUrl: IMG_PART_1,
                 questions: [
-                    { id: 1, type: "long", promptBefore: "Question 1. Mu _ _ c →", promptAfter: "", correct: "Music" },
-                    { id: 2, type: "long", promptBefore: "Question 2. _ _ ate →", promptAfter: "", correct: "skate" },
-                    { id: 3, type: "long", promptBefore: "Question 3. _ _ ite →", promptAfter: "", correct: "write" },
-                    { id: 4, type: "long", promptBefore: "Question 4. F_ _day →", promptAfter: "", correct: "Friday" }
+                    {
+                        id: 1,
+                        type: "long",
+                        promptBefore: "Question 1. Mu _ _ c →",
+                        promptAfter: "",
+                        correct: "Music",
+                        explanation: "Từ gợi ý 'Mu _ _ c' là 'Music' (môn Âm nhạc)."
+                    },
+                    {
+                        id: 2,
+                        type: "long",
+                        promptBefore: "Question 2. _ _ ate →",
+                        promptAfter: "",
+                        correct: "skate",
+                        explanation: "Từ gợi ý '_ _ ate' là 'skate' (trượt patin)."
+                    },
+                    {
+                        id: 3,
+                        type: "long",
+                        promptBefore: "Question 3. _ _ ite →",
+                        promptAfter: "",
+                        correct: "write",
+                        explanation: "Từ gợi ý '_ _ ite' là 'write' (viết)."
+                    },
+                    {
+                        id: 4,
+                        type: "long",
+                        promptBefore: "Question 4. F_ _day →",
+                        promptAfter: "",
+                        correct: "Friday",
+                        explanation: "Từ gợi ý 'F_ _day' là 'Friday' (thứ Sáu)."
+                    }
                 ]
             },
             {
@@ -308,10 +336,38 @@
                 title: "PART 2: Choose the best answers by circling A, B, C or D",
                 subtitle: "Chọn đáp án đúng nhất A, B, C hoặc D (Câu 5 – 8)",
                 questions: [
-                    { id: 5, type: "mcq", prompt: "Question 5. What’s your hobby? - I like ____", options: [{ key: "A", text: "A. Sings" }, { key: "B", text: "B. Singing" }, { key: "C", text: "C. Sing" }, { key: "D", text: "D. to sing" }], correct: "B" },
-                    { id: 6, type: "mcq", prompt: "Question 6. My favourite subject is____.", options: [{ key: "A", text: "A. do" }, { key: "B", text: "B. Monday" }, { key: "C", text: "C. Friday" }, { key: "D", text: "D. Science" }], correct: "D" },
-                    { id: 7, type: "mcq", prompt: "Question 7. ___ can you do? – I can swim.", options: [{ key: "A", text: "A. Who" }, { key: "B", text: "B. What" }, { key: "C", text: "C. Where" }, { key: "D", text: "D. When" }], correct: "B" },
-                    { id: 8, type: "mcq", prompt: "Question 8. What day is it today? – It’s____.", options: [{ key: "A", text: "A. Thursday" }, { key: "B", text: "B. Cooking" }, { key: "C", text: "C. at home" }, { key: "D", text: "D. Music" }], correct: "A" }
+                    {
+                        id: 5,
+                        type: "mcq",
+                        prompt: "Question 5. What’s your hobby? - I like ____",
+                        options: [{ key: "A", text: "A. Sings" }, { key: "B", text: "B. Singing" }, { key: "C", text: "C. Sing" }, { key: "D", text: "D. to sing" }],
+                        correct: "B",
+                        explanation: "Sau 'like' diễn tả sở thích ('What's your hobby?') thường dùng động từ thêm '-ing': 'Singing' ('I like Singing.'), chọn B."
+                    },
+                    {
+                        id: 6,
+                        type: "mcq",
+                        prompt: "Question 6. My favourite subject is____.",
+                        options: [{ key: "A", text: "A. do" }, { key: "B", text: "B. Monday" }, { key: "C", text: "C. Friday" }, { key: "D", text: "D. Science" }],
+                        correct: "D",
+                        explanation: "'subject' là môn học nên đáp án đúng là 'Science' (môn Khoa học), còn 'Monday' và 'Friday' là ngày trong tuần, chọn D."
+                    },
+                    {
+                        id: 7,
+                        type: "mcq",
+                        prompt: "Question 7. ___ can you do? – I can swim.",
+                        options: [{ key: "A", text: "A. Who" }, { key: "B", text: "B. What" }, { key: "C", text: "C. Where" }, { key: "D", text: "D. When" }],
+                        correct: "B",
+                        explanation: "Câu trả lời 'I can swim.' nêu hành động/khả năng làm được nên từ hỏi đúng là 'What' ('What can you do?'), chọn B."
+                    },
+                    {
+                        id: 8,
+                        type: "mcq",
+                        prompt: "Question 8. What day is it today? – It’s____.",
+                        options: [{ key: "A", text: "A. Thursday" }, { key: "B", text: "B. Cooking" }, { key: "C", text: "C. at home" }, { key: "D", text: "D. Music" }],
+                        correct: "A",
+                        explanation: "Câu hỏi 'What day is it today?' hỏi thứ trong tuần nên đáp án đúng là 'Thursday' (thứ Năm), chọn A."
+                    }
                 ]
             },
             {
@@ -320,10 +376,38 @@
                 subtitle: "Chọn câu trả lời phù hợp (a – d) cho từng câu hỏi (Câu 9 – 12)",
                 isMatchingPart: true,
                 questions: [
-                    { id: 9, type: "match", num: 1, prompt: "1. Goodbye, Linda", correct: "a" },
-                    { id: 10, type: "match", num: 2, prompt: "2. What nationality are you?", correct: "b" },
-                    { id: 11, type: "match", num: 3, prompt: "3. Can you play the piano?", correct: "c" },
-                    { id: 12, type: "match", num: 4, prompt: "4. Where are you from?", correct: "d" }
+                    {
+                        id: 9,
+                        type: "match",
+                        num: 1,
+                        prompt: "1. Goodbye, Linda",
+                        correct: "a",
+                        explanation: "Lời tạm biệt 'Goodbye, Linda' ứng với đáp án a: 'See you later, Peter' (Hẹn gặp lại sau nhé, Peter)."
+                    },
+                    {
+                        id: 10,
+                        type: "match",
+                        num: 2,
+                        prompt: "2. What nationality are you?",
+                        correct: "b",
+                        explanation: "Câu hỏi quốc tịch 'What nationality are you?' ứng với đáp án b: 'I’m Vietnamese.' (Tớ là người Việt Nam)."
+                    },
+                    {
+                        id: 11,
+                        type: "match",
+                        num: 3,
+                        prompt: "3. Can you play the piano?",
+                        correct: "c",
+                        explanation: "Câu hỏi 'Can you play the piano?' ứng với đáp án c: 'Yes, I can.'."
+                    },
+                    {
+                        id: 12,
+                        type: "match",
+                        num: 4,
+                        prompt: "4. Where are you from?",
+                        correct: "d",
+                        explanation: "Câu hỏi quê quán 'Where are you from?' ứng với đáp án d: 'I’m from Vietnam.' (Tớ đến từ Việt Nam)."
+                    }
                 ]
             },
             {
@@ -331,10 +415,38 @@
                 title: "PART 4: Reorder words",
                 subtitle: "Bấm vào các thẻ từ để sắp xếp thành câu hoàn chỉnh (Câu 13 – 16)",
                 questions: [
-                    { id: 13, type: "reorder", prompt: "Question 13.", words: ["visit", "the", "my", "I", "grandparents", "morning.", "in"], correct: "I visit my grandparents in the morning." },
-                    { id: 14, type: "reorder", prompt: "Question 14.", words: ["When", "is", "birthday?", "your"], correct: "When is your birthday?" },
-                    { id: 15, type: "reorder", prompt: "Question 15.", words: ["were", "you", "Where", "yesterday?"], correct: "Where were you yesterday?" },
-                    { id: 16, type: "reorder", prompt: "Question 16.", words: ["is", "music.", "to", "listening", "He"], correct: "He is listening to music." }
+                    {
+                        id: 13,
+                        type: "reorder",
+                        prompt: "Question 13.",
+                        words: ["visit", "the", "my", "I", "grandparents", "morning.", "in"],
+                        correct: "I visit my grandparents in the morning.",
+                        explanation: "Thứ tự đúng của câu là: 'I visit my grandparents in the morning.' (Tớ thăm ông bà vào buổi sáng)."
+                    },
+                    {
+                        id: 14,
+                        type: "reorder",
+                        prompt: "Question 14.",
+                        words: ["When", "is", "birthday?", "your"],
+                        correct: "When is your birthday?",
+                        explanation: "Câu hỏi sinh nhật chuẩn là: 'When is your birthday?' (Sinh nhật của bạn khi nào?)."
+                    },
+                    {
+                        id: 15,
+                        type: "reorder",
+                        prompt: "Question 15.",
+                        words: ["were", "you", "Where", "yesterday?"],
+                        correct: "Where were you yesterday?",
+                        explanation: "Câu hỏi 'Hôm qua bạn đã ở đâu?' xếp đúng là: 'Where were you yesterday?'."
+                    },
+                    {
+                        id: 16,
+                        type: "reorder",
+                        prompt: "Question 16.",
+                        words: ["is", "music.", "to", "listening", "He"],
+                        correct: "He is listening to music.",
+                        explanation: "Câu hiện tại tiếp diễn xếp đúng là: 'He is listening to music.' (Anh ấy đang nghe nhạc)."
+                    }
                 ]
             },
             {
@@ -345,10 +457,38 @@
                     { speaker: "Peter", text: "My name is Peter. I study at Nguyen Trai Primary School. It is in Nguyen Trai Street, Hanoi. I go to school from Monday to Friday. At school, I have English, Maths, Science, Music, Art, PE and IT. Maths is my favourite subject. It was Saturday yesterday. I was at home. In the morning, I played games with my friends on the Internet. In the afternoon, I played football and listened to music. In the evening, I played chess with my father. I went to bed early." }
                 ],
                 questions: [
-                    { id: 17, type: "mcq", prompt: "Question 17. Yesterday evening, he _.", options: [{ key: "A", text: "A. played football" }, { key: "B", text: "B. listened to music" }, { key: "C", text: "C. played chess" }], correct: "C" },
-                    { id: 18, type: "mcq", prompt: "Question 18. His favourite subject is _.", options: [{ key: "A", text: "A. Maths" }, { key: "B", text: "B. Music" }, { key: "C", text: "C. Science" }], correct: "A" },
-                    { id: 19, type: "mcq", prompt: "Question 19. Yesterday morning, he _ with his friends on the Internet.", options: [{ key: "A", text: "A. played games" }, { key: "B", text: "B. chatted" }, { key: "C", text: "C. watched a video" }], correct: "A" },
-                    { id: 20, type: "mcq", prompt: "Question 20. Peter studies at _ School.", options: [{ key: "A", text: "A. Nguyen Trai Primary" }, { key: "B", text: "B. Nguyen Trai Street" }, { key: "C", text: "C. Hanoi" }], correct: "A" }
+                    {
+                        id: 17,
+                        type: "mcq",
+                        prompt: "Question 17. Yesterday evening, he _.",
+                        options: [{ key: "A", text: "A. played football" }, { key: "B", text: "B. listened to music" }, { key: "C", text: "C. played chess" }],
+                        correct: "C",
+                        explanation: "Trong đoạn văn viết 'In the evening, I played chess with my father.' nên chọn 'C. played chess'."
+                    },
+                    {
+                        id: 18,
+                        type: "mcq",
+                        prompt: "Question 18. His favourite subject is _.",
+                        options: [{ key: "A", text: "A. Maths" }, { key: "B", text: "B. Music" }, { key: "C", text: "C. Science" }],
+                        correct: "A",
+                        explanation: "Peter viết 'Maths is my favourite subject.' nên môn yêu thích là 'A. Maths'."
+                    },
+                    {
+                        id: 19,
+                        type: "mcq",
+                        prompt: "Question 19. Yesterday morning, he _ with his friends on the Internet.",
+                        options: [{ key: "A", text: "A. played games" }, { key: "B", text: "B. chatted" }, { key: "C", text: "C. watched a video" }],
+                        correct: "A",
+                        explanation: "Đoạn văn viết 'In the morning, I played games with my friends on the Internet.' nên chọn 'A. played games'."
+                    },
+                    {
+                        id: 20,
+                        type: "mcq",
+                        prompt: "Question 20. Peter studies at _ School.",
+                        options: [{ key: "A", text: "A. Nguyen Trai Primary" }, { key: "B", text: "B. Nguyen Trai Street" }, { key: "C", text: "C. Hanoi" }],
+                        correct: "A",
+                        explanation: "Câu đầu đoạn văn viết 'I study at Nguyen Trai Primary School.' nên chọn 'A. Nguyen Trai Primary'."
+                    }
                 ]
             },
             {
@@ -360,11 +500,46 @@
                     { speaker: "Mimi", text: "(0) Hello, I’m Mimi from Mayan Primary School. It’s <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(21)___</span> today. I’m in class now. We have Art and <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(22)___</span> today. We are surfing the <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(23)___</span> for our IT project. Yesterday was Sunday. I was not at school. I had a <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(24)___</span> party with a lot of classmates. We had lots of fun. We had a big birthday cake. We watched videos, listened to music and <span class='px-2 py-0.5 bg-amber-200 rounded-lg font-black text-amber-900'>___(25)___</span>." }
                 ],
                 questions: [
-                    { id: 21, type: "long", promptBefore: "Question 21. Chỗ trống (21):", promptAfter: "", correct: "Monday" },
-                    { id: 22, type: "long", promptBefore: "Question 22. Chỗ trống (22):", promptAfter: "", correct: "IT" },
-                    { id: 23, type: "long", promptBefore: "Question 23. Chỗ trống (23):", promptAfter: "", correct: "Internet" },
-                    { id: 24, type: "long", promptBefore: "Question 24. Chỗ trống (24):", promptAfter: "", correct: "birthday" },
-                    { id: 25, type: "long", promptBefore: "Question 25. Chỗ trống (25):", promptAfter: "", correct: "danced" }
+                    {
+                        id: 21,
+                        type: "long",
+                        promptBefore: "Question 21. Chỗ trống (21):",
+                        promptAfter: "",
+                        correct: "Monday",
+                        explanation: "Vì hôm qua là Chủ nhật ('Yesterday was Sunday.') nên hôm nay là thứ Hai ('Monday')."
+                    },
+                    {
+                        id: 22,
+                        type: "long",
+                        promptBefore: "Question 22. Chỗ trống (22):",
+                        promptAfter: "",
+                        correct: "IT",
+                        explanation: "Môn học đi cùng 'Art' và liên quan tới 'IT project' ở câu sau là 'IT'."
+                    },
+                    {
+                        id: 23,
+                        type: "long",
+                        promptBefore: "Question 23. Chỗ trống (23):",
+                        promptAfter: "",
+                        correct: "Internet",
+                        explanation: "Cụm từ 'surfing the Internet' có nghĩa là lướt mạng/lướt Internet nên điền 'Internet'."
+                    },
+                    {
+                        id: 24,
+                        type: "long",
+                        promptBefore: "Question 24. Chỗ trống (24):",
+                        promptAfter: "",
+                        correct: "birthday",
+                        explanation: "Phía sau có nhắc đến 'big birthday cake' (bánh sinh nhật lớn) nên đây là bữa tiệc sinh nhật: 'birthday'."
+                    },
+                    {
+                        id: 25,
+                        type: "long",
+                        promptBefore: "Question 25. Chỗ trống (25):",
+                        promptAfter: "",
+                        correct: "danced",
+                        explanation: "Các động từ trong chuỗi hoạt động quá khứ đều ở dạng quá khứ đơn ('watched... listened... and danced'), nên điền 'danced'."
+                    }
                 ]
             }
         ];
@@ -396,6 +571,32 @@
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getStudentDisplayName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getStudentDisplayName();
+            const correctDisplay = q.type === "match" && typeof MATCH_ANSWERS !== "undefined"
+                ? `${q.correct}. ${MATCH_ANSWERS.find(m => m.key === q.correct)?.text || ""}`
+                : q.correct;
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Cô Linda chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(String(correctDisplay))}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -605,22 +806,6 @@
                 `;
             }
 
-            if (p.isMatchingPart) {
-                html += `
-                    <div class="mt-4 bg-amber-50/80 border-2 border-amber-200 rounded-2xl p-4">
-                        <div class="text-xs font-black uppercase text-amber-800 tracking-wide mb-2.5">📋 Bảng đáp án gợi ý (a – d):</div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm font-bold text-slate-700">
-                            ${MATCH_ANSWERS.map(item => `
-                                <div class="bg-white px-3 py-2 rounded-xl border border-amber-200 flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-full bg-blue-600 text-white font-black text-xs flex items-center justify-center flex-shrink-0">${item.key}</span>
-                                    <span>${item.text}</span>
-                                </div>
-                            `).join("")}
-                        </div>
-                    </div>
-                `;
-            }
-
             html += `</div><div class="space-y-4">`;
 
             p.questions.forEach(q => {
@@ -719,6 +904,7 @@
                     `;
                 }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
