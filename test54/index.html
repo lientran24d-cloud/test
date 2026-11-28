@@ -295,16 +295,86 @@
                 title: "PART 1: Choose the correct answer",
                 subtitle: "Chọn đáp án đúng hoàn thành câu (Câu 1 – 10)",
                 questions: [
-                    { id: 1, type: "mcq", prompt: "Question 1. We ____ new subjects for this school year.", options: [{ key: "A", text: "A. having" }, { key: "B", text: "B. have" }, { key: "C", text: "C. had" }, { key: "D", text: "D. has" }], correct: "B" },
-                    { id: 2, type: "mcq", prompt: "Question 2. What do you do in your free time? – I always ______ books in my free time.", options: [{ key: "A", text: "A. is reading" }, { key: "B", text: "B. reads" }, { key: "C", text: "C. to read" }, { key: "D", text: "D. read" }], correct: "D" },
-                    { id: 3, type: "mcq", prompt: "Question 3. Alex usually _________ his homework at 8 p.m.", options: [{ key: "A", text: "A. finishes" }, { key: "B", text: "B. finished" }, { key: "C", text: "C. finishing" }, { key: "D", text: "D. finish" }], correct: "A" },
-                    { id: 4, type: "mcq", prompt: "Question 4. We _______ to the judo club twice a month.", options: [{ key: "A", text: "A. make" }, { key: "B", text: "B. take" }, { key: "C", text: "C. go" }, { key: "D", text: "D. have" }], correct: "C" },
-                    { id: 5, type: "mcq", prompt: "Question 5. I ___________ English lessons on Tuesday and Friday every week.", options: [{ key: "A", text: "A. is having" }, { key: "B", text: "B. has" }, { key: "C", text: "C. have" }, { key: "D", text: "D. had" }], correct: "C" },
-                    { id: 6, type: "mcq", prompt: "Question 6. Would you ______ chicken or pizza?", options: [{ key: "A", text: "A. do" }, { key: "B", text: "B. surf" }, { key: "C", text: "C. like" }], correct: "C" },
-                    { id: 7, type: "mcq", prompt: "Question 7. They ______ taking a photo.", options: [{ key: "A", text: "A. are" }, { key: "B", text: "B. am" }, { key: "C", text: "C. is" }], correct: "A" },
-                    { id: 8, type: "mcq", prompt: "Question 8. This is _____ dad.", options: [{ key: "A", text: "A. Rosy" }, { key: "B", text: "B. Rosy’s" }, { key: "C", text: "C. Rosys" }], correct: "B" },
-                    { id: 9, type: "mcq", prompt: "Question 9. Does he _____ in a police station?", options: [{ key: "A", text: "A. working" }, { key: "B", text: "B. works" }, { key: "C", text: "C. work" }], correct: "C" },
-                    { id: 10, type: "mcq", prompt: "Question 10. Can we ______ these pens?", options: [{ key: "A", text: "A. uses" }, { key: "B", text: "B. use" }, { key: "C", text: "C. using" }], correct: "B" }
+                    {
+                        id: 1,
+                        type: "mcq",
+                        prompt: "Question 1. We ____ new subjects for this school year.",
+                        options: [{ key: "A", text: "A. having" }, { key: "B", text: "B. have" }, { key: "C", text: "C. had" }, { key: "D", text: "D. has" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'We' (số nhiều) ở thì hiện tại đơn dùng động từ nguyên thể 'have' ('We have new subjects for this school year.'), chọn B."
+                    },
+                    {
+                        id: 2,
+                        type: "mcq",
+                        prompt: "Question 2. What do you do in your free time? – I always ______ books in my free time.",
+                        options: [{ key: "A", text: "A. is reading" }, { key: "B", text: "B. reads" }, { key: "C", text: "C. to read" }, { key: "D", text: "D. read" }],
+                        correct: "D",
+                        explanation: "Với 'always' (luôn luôn) và chủ ngữ 'I' ở thì hiện tại đơn, động từ giữ nguyên dạng 'read' ('I always read books...'), chọn D."
+                    },
+                    {
+                        id: 3,
+                        type: "mcq",
+                        prompt: "Question 3. Alex usually _________ his homework at 8 p.m.",
+                        options: [{ key: "A", text: "A. finishes" }, { key: "B", text: "B. finished" }, { key: "C", text: "C. finishing" }, { key: "D", text: "D. finish" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ 'Alex' là ngôi thứ ba số ít có trạng từ tần suất 'usually' (hiện tại đơn) nên động từ 'finish' thêm '-es' thành 'finishes', chọn A."
+                    },
+                    {
+                        id: 4,
+                        type: "mcq",
+                        prompt: "Question 4. We _______ to the judo club twice a month.",
+                        options: [{ key: "A", text: "A. make" }, { key: "B", text: "B. take" }, { key: "C", text: "C. go" }, { key: "D", text: "D. have" }],
+                        correct: "C",
+                        explanation: "Cụm từ đi tới câu lạc bộ là 'go to the ... club' ('We go to the judo club twice a month.'), chọn C."
+                    },
+                    {
+                        id: 5,
+                        type: "mcq",
+                        prompt: "Question 5. I ___________ English lessons on Tuesday and Friday every week.",
+                        options: [{ key: "A", text: "A. is having" }, { key: "B", text: "B. has" }, { key: "C", text: "C. have" }, { key: "D", text: "D. had" }],
+                        correct: "C",
+                        explanation: "Có 'every week' (hàng tuần - hiện tại đơn) và chủ ngữ 'I' nên động từ đúng là 'have' ('I have English lessons...'), chọn C."
+                    },
+                    {
+                        id: 6,
+                        type: "mcq",
+                        prompt: "Question 6. Would you ______ chicken or pizza?",
+                        options: [{ key: "A", text: "A. do" }, { key: "B", text: "B. surf" }, { key: "C", text: "C. like" }],
+                        correct: "C",
+                        explanation: "Mẫu câu mời/hỏi lựa chọn đồ ăn thức uống lịch sự là 'Would you like ...?' ('Would you like chicken or pizza?'), chọn C."
+                    },
+                    {
+                        id: 7,
+                        type: "mcq",
+                        prompt: "Question 7. They ______ taking a photo.",
+                        options: [{ key: "A", text: "A. are" }, { key: "B", text: "B. am" }, { key: "C", text: "C. is" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ số nhiều 'They' trong thì hiện tại tiếp diễn ('... taking a photo') đi với 'are' ('They are taking a photo.'), chọn A."
+                    },
+                    {
+                        id: 8,
+                        type: "mcq",
+                        prompt: "Question 8. This is _____ dad.",
+                        options: [{ key: "A", text: "A. Rosy" }, { key: "B", text: "B. Rosy’s" }, { key: "C", text: "C. Rosys" }],
+                        correct: "B",
+                        explanation: "Để diễn tả 'bố của Rosy' ta dùng sở hữu cách thêm '’s': 'Rosy’s dad' ('This is Rosy’s dad.'), chọn B."
+                    },
+                    {
+                        id: 9,
+                        type: "mcq",
+                        prompt: "Question 9. Does he _____ in a police station?",
+                        options: [{ key: "A", text: "A. working" }, { key: "B", text: "B. works" }, { key: "C", text: "C. work" }],
+                        correct: "C",
+                        explanation: "Sau trợ động từ 'Does' trong câu hỏi thì hiện tại đơn, động từ chính trở về dạng nguyên thể 'work', chọn C."
+                    },
+                    {
+                        id: 10,
+                        type: "mcq",
+                        prompt: "Question 10. Can we ______ these pens?",
+                        options: [{ key: "A", text: "A. uses" }, { key: "B", text: "B. use" }, { key: "C", text: "C. using" }],
+                        correct: "B",
+                        explanation: "Sau động từ khuyết thiếu 'Can' và chủ ngữ 'we', động từ giữ nguyên dạng 'use' ('Can we use these pens?'), chọn B."
+                    }
                 ]
             },
             {
@@ -321,16 +391,97 @@
                 ],
                 fallbackScript: "1. Where's your school? It's in the mountains. 2. When do you have music? I have it on Thursdays. 3. What's your favourite subject? It's English because I want to be an English teacher. 4. Is your sports day in October? No, it isn't. It's in May. 5. Were you at the campsite last weekend? Yes, I was.",
                 questions: [
-                    { id: 11, type: "spell", promptPrefix: "Question 11. Chỗ trống (11):", promptSuffix: "", length: 5, correct: "Where" },
-                    { id: 12, type: "spell", promptPrefix: "Question 12. Chỗ trống (12):", promptSuffix: "", length: 9, correct: "mountains" },
-                    { id: 13, type: "spell", promptPrefix: "Question 13. Chỗ trống (13):", promptSuffix: "", length: 4, correct: "When" },
-                    { id: 14, type: "spell", promptPrefix: "Question 14. Chỗ trống (14):", promptSuffix: "", length: 9, correct: "Thursdays" },
-                    { id: 15, type: "spell", promptPrefix: "Question 15. Chỗ trống (15):", promptSuffix: "", length: 9, correct: "favourite", altCorrect: ["favorite"] },
-                    { id: 16, type: "spell", promptPrefix: "Question 16. Chỗ trống (16):", promptSuffix: "", length: 7, correct: "because" },
-                    { id: 17, type: "spell", promptPrefix: "Question 17. Chỗ trống (17):", promptSuffix: "", length: 6, correct: "sports" },
-                    { id: 18, type: "spell", promptPrefix: "Question 18. Chỗ trống (18):", promptSuffix: "", length: 3, correct: "May" },
-                    { id: 19, type: "spell", promptPrefix: "Question 19. Chỗ trống (19):", promptSuffix: "", length: 7, correct: "weekend" },
-                    { id: 20, type: "spell", promptPrefix: "Question 20. Chỗ trống (20):", promptSuffix: "", length: 3, correct: "was" }
+                    {
+                        id: 11,
+                        type: "spell",
+                        promptPrefix: "Question 11. Chỗ trống (11):",
+                        promptSuffix: "",
+                        length: 5,
+                        correct: "Where",
+                        explanation: "Hội thoại 1 mở đầu bằng từ hỏi địa điểm 'Where' ('Where's your school?' - 5 chữ cái)."
+                    },
+                    {
+                        id: 12,
+                        type: "spell",
+                        promptPrefix: "Question 12. Chỗ trống (12):",
+                        promptSuffix: "",
+                        length: 9,
+                        correct: "mountains",
+                        explanation: "Câu trả lời trong đoạn nghe là 'It's in the mountains.' (Ở vùng núi - 'mountains', 9 chữ cái)."
+                    },
+                    {
+                        id: 13,
+                        type: "spell",
+                        promptPrefix: "Question 13. Chỗ trống (13):",
+                        promptSuffix: "",
+                        length: 4,
+                        correct: "When",
+                        explanation: "Hội thoại 2 hỏi thời gian có môn âm nhạc bằng 'When' ('When do you have music?' - 4 chữ cái)."
+                    },
+                    {
+                        id: 14,
+                        type: "spell",
+                        promptPrefix: "Question 14. Chỗ trống (14):",
+                        promptSuffix: "",
+                        length: 9,
+                        correct: "Thursdays",
+                        explanation: "Trong đoạn nghe, môn âm nhạc được học vào 'Thursdays' (các ngày thứ Năm - 9 chữ cái)."
+                    },
+                    {
+                        id: 15,
+                        type: "spell",
+                        promptPrefix: "Question 15. Chỗ trống (15):",
+                        promptSuffix: "",
+                        length: 9,
+                        correct: "favourite",
+                        altCorrect: ["favorite"],
+                        explanation: "Cụm từ 'favourite subject' (môn học yêu thích) dùng tính từ 'favourite' (9 chữ cái)."
+                    },
+                    {
+                        id: 16,
+                        type: "spell",
+                        promptPrefix: "Question 16. Chỗ trống (16):",
+                        promptSuffix: "",
+                        length: 7,
+                        correct: "because",
+                        explanation: "Liên từ nêu lý do 'bởi vì tớ muốn trở thành giáo viên tiếng Anh' là 'because' (7 chữ cái)."
+                    },
+                    {
+                        id: 17,
+                        type: "spell",
+                        promptPrefix: "Question 17. Chỗ trống (17):",
+                        promptSuffix: "",
+                        length: 6,
+                        correct: "sports",
+                        explanation: "Cụm 'sports day' (ngày hội thể thao) dùng từ 'sports' (6 chữ cái)."
+                    },
+                    {
+                        id: 18,
+                        type: "spell",
+                        promptPrefix: "Question 18. Chỗ trống (18):",
+                        promptSuffix: "",
+                        length: 3,
+                        correct: "May",
+                        explanation: "Trong đoạn nghe, ngày hội thể thao diễn ra vào tháng Năm ('It's in May.' - 3 chữ cái)."
+                    },
+                    {
+                        id: 19,
+                        type: "spell",
+                        promptPrefix: "Question 19. Chỗ trống (19):",
+                        promptSuffix: "",
+                        length: 7,
+                        correct: "weekend",
+                        explanation: "Cụm từ chỉ thời gian quá khứ 'last weekend' (cuối tuần trước) dùng từ 'weekend' (7 chữ cái)."
+                    },
+                    {
+                        id: 20,
+                        type: "spell",
+                        promptPrefix: "Question 20. Chỗ trống (20):",
+                        promptSuffix: "",
+                        length: 3,
+                        correct: "was",
+                        explanation: "Câu hỏi bắt đầu bằng 'Were you...?' thì câu trả lời khẳng định dùng 'Yes, I was.' ('was' - 3 chữ cái)."
+                    }
                 ]
             },
             {
@@ -338,16 +489,86 @@
                 title: "PART 3: Reorder words",
                 subtitle: "Bấm vào các thẻ từ để sắp xếp thành câu hoàn chỉnh (Câu 21 – 30)",
                 questions: [
-                    { id: 21, type: "reorder", prompt: "Question 21.", words: ["English", "because", "want", "I", "an", "English", "to", "It’s", "teacher", "be"], correct: "It’s because I want to be an English teacher" },
-                    { id: 22, type: "reorder", prompt: "Question 22.", words: ["I", "because", "the", "to", "in", "become", "translator", "future.", "I", "a", "want", "like", "English"], correct: "I like English because I want to become a translator in the future." },
-                    { id: 23, type: "reorder", prompt: "Question 23.", words: ["day", "yesterday.", "sports", "our", "It", "was"], correct: "It was our sports day yesterday." },
-                    { id: 24, type: "reorder", prompt: "Question 24.", words: ["How", "in", "school?", "many", "buildings", "there", "your", "are"], correct: "How many buildings are there in your school?" },
-                    { id: 25, type: "reorder", prompt: "Question 25.", words: ["day?", "is", "your", "When", "sports"], correct: "When is your sports day?" },
-                    { id: 26, type: "reorder", prompt: "Question 26.", words: ["the", "on", "beach.", "I", "was"], correct: "I was on the beach." },
-                    { id: 27, type: "reorder", prompt: "Question 27.", words: ["October?", "in", "your", "sports", "Is", "day"], correct: "Is your sports day in October?" },
-                    { id: 28, type: "reorder", prompt: "Question 28.", words: ["you", "camp", "at", "Were", "the", "weekend?", "last"], correct: "Were you at the camp last weekend?" },
-                    { id: 29, type: "reorder", prompt: "Question 29.", words: ["Where", "were", "summer?", "you", "last"], correct: "Where were you last summer?" },
-                    { id: 30, type: "reorder", prompt: "Question 30.", words: ["What’s", "your", "subject?", "favorite"], correct: "What’s your favorite subject?" }
+                    {
+                        id: 21,
+                        type: "reorder",
+                        prompt: "Question 21.",
+                        words: ["English", "because", "want", "I", "an", "English", "to", "It’s", "teacher", "be"],
+                        correct: "It’s because I want to be an English teacher",
+                        explanation: "Thứ tự đúng của câu là: 'It’s because I want to be an English teacher'."
+                    },
+                    {
+                        id: 22,
+                        type: "reorder",
+                        prompt: "Question 22.",
+                        words: ["I", "because", "the", "to", "in", "become", "translator", "future.", "I", "a", "want", "like", "English"],
+                        correct: "I like English because I want to become a translator in the future.",
+                        explanation: "Câu ghép nêu lý do xếp đúng thứ tự là: 'I like English because I want to become a translator in the future.'."
+                    },
+                    {
+                        id: 23,
+                        type: "reorder",
+                        prompt: "Question 23.",
+                        words: ["day", "yesterday.", "sports", "our", "It", "was"],
+                        correct: "It was our sports day yesterday.",
+                        explanation: "Câu kể thì quá khứ xếp đúng thứ tự là: 'It was our sports day yesterday.'."
+                    },
+                    {
+                        id: 24,
+                        type: "reorder",
+                        prompt: "Question 24.",
+                        words: ["How", "in", "school?", "many", "buildings", "there", "your", "are"],
+                        correct: "How many buildings are there in your school?",
+                        explanation: "Câu hỏi số lượng tòa nhà trong trường xếp đúng là: 'How many buildings are there in your school?'."
+                    },
+                    {
+                        id: 25,
+                        type: "reorder",
+                        prompt: "Question 25.",
+                        words: ["day?", "is", "your", "When", "sports"],
+                        correct: "When is your sports day?",
+                        explanation: "Câu hỏi ngày hội thể thao diễn ra khi nào xếp là: 'When is your sports day?'."
+                    },
+                    {
+                        id: 26,
+                        type: "reorder",
+                        prompt: "Question 26.",
+                        words: ["the", "on", "beach.", "I", "was"],
+                        correct: "I was on the beach.",
+                        explanation: "Câu kể ở quá khứ với cụm 'on the beach' (trên bãi biển) xếp là: 'I was on the beach.'."
+                    },
+                    {
+                        id: 27,
+                        type: "reorder",
+                        prompt: "Question 27.",
+                        words: ["October?", "in", "your", "sports", "Is", "day"],
+                        correct: "Is your sports day in October?",
+                        explanation: "Câu hỏi Yes/No về tháng diễn ra ngày hội thể thao xếp là: 'Is your sports day in October?'."
+                    },
+                    {
+                        id: 28,
+                        type: "reorder",
+                        prompt: "Question 28.",
+                        words: ["you", "camp", "at", "Were", "the", "weekend?", "last"],
+                        correct: "Were you at the camp last weekend?",
+                        explanation: "Câu hỏi 'Bạn có ở khu cắm trại cuối tuần trước không?' xếp là: 'Were you at the camp last weekend?'."
+                    },
+                    {
+                        id: 29,
+                        type: "reorder",
+                        prompt: "Question 29.",
+                        words: ["Where", "were", "summer?", "you", "last"],
+                        correct: "Where were you last summer?",
+                        explanation: "Câu hỏi 'Mùa hè năm ngoái bạn đã ở đâu?' xếp là: 'Where were you last summer?'."
+                    },
+                    {
+                        id: 30,
+                        type: "reorder",
+                        prompt: "Question 30.",
+                        words: ["What’s", "your", "subject?", "favorite"],
+                        correct: "What’s your favorite subject?",
+                        explanation: "Câu hỏi môn học yêu thích xếp đúng thứ tự là: 'What’s your favorite subject?'."
+                    }
                 ]
             }
         ];
@@ -379,6 +600,29 @@
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getStudentDisplayName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getStudentDisplayName();
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Cô Linda chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(q.correct)}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -679,6 +923,7 @@
                     `;
                 }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
