@@ -286,16 +286,86 @@
                 title: "PART 1: Choose the correct answer",
                 subtitle: "Chọn đáp án đúng A, B, C hoặc D hoàn thành câu (Câu 1 – 10)",
                 questions: [
-                    { id: 1, type: "mcq", prompt: "Question 1. Linda ______ homework in the evenings.", options: [{ key: "A", text: "A. does not do" }, { key: "B", text: "B. doing" }, { key: "C", text: "C. Do not" }, { key: "D", text: "D. do" }], correct: "A" },
-                    { id: 2, type: "mcq", prompt: "Question 2. ______ you often______ TV?", options: [{ key: "A", text: "A. Do/watch" }, { key: "B", text: "B. Have/watch" }, { key: "C", text: "C. Does/watches" }, { key: "D", text: "D. Do/watches" }], correct: "A" },
-                    { id: 3, type: "mcq", prompt: "Question 3. Quan usually ______ a taxi to the railway station", options: [{ key: "A", text: "A. take" }, { key: "B", text: "B. Ddoes take" }, { key: "C", text: "C. taking" }, { key: "D", text: "D. Takes" }], correct: "D" },
-                    { id: 4, type: "mcq", prompt: "Question 4. Quan usually ______ shopping on weekends.", options: [{ key: "A", text: "A. go" }, { key: "B", text: "B. do" }, { key: "C", text: "C. goes" }, { key: "D", text: "D. does go" }], correct: "C" },
-                    { id: 5, type: "mcq", prompt: "Question 5. Mr. Brown ______ English.", options: [{ key: "A", text: "A. does speak" }, { key: "B", text: "B. Speak" }, { key: "C", text: "C. speakes" }, { key: "D", text: "D. speaks" }], correct: "D" },
-                    { id: 6, type: "mcq", prompt: "Question 6. He often ______ up late.", options: [{ key: "A", text: "A. get up" }, { key: "B", text: "B. getting up" }, { key: "C", text: "C. gets up" }, { key: "D", text: "D. got up" }], correct: "C" },
-                    { id: 7, type: "mcq", prompt: "Question 7. ______ Andy often______ a bus to school?", options: [{ key: "A", text: "A. does/takes" }, { key: "B", text: "B. is/take" }, { key: "C", text: "C. does/take" }, { key: "D", text: "D. Do/take" }], correct: "C" },
-                    { id: 8, type: "mcq", prompt: "Question 8. San and David always ______ a movie on Saturdays.", options: [{ key: "A", text: "A. do see" }, { key: "B", text: "B. See" }, { key: "C", text: "C. sees" }, { key: "D", text: "D. does" }], correct: "B" },
-                    { id: 9, type: "mcq", prompt: "Question 9. Quan often ______ his face at 6:15.", options: [{ key: "A", text: "A. wash" }, { key: "B", text: "B. washes" }, { key: "C", text: "C. does wash" }, { key: "D", text: "D. washing" }], correct: "B" },
-                    { id: 10, type: "mcq", prompt: "Question 10. They ______ student in class 8A.", options: [{ key: "A", text: "A. is" }, { key: "B", text: "B. do" }, { key: "C", text: "C. eat" }, { key: "D", text: "D. Are" }], correct: "D" }
+                    {
+                        id: 1,
+                        type: "mcq",
+                        prompt: "Question 1. Linda ______ homework in the evenings.",
+                        options: [{ key: "A", text: "A. does not do" }, { key: "B", text: "B. doing" }, { key: "C", text: "C. Do not" }, { key: "D", text: "D. do" }],
+                        correct: "A",
+                        explanation: "Chủ ngữ 'Linda' là ngôi thứ ba số ít ở thì hiện tại đơn nên dạng phủ định đúng là 'does not do' (chọn A)."
+                    },
+                    {
+                        id: 2,
+                        type: "mcq",
+                        prompt: "Question 2. ______ you often______ TV?",
+                        options: [{ key: "A", text: "A. Do/watch" }, { key: "B", text: "B. Have/watch" }, { key: "C", text: "C. Does/watches" }, { key: "D", text: "D. Do/watches" }],
+                        correct: "A",
+                        explanation: "Với chủ ngữ 'you' và trạng từ 'often' ở thì hiện tại đơn, câu hỏi dùng trợ động từ 'Do' và động từ nguyên thể 'watch' ('Do you often watch TV?'), chọn A."
+                    },
+                    {
+                        id: 3,
+                        type: "mcq",
+                        prompt: "Question 3. Quan usually ______ a taxi to the railway station",
+                        options: [{ key: "A", text: "A. take" }, { key: "B", text: "B. Ddoes take" }, { key: "C", text: "C. taking" }, { key: "D", text: "D. Takes" }],
+                        correct: "D",
+                        explanation: "Chủ ngữ 'Quan' là ngôi thứ ba số ít có 'usually' (hiện tại đơn) nên động từ 'take' thêm '-s' thành 'takes' (chọn D)."
+                    },
+                    {
+                        id: 4,
+                        type: "mcq",
+                        prompt: "Question 4. Quan usually ______ shopping on weekends.",
+                        options: [{ key: "A", text: "A. go" }, { key: "B", text: "B. do" }, { key: "C", text: "C. goes" }, { key: "D", text: "D. does go" }],
+                        correct: "C",
+                        explanation: "Chủ ngữ 'Quan' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'go' thêm '-es' thành 'goes' ('goes shopping'), chọn C."
+                    },
+                    {
+                        id: 5,
+                        type: "mcq",
+                        prompt: "Question 5. Mr. Brown ______ English.",
+                        options: [{ key: "A", text: "A. does speak" }, { key: "B", text: "B. Speak" }, { key: "C", text: "C. speakes" }, { key: "D", text: "D. speaks" }],
+                        correct: "D",
+                        explanation: "Chủ ngữ 'Mr. Brown' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'speak' thêm '-s' thành 'speaks' (chọn D)."
+                    },
+                    {
+                        id: 6,
+                        type: "mcq",
+                        prompt: "Question 6. He often ______ up late.",
+                        options: [{ key: "A", text: "A. get up" }, { key: "B", text: "B. getting up" }, { key: "C", text: "C. gets up" }, { key: "D", text: "D. got up" }],
+                        correct: "C",
+                        explanation: "Chủ ngữ 'He' là ngôi thứ ba số ít có 'often' (hiện tại đơn) nên cụm 'get up' chia thành 'gets up' (chọn C)."
+                    },
+                    {
+                        id: 7,
+                        type: "mcq",
+                        prompt: "Question 7. ______ Andy often______ a bus to school?",
+                        options: [{ key: "A", text: "A. does/takes" }, { key: "B", text: "B. is/take" }, { key: "C", text: "C. does/take" }, { key: "D", text: "D. Do/take" }],
+                        correct: "C",
+                        explanation: "Chủ ngữ 'Andy' là số ít ở hiện tại đơn nên câu hỏi dùng trợ động từ 'does' và động từ nguyên thể 'take' ('Does Andy often take...?'), chọn C."
+                    },
+                    {
+                        id: 8,
+                        type: "mcq",
+                        prompt: "Question 8. San and David always ______ a movie on Saturdays.",
+                        options: [{ key: "A", text: "A. do see" }, { key: "B", text: "B. See" }, { key: "C", text: "C. sees" }, { key: "D", text: "D. does" }],
+                        correct: "B",
+                        explanation: "'San and David' là chủ ngữ số nhiều ở thì hiện tại đơn nên động từ giữ nguyên dạng 'see' ('see a movie'), chọn B."
+                    },
+                    {
+                        id: 9,
+                        type: "mcq",
+                        prompt: "Question 9. Quan often ______ his face at 6:15.",
+                        options: [{ key: "A", text: "A. wash" }, { key: "B", text: "B. washes" }, { key: "C", text: "C. does wash" }, { key: "D", text: "D. washing" }],
+                        correct: "B",
+                        explanation: "Chủ ngữ 'Quan' là ngôi thứ ba số ít ở thì hiện tại đơn nên động từ 'wash' kết thúc bằng '-sh' thêm '-es' thành 'washes', chọn B."
+                    },
+                    {
+                        id: 10,
+                        type: "mcq",
+                        prompt: "Question 10. They ______ student in class 8A.",
+                        options: [{ key: "A", text: "A. is" }, { key: "B", text: "B. do" }, { key: "C", text: "C. eat" }, { key: "D", text: "D. Are" }],
+                        correct: "D",
+                        explanation: "Chủ ngữ 'They' đi với động từ tobe 'are' ('They are...'), nên chọn D."
+                    }
                 ]
             },
             {
@@ -304,10 +374,38 @@
                 subtitle: "Chọn câu trả lời phù hợp (a – d) cho từng câu hỏi (Câu 11 – 14)",
                 isMatchingPart: true,
                 questions: [
-                    { id: 11, type: "match", num: 1, prompt: "1. Where were you last summer?", correct: "b" },
-                    { id: 12, type: "match", num: 2, prompt: "2. What was the food like?", correct: "c" },
-                    { id: 13, type: "match", num: 3, prompt: "3. Were you on the beach?", correct: "a" },
-                    { id: 14, type: "match", num: 4, prompt: "4. Are you on the beach now?", correct: "d" }
+                    {
+                        id: 11,
+                        type: "match",
+                        num: 1,
+                        prompt: "1. Where were you last summer?",
+                        correct: "b",
+                        explanation: "Câu hỏi 'Mùa hè năm ngoái bạn đã ở đâu?' ứng với đáp án b: 'I was in Sydney.' (Tớ đã ở Sydney)."
+                    },
+                    {
+                        id: 12,
+                        type: "match",
+                        num: 2,
+                        prompt: "2. What was the food like?",
+                        correct: "c",
+                        explanation: "Câu hỏi 'Đồ ăn thì thế nào?' ứng với đáp án c: 'It was very good.' (Nó rất ngon)."
+                    },
+                    {
+                        id: 13,
+                        type: "match",
+                        num: 3,
+                        prompt: "3. Were you on the beach?",
+                        correct: "a",
+                        explanation: "Câu hỏi quá khứ 'Bạn có ở trên bãi biển không?' ứng với đáp án a: 'Yes, I was. The beach was beautiful.'."
+                    },
+                    {
+                        id: 14,
+                        type: "match",
+                        num: 4,
+                        prompt: "4. Are you on the beach now?",
+                        correct: "d",
+                        explanation: "Câu hỏi hiện tại 'Bây giờ bạn có ở trên bãi biển không?' ứng với đáp án d: 'No, I'm not.'."
+                    }
                 ]
             },
             {
@@ -318,10 +416,34 @@
                     { speaker: "Reading Text", text: "I have three friends, Ha, Khoa and Rosie. Ha can play badminton, but she can’t swim. Khoa can ride a bike, but he can’t ride a horse. Rosie can play the piano, but she can’t play the guitar. I can sing, but I can’t dance. We can all roller skate." }
                 ],
                 questions: [
-                    { id: 15, type: "tf", prompt: "15. Ha can swim.", correct: "False" },
-                    { id: 16, type: "tf", prompt: "16. Rosie can play the guitar.", correct: "False" },
-                    { id: 17, type: "tf", prompt: "17. Khoa can’t ride a horse.", correct: "True" },
-                    { id: 18, type: "tf", prompt: "18. They can all roller skate.", correct: "True" }
+                    {
+                        id: 15,
+                        type: "tf",
+                        prompt: "15. Ha can swim.",
+                        correct: "False",
+                        explanation: "Đoạn văn viết 'Ha can play badminton, but she can't swim.' (Hà không biết bơi), trái với câu hỏi nên chọn False."
+                    },
+                    {
+                        id: 16,
+                        type: "tf",
+                        prompt: "16. Rosie can play the guitar.",
+                        correct: "False",
+                        explanation: "Đoạn văn viết 'Rosie can play the piano, but she can't play the guitar.' (Rosie không chơi được đàn ghi-ta), nên chọn False."
+                    },
+                    {
+                        id: 17,
+                        type: "tf",
+                        prompt: "17. Khoa can’t ride a horse.",
+                        correct: "True",
+                        explanation: "Đoạn văn viết 'Khoa can ride a bike, but he can't ride a horse.' (Khoa không biết cưỡi ngựa), khớp với câu hỏi nên chọn True."
+                    },
+                    {
+                        id: 18,
+                        type: "tf",
+                        prompt: "18. They can all roller skate.",
+                        correct: "True",
+                        explanation: "Câu cuối đoạn văn viết 'We can all roller skate.' (Tất cả chúng tớ đều biết trượt patin), khớp với câu hỏi nên chọn True."
+                    }
                 ]
             }
         ];
@@ -353,6 +475,32 @@
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getStudentDisplayName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getStudentDisplayName();
+            const correctDisplay = q.type === "match" && typeof MATCH_ANSWERS !== "undefined"
+                ? `${q.correct}. ${MATCH_ANSWERS.find(m => m.key === q.correct)?.text || ""}`
+                : q.correct;
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Cô Linda chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(String(correctDisplay))}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -603,6 +751,7 @@
                     html += renderTrueFalseOptions(q);
                 }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
