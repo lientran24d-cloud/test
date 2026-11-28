@@ -285,10 +285,38 @@
                 title: "PART 1: Choose the odd one out",
                 subtitle: "Chọn từ khác nhóm so với các từ còn lại (Câu 1 – 4)",
                 questions: [
-                    { id: 1, type: "mcq", prompt: "Question 1.", options: [{ key: "A", text: "A. village" }, { key: "B", text: "B. city" }, { key: "C", text: "C. town" }, { key: "D", text: "D. building" }], correct: "D" },
-                    { id: 2, type: "mcq", prompt: "Question 2.", options: [{ key: "A", text: "A. IT" }, { key: "B", text: "B. P.E" }, { key: "C", text: "C. Music" }, { key: "D", text: "D. subject" }], correct: "D" },
-                    { id: 3, type: "mcq", prompt: "Question 3.", options: [{ key: "A", text: "A. birthday" }, { key: "B", text: "B. chips" }, { key: "C", text: "C. jam" }, { key: "D", text: "D. grapes" }], correct: "A" },
-                    { id: 4, type: "mcq", prompt: "Question 4.", options: [{ key: "A", text: "A. Friday" }, { key: "B", text: "B. Saturday" }, { key: "C", text: "C. Monday" }, { key: "D", text: "D. May" }], correct: "D" }
+                    {
+                        id: 1,
+                        type: "mcq",
+                        prompt: "Question 1.",
+                        options: [{ key: "A", text: "A. village" }, { key: "B", text: "B. city" }, { key: "C", text: "C. town" }, { key: "D", text: "D. building" }],
+                        correct: "D",
+                        explanation: "'village' (làng/xã), 'city' (thành phố) và 'town' (thị trấn) đều là địa danh/khu dân cư; riêng 'building' (tòa nhà) là công trình nên khác nhóm (chọn D)."
+                    },
+                    {
+                        id: 2,
+                        type: "mcq",
+                        prompt: "Question 2.",
+                        options: [{ key: "A", text: "A. IT" }, { key: "B", text: "B. P.E" }, { key: "C", text: "C. Music" }, { key: "D", text: "D. subject" }],
+                        correct: "D",
+                        explanation: "'IT' (Tin học), 'P.E' (Thể dục) và 'Music' (Âm nhạc) là tên các môn học cụ thể; 'subject' (môn học) là từ chỉ loại chung nên khác nhóm (chọn D)."
+                    },
+                    {
+                        id: 3,
+                        type: "mcq",
+                        prompt: "Question 3.",
+                        options: [{ key: "A", text: "A. birthday" }, { key: "B", text: "B. chips" }, { key: "C", text: "C. jam" }, { key: "D", text: "D. grapes" }],
+                        correct: "A",
+                        explanation: "'chips' (khoai tây chiên), 'jam' (mứt) và 'grapes' (nho) là đồ ăn/trái cây; riêng 'birthday' (sinh nhật) là dịp/sự kiện nên khác nhóm (chọn A)."
+                    },
+                    {
+                        id: 4,
+                        type: "mcq",
+                        prompt: "Question 4.",
+                        options: [{ key: "A", text: "A. Friday" }, { key: "B", text: "B. Saturday" }, { key: "C", text: "C. Monday" }, { key: "D", text: "D. May" }],
+                        correct: "D",
+                        explanation: "'Friday' (thứ Sáu), 'Saturday' (thứ Bảy) và 'Monday' (thứ Hai) là các ngày trong tuần; riêng 'May' (tháng Năm) là tên tháng nên khác nhóm (chọn D)."
+                    }
                 ]
             },
             {
@@ -300,10 +328,42 @@
                     { speaker: "Thùy Linh (2)", text: "In our classroom we learn and play. The pupils learn many subjects such as maths, art, English and Vietnamese.... I have maths on Mondays and English on Thursdays. I love music, I have it on Saturdays." }
                 ],
                 questions: [
-                    { id: 5, type: "spell", promptPrefix: "Question 5. What does she have on Monday?", promptSuffix: "", length: 5, correct: "maths" },
-                    { id: 6, type: "spell", promptPrefix: "Question 6. How many whiteboard are there at Thuy Linh’s class?", promptSuffix: "", length: 3, correct: "one" },
-                    { id: 7, type: "spell", promptPrefix: "Question 7. What subjects does she like?", promptSuffix: "", length: 5, correct: "music" },
-                    { id: 8, type: "spell", promptPrefix: "Question 8. Where is Thuy Linh’s school?", promptSuffix: "", length: 11, correct: "in the town" }
+                    {
+                        id: 5,
+                        type: "spell",
+                        promptPrefix: "Question 5. What does she have on Monday?",
+                        promptSuffix: "",
+                        length: 5,
+                        correct: "maths",
+                        explanation: "Trong đoạn (2), Thùy Linh viết 'I have maths on Mondays' nên đáp án là 'maths' (5 chữ cái)."
+                    },
+                    {
+                        id: 6,
+                        type: "spell",
+                        promptPrefix: "Question 6. How many whiteboard are there at Thuy Linh’s class?",
+                        promptSuffix: "",
+                        length: 3,
+                        correct: "one",
+                        explanation: "Trong đoạn (1), có câu 'At our class we have one big whiteboard.' nên đáp án là 'one' (một)."
+                    },
+                    {
+                        id: 7,
+                        type: "spell",
+                        promptPrefix: "Question 7. What subjects does she like?",
+                        promptSuffix: "",
+                        length: 5,
+                        correct: "music",
+                        explanation: "Thùy Linh viết 'I love music' nên môn học bạn ấy thích là 'music' (5 chữ cái)."
+                    },
+                    {
+                        id: 8,
+                        type: "spell",
+                        promptPrefix: "Question 8. Where is Thuy Linh’s school?",
+                        promptSuffix: "",
+                        length: 11,
+                        correct: "in the town",
+                        explanation: "Trong đoạn (1) có câu 'My school is in the town.' nên cụm trả lời là 'in the town' (11 ký tự)."
+                    }
                 ]
             },
             {
@@ -311,11 +371,46 @@
                 title: "PART 3: Choose the correct answer",
                 subtitle: "Chọn đáp án đúng nhất A, B, C hoặc D (Câu 9 – 13)",
                 questions: [
-                    { id: 9, type: "mcq", prompt: "Question 9. How ______ computer rooms are there at her school?", options: [{ key: "A", text: "A. often" }, { key: "B", text: "B. many" }, { key: "C", text: "C. much" }, { key: "D", text: "D. cost" }], correct: "B" },
-                    { id: 10, type: "mcq", prompt: "Question 10. ______ have English and Maths ______ Monday and Wednesday.", options: [{ key: "A", text: "A. at" }, { key: "B", text: "B. on" }, { key: "C", text: "C. from" }, { key: "D", text: "D. in" }], correct: "B" },
-                    { id: 11, type: "mcq", prompt: "Question 11. __________? – My sister can sing well.", options: [{ key: "A", text: "A. What can your sister do?" }, { key: "B", text: "B. What is the date today?" }, { key: "C", text: "C. What do you do?" }, { key: "D", text: "D. Can you sing?" }], correct: "A" },
-                    { id: 12, type: "mcq", prompt: "Question 12. How ______ are these apples? - They are 100.000 dong.", options: [{ key: "A", text: "A. many" }, { key: "B", text: "B. often" }, { key: "C", text: "C. much" }, { key: "D", text: "D. cost" }], correct: "C" },
-                    { id: 13, type: "mcq", prompt: "Question 13. There ______ three buildings at my school.", options: [{ key: "A", text: "A. be" }, { key: "B", text: "B. are" }, { key: "C", text: "C. is" }, { key: "D", text: "D. am" }], correct: "B" }
+                    {
+                        id: 9,
+                        type: "mcq",
+                        prompt: "Question 9. How ______ computer rooms are there at her school?",
+                        options: [{ key: "A", text: "A. often" }, { key: "B", text: "B. many" }, { key: "C", text: "C. much" }, { key: "D", text: "D. cost" }],
+                        correct: "B",
+                        explanation: "'computer rooms' là danh từ đếm được số nhiều nên để hỏi số lượng ta dùng 'How many' ('How many computer rooms...?'), chọn B."
+                    },
+                    {
+                        id: 10,
+                        type: "mcq",
+                        prompt: "Question 10. ______ have English and Maths ______ Monday and Wednesday.",
+                        options: [{ key: "A", text: "A. at" }, { key: "B", text: "B. on" }, { key: "C", text: "C. from" }, { key: "D", text: "D. in" }],
+                        correct: "B",
+                        explanation: "Trước các thứ trong tuần như 'Monday and Wednesday', giới từ đúng là 'on' ('on Monday and Wednesday'), chọn B."
+                    },
+                    {
+                        id: 11,
+                        type: "mcq",
+                        prompt: "Question 11. __________? – My sister can sing well.",
+                        options: [{ key: "A", text: "A. What can your sister do?" }, { key: "B", text: "B. What is the date today?" }, { key: "C", text: "C. What do you do?" }, { key: "D", text: "D. Can you sing?" }],
+                        correct: "A",
+                        explanation: "Câu trả lời 'My sister can sing well.' (Chị/Em gái tớ có thể hát hay) hỏi về khả năng của người chị/em gái nên câu hỏi đúng là 'What can your sister do?' (chọn A)."
+                    },
+                    {
+                        id: 12,
+                        type: "mcq",
+                        prompt: "Question 12. How ______ are these apples? - They are 100.000 dong.",
+                        options: [{ key: "A", text: "A. many" }, { key: "B", text: "B. often" }, { key: "C", text: "C. much" }, { key: "D", text: "D. cost" }],
+                        correct: "C",
+                        explanation: "Câu trả lời 'They are 100.000 dong.' hỏi về giá tiền nên dùng 'How much' ('How much are these apples?'), chọn C."
+                    },
+                    {
+                        id: 13,
+                        type: "mcq",
+                        prompt: "Question 13. There ______ three buildings at my school.",
+                        options: [{ key: "A", text: "A. be" }, { key: "B", text: "B. are" }, { key: "C", text: "C. is" }, { key: "D", text: "D. am" }],
+                        correct: "B",
+                        explanation: "'three buildings' là số nhiều nên cấu trúc 'Có...' dùng 'There are' ('There are three buildings...'), chọn B."
+                    }
                 ]
             },
             {
@@ -326,11 +421,46 @@
                     { speaker: "Linh", text: "Hi. My name is Linh. My friends are Mai and Nam. We like music very much. I can sing and dance, but I can’t play the piano. Mai can sing English songs. She can play the piano, too. Nam can dance, but he can’t play the piano. We go to the Music Club on every Friday afternoon." }
                 ],
                 questions: [
-                    { id: 14, type: "mcq", prompt: "Question 14. Who loves music?", options: [{ key: "A", text: "A. Mai." }, { key: "B", text: "B. Nam." }, { key: "C", text: "C. Linh, Mai and Nam." }, { key: "D", text: "D. Mai and Nam" }], correct: "C" },
-                    { id: 15, type: "mcq", prompt: "Question 15. Can Linh sing and dance?", options: [{ key: "A", text: "A. Yes." }, { key: "B", text: "B. No." }, { key: "C", text: "C. Don’t know." }], correct: "A" },
-                    { id: 16, type: "mcq", prompt: "Question 16. Who can play the piano?", options: [{ key: "A", text: "A. Nam." }, { key: "B", text: "B. Linh and Mai" }, { key: "C", text: "C. Mai." }, { key: "D", text: "D. Linh." }], correct: "C" },
-                    { id: 17, type: "mcq", prompt: "Question 17. Can Nam play the piano?", options: [{ key: "A", text: "A. Yes." }, { key: "B", text: "B. No." }, { key: "C", text: "C. Don’t know." }], correct: "B" },
-                    { id: 18, type: "mcq", prompt: "Question 18. What do they do on Friday afternoon?", options: [{ key: "A", text: "A. Play the piano." }, { key: "B", text: "B. Play the guitar." }, { key: "C", text: "C. Go to the Music Club." }], correct: "C" }
+                    {
+                        id: 14,
+                        type: "mcq",
+                        prompt: "Question 14. Who loves music?",
+                        options: [{ key: "A", text: "A. Mai." }, { key: "B", text: "B. Nam." }, { key: "C", text: "C. Linh, Mai and Nam." }, { key: "D", text: "D. Mai and Nam" }],
+                        correct: "C",
+                        explanation: "Linh viết 'My friends are Mai and Nam. We like music very much.' ('We' gồm cả Linh, Mai và Nam), nên chọn C."
+                    },
+                    {
+                        id: 15,
+                        type: "mcq",
+                        prompt: "Question 15. Can Linh sing and dance?",
+                        options: [{ key: "A", text: "A. Yes." }, { key: "B", text: "B. No." }, { key: "C", text: "C. Don’t know." }],
+                        correct: "A",
+                        explanation: "Linh viết 'I can sing and dance' (Tớ có thể hát và nhảy), nên đáp án là 'A. Yes.'."
+                    },
+                    {
+                        id: 16,
+                        type: "mcq",
+                        prompt: "Question 16. Who can play the piano?",
+                        options: [{ key: "A", text: "A. Nam." }, { key: "B", text: "B. Linh and Mai" }, { key: "C", text: "C. Mai." }, { key: "D", text: "D. Linh." }],
+                        correct: "C",
+                        explanation: "Trong bài chỉ có Mai chơi được piano ('She can play the piano, too.'), còn Linh và Nam đều không chơi được, nên chọn C."
+                    },
+                    {
+                        id: 17,
+                        type: "mcq",
+                        prompt: "Question 17. Can Nam play the piano?",
+                        options: [{ key: "A", text: "A. Yes." }, { key: "B", text: "B. No." }, { key: "C", text: "C. Don’t know." }],
+                        correct: "B",
+                        explanation: "Đoạn văn viết 'Nam can dance, but he can't play the piano.' (Nam không thể chơi piano), nên chọn 'B. No.'."
+                    },
+                    {
+                        id: 18,
+                        type: "mcq",
+                        prompt: "Question 18. What do they do on Friday afternoon?",
+                        options: [{ key: "A", text: "A. Play the piano." }, { key: "B", text: "B. Play the guitar." }, { key: "C", text: "C. Go to the Music Club." }],
+                        correct: "C",
+                        explanation: "Câu cuối đoạn văn viết 'We go to the Music Club on every Friday afternoon.' nên đáp án là 'C. Go to the Music Club.'."
+                    }
                 ]
             }
         ];
@@ -362,6 +492,29 @@
             resetQuiz();
             document.getElementById("studentNameInput").value = "";
             document.getElementById("loginScreen").classList.remove("hidden");
+        }
+
+        function getStudentDisplayName() {
+            const fullName = (currentStudent.name || "").trim();
+            if (!fullName) return "con";
+            const parts = fullName.split(/\s+/);
+            return parts[parts.length - 1];
+        }
+
+        function renderExplanationBox(q, isCorrect) {
+            if (!isSubmitted || isCorrect || !q.explanation) return "";
+            const studentCallName = getStudentDisplayName();
+            return `
+                <div class="mt-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 text-sm text-slate-700 leading-relaxed">
+                    <div class="font-black text-amber-900 mb-1">
+                        💡 Cô Linda chào ${escapeHtml(studentCallName)}, ở câu này con đã làm sai rồi!
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-emerald-700">Đáp án đúng là ${escapeHtml(q.correct)}.</span>
+                        <span> ${escapeHtml(q.explanation)}</span>
+                    </div>
+                </div>
+            `;
         }
 
         function saveStudentResult(correctCount, scoreTen) {
@@ -600,6 +753,7 @@
                     `;
                 }
 
+                html += renderExplanationBox(q, isCorrect);
                 html += `</div>`;
             });
 
